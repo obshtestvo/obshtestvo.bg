@@ -130,6 +130,9 @@ body {
 
 .select2-results li,
 .inner .txt p a,
+.inner .masthead #sidebar .toc li a,
+.bulky.more,
+a.more-activities,
 .blockUI.blockMsg.blockPage a,
 .mfp-content a,
 .home #forces li.contact a,
@@ -146,6 +149,8 @@ a.continue.more,
     transition: all 100ms ease-in-out;
 }
 
+a.more-activities,
+a.more-activities:after,
 .inner.support .txt > section#act .option header .fi,
 .select2-container-multi .select2-choices,
 .select2-container-multi .select2-choices,
@@ -828,6 +833,7 @@ header.masthead aside a.more {
 }
 .bulky.more {
     position: relative;
+    left:0;
 }
 header.masthead aside a.more {
     padding-top: 10px;
@@ -2302,8 +2308,10 @@ nav.main .sub.waiting li {
     position: relative;
     text-transform: lowercase;
     padding-right: 11px;
+    left:0;
 }
 
+a.more-activities:after,
 .bulky.more:after,
 .inner .masthead #sidebar .toc li a:after {
     content: "\e006"; /*.flaticon-chevron18*/
@@ -2329,6 +2337,7 @@ nav.main .sub.waiting li {
     color: #197A9E;
 }
 
+a.more-activities:hover:after,
 .bulky.more:hover:after,
 .inner .masthead #sidebar .toc li a:hover:after {
     color: #2296c1;
@@ -2340,8 +2349,10 @@ nav.main .sub.waiting li {
 
 .inner .masthead #sidebar .toc li a:active {
     left: 2px;
+    top:1px;
 }
 
+a.more-activities:active:after,
 .bulky.more:active:after,
 .inner .masthead #sidebar .toc li a:active:after {
     color: #4ACEFF;
@@ -2451,6 +2462,7 @@ nav.main .sub.waiting li {
     line-height: 1.26em;
 }
 
+a.more-activities,
 .inner .txt ol a,
 .inner .txt ul a,
 .blockUI.blockMsg.blockPage a,
@@ -2463,6 +2475,7 @@ nav.main .sub.waiting li {
     top: 0;
 }
 
+a.more-activities:hover,
 .inner .txt ol a:hover,
 .inner .txt ul a:hover,
 .blockUI.blockMsg.blockPage a:hover,
@@ -2474,6 +2487,7 @@ nav.main .sub.waiting li {
     color: #03beff;
 }
 
+a.more-activities:active,
 .inner .txt ol a:active,
 .inner .txt ul a:active,
 .blockUI.blockMsg.blockPage a:active,
@@ -2995,7 +3009,7 @@ form.small.signup .personal .button {
     float: right;
 }
 
-form.small.signup .select2 {
+form.small .select2 {
     font-size: 14px;
 }
 
@@ -4214,24 +4228,40 @@ footer .quick-contacts li a {
 }
 
 
+.users-page .masthead{
+    padding-bottom: 218px;
+}
 .nav-tabs {
-    background: #102b36;
+    overflow: hidden;
+    position: relative;
+    top:-45px;
 }
 
+.nav-tabs a.selected:hover,
 .nav-tabs a {
-    padding: 10px 15px;
-    display: inline-block;
+    padding: 0 22px;
+    float:left;
     color: #79939e;
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
+    margin-right: 1px;
     text-decoration: none;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    height: 45px;
+    line-height: 44px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    letter-spacing: -0.04em;
+    opacity: 1;
 }
 
-.nav-tabs a:hover,
+.nav-tabs a.selected:hover,
 .nav-tabs .selected {
     background: #fff;
+}
+.nav-tabs a:hover {
+    background: #108eba;
+    color:#fff;
+    opacity: 0.9;
 }
 
 .nav-tabs .selected {
@@ -4249,6 +4279,8 @@ input.checkbox:checked + label.checkbox {
 label.checkbox {
     display: inline-block;
     width: 21px;
+    vertical-align: middle;
+    overflow: hidden;
     height: 21px;
     text-indent: -9999px;
     cursor: pointer;
@@ -4264,7 +4296,7 @@ label.checkbox-second {
 .users {
     position: relative;
     min-height: 500px;
-    background: #eef0f1  url(../img/users-border.png) repeat-y 309px 0;
+    margin-top: -165px;
 }
 
 .users:after {
@@ -4282,17 +4314,16 @@ label.checkbox-second {
 }
 
 .users .list {
-     margin-left: 310px;
-     background: #fff;
+    margin-left: 310px;
+    background: #fff;
+    position: relative;
+    top:45px
 }
 
-.filter-simple {
-    margin: 0;
-    padding: 84px 15px 27px 0px;
+ul.filter-simple {
+    padding: 84px 15px 17px 0px;
     color: #108eba;
     font-size: 15px;
-    background: #112c37;
-    list-style-type: none;
     overflow: hidden;
 }
 
@@ -4303,19 +4334,25 @@ label.checkbox-second {
 }
 
 .filter-simple li.label {
-    padding: 0 9px 10px 0;
+    padding: 1px 9px 10px 0;
     width: 264px;
     text-align: right;
 }
+.filter-simple li.label label {
+    cursor: pointer;
+}
 
 .filter-advanced {
-    padding: 5px 13px 0 25px;
+    padding: 5px 13px 40px 25px;
+    background: #eef0f1  url(../img/users-border.png) repeat-y 309px 0;
+}
+.filter-advanced > label {
+    display: block;
 }
 
 .filter-advanced input[type=text] {
     margin: 10px 0 0 0;
     display: inline-block;
-    width: 99%;
     color: #607d89;
     font-size: 14px;
     border: solid 1px #b5b5b5;
@@ -4323,8 +4360,8 @@ label.checkbox-second {
 }
 
 .filter-advanced .title-primary {
-    margin: 30px 0 0 0;
-    padding: 0;
+    margin: 22px 0 0 0;
+    padding: 0 0 0 1px;
     color: #607d89;
     font-weight: normal;
     font-size: 18px;
@@ -4332,23 +4369,23 @@ label.checkbox-second {
 
 .filter-advanced .title-info {
     margin: 0;
-    padding: 0;
     color: #9ba9ad;
     font-weight: normal;
     font-size: 14px;
+    line-height: 16px;
+    padding:4px 0 3px 1px;
 }
 
 .filter-advanced .users-free {
-    padding: 5px 0 0 0;
+    padding: 9px 0 0 0;
     font-size: 14px;
+    vertical-align: top;
     color: #607d89;
     text-align: right;
 }
 
-.users-list {
-    margin: 0;
-    padding: 45px 30px;
-    list-style-type: none;
+ul.users-list {
+    padding: 0 30px;
 }
 
 .users-list:after {
@@ -4359,9 +4396,9 @@ label.checkbox-second {
 
 .users-list > li {
     position: relative;
-    margin: 0 30px 40px 0;
+    margin: 0 0 40px 0;
     padding: 0;
-    width: 265px;
+    width: 298px;
     height: 156px;
     float: left;
 
@@ -4370,67 +4407,54 @@ label.checkbox-second {
 .user-names {
     margin: 0;
     padding: 0;
-    height: 30px;
+    height: 32px;
     overflow: hidden;
     font-weight: normal;
     color: #194352;
-    font-size: 19px;
+    font-size: 21px;
+    left:-1px;
+    position: relative;
 }
 
 .users-list .avatar {
-    width: 95px;
+    width: 94px;
     height: 126px;
     float: left;
     overflow: hidden;
 }
-
-.users-list .avatar > a{
-    margin-top: 5px;
-    display: block;
-    width: 87px;
-    height: 34px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    line-height: 34px;
-    font-size: 13px;
-    font-weight: bold;
-    border-radius: 3px;
-    background: #108eba; 
-    -webkit-transition: background-color 0.5s ease;
-    -moz-transition: background-color 0.5s ease;
-    -o-transition: background-color 0.5s ease;
-    transition: background-color 0.5s ease;
+.users-list .avatar img {
+    width: 86px;
+    height: 86px;
 }
 
-.users-list .avatar > a:hover {
-    background: #102b36;
-
+.users-list .avatar > .button {
+    margin-top: 4px;
+    min-width: 67px;
 }
 
 .users-list li > ul {
     position: relative;
-    margin: 0;
-    padding: 0;
-    height: 94px;
-    float: left;
+    height: 92px;
     overflow: hidden;
-    list-style-type: none;
+    padding-right: 30px;
 }
 
 .users-list li > ul li {
-    padding: 0 0 0 15px;
+    padding: 0 0 3px 15px;
     position: relative;
     font-size: 14px;
+    line-height: 20px;
     color: #3a768e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .users-list li > ul li:first-child {
     position: absolute; 
     left: 0;
-    bottom: 0;
-    padding: 8px 0 0 0;
+    bottom: -2px;
+    padding: 0 0 0 0;
     width: 100%;
     height: 27px;
     z-index: 5;
@@ -4444,8 +4468,8 @@ label.checkbox-second {
 .users-list li > ul li:before {
     content: "\e006";
     position: absolute;
-    left: 0;
-    top: 6px;
+    left: -2px;
+    top: 0;
     font-size: 9px;
     color: #BAD3DE;
     font-family: "Flaticon";
@@ -4454,110 +4478,119 @@ label.checkbox-second {
 a.more-activities {
     display: inline-block;
     color: #0498cc;
+    position: relative;
     font-size: 14px;
+    padding-right: 11px;
     text-decoration: underline;
 }
 
 a.more-activities:hover {
     text-decoration: none;
 }
+a.more-activities:active:after {
+    top:1px;
+}
 
 a.more-activities:before {
     padding-right: 7px;
     content: "...";
+    position: relative;
+    top:1px;
+    color:#a4cfe6;
     display:inline-block;
     text-decoration: none;
+}
+a.more-activities:active {
+    top:0;
 }
 
 a.more-activities:after {
-    content: "\e006";
-    display:inline-block;
-    text-decoration: none;
-    font-size: 9px;
-    color: #BAD3DE;
-    font-family: "Flaticon";
+    top:1px;
+}
+
+a.more-activities:active:after {
+    right:-3px;
 }
 
 .user-projects {
-    margin: 0;
-    padding: 0;
     display: inline-block;
-    list-style-type: none;
 }
 .user-projects li {
     display: inline-block;
 }
-
-.user-project-all {
-    color: #2296c1;
-    text-decoration: none;
+.user-projects li img {
+    width:28px;
+    height:28px;
+    border:1px solid #abc8d3;
 }
-.user-project-all:hover {
-    color: #3a768e;
-}
-
-.user-project-all:after {
-    content: "\e006";
-    display:inline-block;
-    text-decoration: none;
-    font-size: 9px;
-    color: #BAD3DE;
-    font-family: "Flaticon";
-}
-
-.no-projects { 
+.no-projects {
     margin: 0;
     padding: 0;
-    font-size: 13px;
+    font-size: 14px;
+    text-indent: 14px;
     line-height: 27px;
+    font-weight: normal;
+    font-style: italic;
     color: #85979e;
 }
 
 .user-popup {
     position: absolute;
-    left: -20px; 
-    top: -15px;
     z-index: 10;
-    padding: 15px 20px;
-    width: 300px;
-    box-shadow: 0 0 24px 0px #ccc;
+    padding: 12px 21px 18px 21px;
+    left: -21px;
+    top: -12px;
+    width: 287px;
+    -webkit-box-shadow: 0 0 100px 3px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0 0 100px 3px rgba(0,0,0,0.31);
+    box-shadow: 0 0 100px 3px rgba(0,0,0,0.31);
     background: #fff;
 }
 
 .close-popup {
     position: absolute;
-    top: 15px;
-    right: 10px;
+    top: 9px;
+    right: 8px;
     display: block;
-    width: 23px;
-    height: 23px;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
     color: #83949c;
     font-weight: bold;
     text-decoration: none;
+    opacity: 0.65;
+    z-index: 20;
 }
 
 .close-popup:hover {
+    opacity: 1;
     color: #108eba;
 }
 
 .user-desription {
     color: #879296;
     font-size: 14px;
+    position: relative;
+    left:5px;
+    line-height: 17px;
+    padding: 3px 5px 0 0;
 }
 
-.activities-all {
-    margin: 0;
-    padding: 23px 0 0 0;
+ul.activities-all {
+    padding: 15px 0 0 0;
     clear: both;
-    list-style-type: none;
+    position: relative;
+    left:-3px;
 }
 
 .activities-all li {
     position: relative;
-    margin: 0;
-    padding: 0 0 0 15px;
+    padding: 0 2px 5px 13px;
+    line-height: 17px;
     font-size: 14px;
+    display: inline-block;
     color: #3A768E;
 }
 
@@ -4565,7 +4598,7 @@ a.more-activities:after {
     content: "\e006";
     position: absolute;
     left: 0;
-    top: 4px;
+    top: 0;
     font-size: 9px;
     color: #BAD3DE;
     font-family: "Flaticon";
@@ -4574,7 +4607,8 @@ a.more-activities:after {
 
 .user-popup .user-projects {
     display: block;
-    padding-top: 30px;
+    padding-top: 23px;
+    padding-left: 4px;
 }
 
 .user-popup .user-projects li {

@@ -8,32 +8,36 @@
 
     <section class="users">
         <aside class="filter">
-            <ul class="filter-simple">
-                <li class="label">Само тези на разположение</li>
-                <li>
-                    <input class="checkbox" type="checkbox" id="check-users-free" />
-                    <label class="checkbox" for="check-users-free">custom checkbox</label>
-                </li>
-                <li class="label">Покажи в категории спрямо дейност</li>
-                <li>
-                    <input class="checkbox" type="checkbox" id="check-category" />
-                    <label class="checkbox" for="check-category">custom checkbox</label>
-                </li>
-            </ul>
-            <div class="filter-advanced">
-                <h3 class="title-primary">Интерес към проекти:</h3>
-                <h4 class="title-info">Намерете човек спрямо интереса му към дадени проекти</h4>
-                <input type="hidden" id="joinSkills" name="skills" style="width:100%" value="" data-choices="{{ skills_options|jsonify }}"/>
-                <div class="users-free">
-                    Участници неизбрали проекти
-                    <input class="checkbox checkbox-second" type="checkbox" id="check-users-noprojects" />
-                    <label class="checkbox checkbox-second" for="check-users-noprojects">custom checkbox</label>
-                </div>
+            <form class="small" action="">
+                <ul class="stripped filter-simple">
+                    <li class="label"><label for="check-users-free">Само тези на разположение</label></li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="check-users-free" />
+                        <label class="checkbox" for="check-users-free">custom checkbox</label>
+                    </li>
+                    <li class="label"><label for="check-category">Покажи в категории спрямо дейност</label></li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="check-category" />
+                        <label class="checkbox" for="check-category">custom checkbox</label>
+                    </li>
+                </ul>
+                <div class="filter-advanced">
+                    <label for="joinSkills">
+                        <h3 class="title-primary">Интерес към проекти:</h3>
+                        <h4 class="title-info">Намерете човек спрямо интереса му към дадени проекти</h4>
+                    </label>
+                    <input type="hidden" id="joinSkills" name="skills" style="width:100%" value="" data-choices="{{ skills_options|jsonify }}"/>
+                    <div class="users-free">
+                        Участници неизбрали проекти
+                        <input class="checkbox checkbox-second" type="checkbox" id="check-users-noprojects" />
+                        <label class="checkbox checkbox-second" for="check-users-noprojects">custom checkbox</label>
+                    </div>
 
-                <h3 class="title-primary">Избрани дейности:</h3>
-                <h4 class="title-info">Намерете човек според дейността, в която иска да се включи</h4>
-                <input type="text" />
-            </div>
+                    <h3 class="title-primary">Избрани дейности:</h3>
+                    <h4 class="title-info">Намерете човек според дейността, в която иска да се включи</h4>
+                    <input type="text" />
+                </div>
+            </form>
         </aside>
         <section class="list">
             <nav class="nav-tabs">
@@ -44,26 +48,26 @@
                 <a href="#">Експертиза</a>
                 <a href="#">Вдъхновение</a>
             </nav>
-            <ul class="users-list">
+            <ul class="stripped users-list">
                 <li>
-                    <section class="user-popup">
+                    <section class="user-popup round">
                         <a class="close-popup" href="#nogo">&#x2715;</a>
                         <h2 class="user-names">Нейчо Михайлов</h2>
                         <div class="avatar">
                             <figure>
                                 <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                             </figure>
-                            <a href="#">попитай</a>
+                            <a href="#" class="button standard blue">попитай</a>
                         </div>
                         <div class="user-desription">
                             Участвам в Общество.бг, понеже желая да
                         </div>
-                        <ul class="activities-all">
+                        <ul class="activities-all stripped">
                             <li>Андроид (код)</li>
                             <li>Проектово ръководство</li>
                             <li>Проектово ръководство и координация и (кво ли не друго казвам на баба си, докато събирал изпопадалите зелки)</li>
                         </ul>
-                        <ol class="user-projects">
+                        <ol class="stripped user-projects">
                             <li>
                                 <a href="#">
                                     <img src="{% static 'img/temp/project-1.jpg' %}" alt="" />
@@ -84,17 +88,17 @@
                         <figure>
                             <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                         </figure>
-                        <a href="#">попитай</a>
+                        <a href="#" class="button standard blue">попитай</a>
                     </div>
-                    <ul>
+                    <ul class="stripped">
                         <li><a class="more-activities" href="#">и още 3 дейности</a></li>
                         <li>Андроид (код)</li>
-                        <li>Проектово ръково....</li>
+                        <li>Проектово ръководство и координация на проекти</li>
                         <li>Проектово ръково....</li>
                         <li>Проектово ръково....</li>
                         <li>Проектово ръково....</li>
                     </ul>
-                    <ol class="user-projects">
+                    <ol class="stripped user-projects">
                         <li><a href="#"><img src="{% static 'img/temp/project-1.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-2.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-3.jpg' %}" alt="" /></a></li>
@@ -106,15 +110,15 @@
                         <figure>
                             <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                         </figure>
-                        <a href="#">попитай</a>
+                        <a href="#" class="button standard blue">попитай</a>
                     </div>
-                    <ul>
+                    <ul class="stripped">
                         <li><a class="more-activities" href="#">и още 3 дейности</a></li>
                         <li>Андроид (код)</li>
-                        <li>Проектово ръково....</li>
-                        <li>Проектово ръково....</li>
-                        <li>Проектово ръково....</li>
-                        <li>Проектово ръково....</li>
+                        <li>Проектово ръководство и координация на проекти</li>
+                        <li>Проектово ръководство и координация на проекти</li>
+                        <li>Проектово ръководство и координация на проекти</li>
+                        <li>Проектово ръководство и координация на проекти</li>
                     </ul>
                     <h6 class="no-projects">няма избрани проекти</h6>
                 </li>
@@ -124,9 +128,9 @@
                         <figure>
                             <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                         </figure>
-                        <a href="#">попитай</a>
+                        <a href="#" class="button standard blue">попитай</a>
                     </div>
-                    <ul>
+                    <ul class="stripped">
                         <li><a class="more-activities" href="#">и още 3 дейности</a></li>
                         <li>Андроид (код)</li>
                         <li>Проектово ръково....</li>
@@ -134,12 +138,12 @@
                         <li>Проектово ръково....</li>
                         <li>Проектово ръково....</li>
                     </ul>
-                     <ol class="user-projects">
+                     <ol class="stripped user-projects">
                         <li><a href="#"><img src="{% static 'img/temp/project-1.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-2.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-3.jpg' %}" alt="" /></a></li>
                     </ol>
-                    <a class="user-project-all" href="#">още</a>
+                    <a class="bulky more" href="#">още</a>
                 </li>
                 <li>
                     <h2 class="user-names">Цветелина Константинова</h2>
@@ -147,9 +151,9 @@
                         <figure>
                             <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                         </figure>
-                        <a href="#">попитай</a>
+                        <a href="#" class="button standard blue">попитай</a>
                     </div>
-                    <ul>
+                    <ul class="stripped">
                         <li><a class="more-activities" href="#">и още 3 дейности</a></li>
                         <li>Андроид (код)</li>
                         <li>Проектово ръково....</li>
@@ -157,12 +161,12 @@
                         <li>Проектово ръково....</li>
                         <li>Проектово ръково....</li>
                     </ul>
-                     <ol class="user-projects">
+                     <ol class="stripped user-projects">
                         <li><a href="#"><img src="{% static 'img/temp/project-1.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-2.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-3.jpg' %}" alt="" /></a></li>
                     </ol>
-                    <a class="user-project-all" href="#">още</a>
+                    <a class="bulky more" href="#">още</a>
                 </li>
                 <li>
                     <h2 class="user-names">Цветелина Константинова</h2>
@@ -170,9 +174,9 @@
                         <figure>
                             <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                         </figure>
-                        <a href="#">попитай</a>
+                        <a href="#" class="button standard blue">попитай</a>
                     </div>
-                    <ul>
+                    <ul class="stripped">
                         <li><a class="more-activities" href="#">и още 3 дейности</a></li>
                         <li>Андроид (код)</li>
                         <li>Проектово ръково....</li>
@@ -180,12 +184,12 @@
                         <li>Проектово ръково....</li>
                         <li>Проектово ръково....</li>
                     </ul>
-                     <ol class="user-projects">
+                     <ol class="stripped user-projects">
                         <li><a href="#"><img src="{% static 'img/temp/project-1.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-2.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-3.jpg' %}" alt="" /></a></li>
                     </ol>
-                    <a class="user-project-all" href="#">още</a>
+                    <a class="bulky more" href="#">още</a>
                 </li>
                 <li>
                     <h2 class="user-names">Цветелина Константинова</h2>
@@ -193,9 +197,9 @@
                         <figure>
                             <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                         </figure>
-                        <a href="#">попитай</a>
+                        <a href="#" class="button standard blue">попитай</a>
                     </div>
-                    <ul>
+                    <ul class="stripped">
                         <li><a class="more-activities" href="#">и още 3 дейности</a></li>
                         <li>Андроид (код)</li>
                         <li>Проектово ръково....</li>
@@ -203,12 +207,12 @@
                         <li>Проектово ръково....</li>
                         <li>Проектово ръково....</li>
                     </ul>
-                     <ol class="user-projects">
+                     <ol class="stripped user-projects">
                         <li><a href="#"><img src="{% static 'img/temp/project-1.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-2.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-3.jpg' %}" alt="" /></a></li>
                     </ol>
-                    <a class="user-project-all" href="#">още</a>
+                    <a class="bulky more" href="#">още</a>
                 </li>
                 <li>
                     <h2 class="user-names">Цветелина Константинова</h2>
@@ -216,9 +220,9 @@
                         <figure>
                             <a href="#"><img src="{% static 'img/temp/user-avatar.jpg' %}" alt="" /></a>
                         </figure>
-                        <a href="#">попитай</a>
+                        <a href="#" class="button standard blue">попитай</a>
                     </div>
-                    <ul>
+                    <ul class="stripped">
                         <li><a class="more-activities" href="#">и още 3 дейности</a></li>
                         <li>Андроид (код)</li>
                         <li>Проектово ръково....</li>
@@ -226,12 +230,12 @@
                         <li>Проектово ръково....</li>
                         <li>Проектово ръково....</li>
                     </ul>
-                     <ol class="user-projects">
+                     <ol class="stripped user-projects">
                         <li><a href="#"><img src="{% static 'img/temp/project-1.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-2.jpg' %}" alt="" /></a></li>
                         <li><a href="#"><img src="{% static 'img/temp/project-3.jpg' %}" alt="" /></a></li>
                     </ol>
-                    <a class="user-project-all" href="#">още</a>
+                    <a class="bulky more" href="#">още</a>
                 </li>
             </ul>
         </section>
