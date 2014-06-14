@@ -178,6 +178,7 @@ header.masthead aside a.more:before,
 .select2-container .select2-choice,
 .select2-drop,
 form.small .select2 > ul,
+.nav-tabs a,
 .round {
     -webkit-border-radius: 2px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
     border-radius: 2px; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
@@ -4228,15 +4229,18 @@ footer .quick-contacts li a {
 }
 
 
-.users-page .masthead{
-    padding-bottom: 218px;
-}
 .nav-tabs {
     overflow: hidden;
     position: relative;
-    top:-45px;
+    margin-left: 310px;
+    max-width: 600px;
 }
 
+.nav-tabs li {
+    float:left;
+    padding-right: 3px;
+    padding-top: 3px;
+}
 .nav-tabs a.selected:hover,
 .nav-tabs a {
     padding: 0 22px;
@@ -4244,15 +4248,17 @@ footer .quick-contacts li a {
     color: #79939e;
     font-size: 22px;
     text-align: center;
-    margin-right: 1px;
+    white-space:nowrap;
     text-decoration: none;
     height: 45px;
     line-height: 44px;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
     letter-spacing: -0.04em;
     opacity: 1;
+    position: relative;
+    top:1px;
+    background: #1a3d4b;
 }
+
 
 .nav-tabs a.selected:hover,
 .nav-tabs .selected {
@@ -4293,10 +4299,17 @@ label.checkbox-second {
     background-image: url(../img/checkbox-2.png);
 }
 
+
+.users-page .masthead{
+    padding-bottom: 550px;
+}
+.users-page .content {
+    margin-top: -500px;
+}
+
 .users {
     position: relative;
     min-height: 500px;
-    margin-top: -165px;
 }
 
 .users:after {
@@ -4317,11 +4330,11 @@ label.checkbox-second {
     margin-left: 310px;
     background: #fff;
     position: relative;
-    top:45px
+    padding-top: 45px;
 }
 
 ul.filter-simple {
-    padding: 84px 15px 17px 0px;
+    padding: 43px 15px 17px 0px;
     color: #108eba;
     font-size: 15px;
     overflow: hidden;

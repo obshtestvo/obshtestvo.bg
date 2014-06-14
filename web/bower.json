@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "pickadate": "*",
+    "isotope": "*",
     "select2": "*",
     "magnific-popup": "*"
   }
