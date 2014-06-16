@@ -21,6 +21,11 @@ def run_manage(command):
 def deploy_static_files():
     run_manage('collectstatic -v0 --noinput')
 
+def install_static_dependencies():
+    with cd(env.project_root+'/web'):
+        command = 'bower install'
+        run(command)
+
 def deploy_code():
     with settings(warn_only=True):
         if run('test -d %s' % env.project_root).failed:
@@ -43,6 +48,7 @@ def restart_app_server():
 def deploy():
     deploy_code()
     install_dependencies()
+    install_static_dependencies()
     deploy_static_files()
     run_migrations()
     restart_app_server()
