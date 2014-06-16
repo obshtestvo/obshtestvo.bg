@@ -8,7 +8,6 @@ function SupportPage($context) {
 
 
     $('.msg.hidden').css('display', 'none').removeClass('hidden')
-    this._join($options)
     this._finance($options)
     this._media($options)
     this._fellowship($options)
@@ -43,10 +42,6 @@ function SupportPage($context) {
 }
 
 SupportPage.prototype = {
-    _join: function ($options) {
-        var $form = $options.filter('.time').find('form');
-        new AjaxForm($form)
-    },
     _finance: function ($options) {
         var $form = $options.filter('.finance').find('form');
         new AjaxForm($form)
