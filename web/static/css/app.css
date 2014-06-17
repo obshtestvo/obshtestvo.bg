@@ -130,6 +130,9 @@ body {
 
 .select2-results li,
 .inner .txt p a,
+.users-list li .user-skills li a,
+.users-list li .user-skills li a:before,
+.users-list .avatar figure a,
 .inner .masthead #sidebar .toc li a,
 .bulky.more,
 a.more-activities,
@@ -2469,6 +2472,7 @@ a.more-activities,
 .blockUI.blockMsg.blockPage a,
 #explanations .slider blockquote a,
 .inner .start .context a,
+.users-list li .user-skills li a,
 .mfp-content a,
 .inner .txt p a {
     color: #0498cc;
@@ -2482,6 +2486,7 @@ a.more-activities:hover,
 .blockUI.blockMsg.blockPage a:hover,
 .mfp-content a:hover,
 .inner .start .context a:hover,
+.users-list li .user-skills li a:hover,
 #explanations .slider blockquote a:hover,
 .inner .txt p a:hover {
     text-decoration: none;
@@ -2494,6 +2499,7 @@ a.more-activities:active,
 .blockUI.blockMsg.blockPage a:active,
 .inner .start .context a:active,
 .mfp-content a:active,
+.users-list li .user-skills li a:active,
 #explanations .slider blockquote a:active,
 .inner .txt p a:active {
     text-decoration: none;
@@ -4413,7 +4419,7 @@ ul.users-list {
     clear: both;
 }
 
-.users-list > li {
+.users-list .user-preview {
     position: relative;
     margin: 0 0 40px 0;
     padding: 0;
@@ -4421,6 +4427,11 @@ ul.users-list {
     height: 156px;
     float: left;
 
+}
+
+.users-list .user-preview a.bulky.more {
+    top:-10px;
+    margin-left: 3px;
 }
 
 .user-names {
@@ -4439,15 +4450,30 @@ ul.users-list {
     width: 94px;
     height: 126px;
     float: left;
-    overflow: hidden;
 }
 .users-list .avatar img {
+    position: relative;
     width: 86px;
     height: 86px;
 }
 
+.users-list .avatar figure a {
+    display: inline-block;
+    border: 2px solid #fff;
+    margin-left: -2px;
+    position: relative;
+    z-index: 20;
+    margin-top: -2px;
+}
+.users-list .avatar figure a:hover {
+    border-color:#97C1D1;
+    /*-webkit-box-shadow: 0 0 5px 3px rgba(0,0,0,0.31);*/
+    /*-moz-box-shadow: 0 0 5px 3px rgba(0,0,0,0.31);*/
+    box-shadow: 0 0 70px 0 rgba(0,0,0,0.1);
+}
+
 .users-list .avatar > .button {
-    margin-top: 4px;
+    margin-top: 2px;
     min-width: 67px;
 }
 
@@ -4474,15 +4500,40 @@ ul.users-list {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.users-list li .user-skills li a {
+    text-decoration: none;
+    color:#3a768e;
+}
+.users-list li .user-skills li a:hover {
+    text-decoration: underline;
+}
+.users-list li .user-skills li a:active {
+    left:1px;
+    top:0;
+}
 
-.users-list li .user-skills li:before {
+.users-list li .user-skills li a:before {
     content: "\e006";
     position: absolute;
-    left: -2px;
-    top: 0;
+    left: -15px;
+    top: -1px;
     font-size: 9px;
     color: #BAD3DE;
     font-family: "Flaticon";
+}
+.users-list li .user-skills li a:hover:before {
+    color: #2296c1;
+    left: -14px;
+}
+.users-list li .user-skills li a:active:before {
+    color: #4ACEFF;
+    /*left: -14px;*/
+    top:-1px;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 a.more-activities {
@@ -4530,9 +4581,12 @@ a.more-activities:active:after {
 
 .user-projects {
     display: inline-block;
+    width: 99px;
+    height:30px;
 }
 .user-projects li {
-    display: inline-block;
+    float:left;
+    padding-right: 3px;
 }
 .user-projects li img {
     width:28px;
@@ -4552,7 +4606,7 @@ a.more-activities:active:after {
 
 .user-popup {
     position: absolute;
-    z-index: 10;
+    z-index: 30;
     padding: 12px 21px 18px 21px;
     left: -21px;
     top: -12px;
@@ -4561,6 +4615,15 @@ a.more-activities:active:after {
     -moz-box-shadow: 0 0 100px 3px rgba(0,0,0,0.31);
     box-shadow: 0 0 100px 3px rgba(0,0,0,0.31);
     background: #fff;
+    opacity: 1;
+    -webkit-transition: opacity 200ms ease-in-out;
+    -moz-transition: opacity 200ms ease-in-out;
+    -ms-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+}
+.user-popup.closed {
+    opacity: 0;
 }
 
 .close-popup {
@@ -4625,11 +4688,14 @@ ul.activities-all {
     display: block;
     padding-top: 23px;
     padding-left: 4px;
+    width: auto;
+    height: auto;
 }
 
 .user-popup .user-projects li {
     padding-bottom: 6px; 
     display:  block;
+    float:none;
 }
 
 .user-popup .user-projects a { 

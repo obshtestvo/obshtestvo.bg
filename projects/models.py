@@ -199,9 +199,9 @@ class User(AbstractUser):
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
 
     def get_avatar(self):
-        src = settings.MEDIA_URL
+        src = None
         if self.avatar:
-            pass
+            src = settings.MEDIA_URL + self.avatar.url()
         else:
             uid = settings.SOCIAL_AUTH_FACEBOOK_KEY
             if self.social_auth.all().count() > 0:
@@ -279,6 +279,10 @@ class Project(models.Model):
         return User.objects.exclude(pauses__project=self).filter(
             project_activities__project=self,
             project_activities__user_activities__is_active=True).distinct()
+
+    def get_logo_thumb(self):
+        if self.logo_thumb:
+            return self.logo_thumb.url
 
     def __unicode__(self):
         return unicode(self.name)

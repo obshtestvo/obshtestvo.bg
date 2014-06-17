@@ -38,93 +38,97 @@
                             <h3 class="title-primary">Интерес към проекти:</h3>
                             <h4 class="title-info">Намерете човек спрямо интереса му към дадени проекти</h4>
                         </label>
-                        <input type="hidden" id="joinSkills" name="skills" style="width:100%" value="" data-choices="{{ skills_options|jsonify }}"/>
+                        <input type="text" />
                         <div class="users-free">
                             Участници неизбрали проекти
                             <input class="checkbox checkbox-second" type="checkbox" id="check-users-noprojects" />
                             <label class="checkbox checkbox-second" for="check-users-noprojects">custom checkbox</label>
                         </div>
 
-                        <h3 class="title-primary">Избрани дейности:</h3>
-                        <h4 class="title-info">Намерете човек според дейността, в която иска да се включи</h4>
-                        <input type="text" />
+                        <label for="joinSkills">
+                            <h3 class="title-primary">Избрани дейности:</h3>
+                            <h4 class="title-info">Намерете човек според дейността, в която иска да се включи</h4>
+                        </label>
+                        <input type="hidden" id="joinSkills" name="skills" style="width:100%" value="" data-choices="{{ skills_options|jsonify }}"/>
                     </div>
                 </form>
             </aside>
             <section class="list">
                 <ul class="stripped users-list">
+                    <li id="target">
+                    </li>
                     {% for u in users %}
-                    <li>
-                        <section class="user-popup round hidden">
-                            <a class="close-popup" href="#nogo">&#x2715;</a>
-                            <h2 class="user-names">Нейчо Михайлов</h2>
-                            <div class="avatar">
-                                <figure>
-                                    <a href="#"><img src="{{ u.get_avatar }}?width=86" alt="" /></a>
-                                </figure>
-                                <a href="#" class="button standard blue">попитай</a>
-                            </div>
-                            <div class="user-desription">
-                                Участвам в Общество.бг, понеже желая да
-                            </div>
-                            <ul class="activities-all stripped">
-                                <li>Андроид (код)</li>
-                                <li>Проектово ръководство</li>
-                                <li>Проектово ръководство и координация и (кво ли не друго казвам на баба си, докато събирал изпопадалите зелки)</li>
-                            </ul>
-                            <ol class="stripped user-projects">
-                                <li>
-                                    <a href="#">
-                                        <img src="{% static 'img/temp/project-1.jpg' %}" alt="" />
-                                        Pitaigi.bg
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="{% static 'img/temp/project-2.jpg' %}" alt="" />
-                                        RE:CYCLE
-                                    </a>
-                                </li>
-                            </ol>
-                        </section>
+                    <li class="user-preview">
 
                         <h2 class="user-names">{{ u.first_name }} {{ u.last_name }}</h2>
                         <div class="avatar">
                             <figure>
-                                <a href="#"><img src="{{ u.get_avatar }}?width=86&height=86" alt="" /></a>
+                                <a href="#" class="round"><img src="{{ u.get_avatar }}?width=86&height=86" alt="" /></a>
                             </figure>
                             <a href="#" class="button standard blue">попитай</a>
                         </div>
                         <div class="user-skills">
                             <ul class="stripped">
-                                {% if u.skills.count > 3 %}
-                                {% endif  %}
                                 {% for s in u.skills.all %}
-                                    <li>{{ s.name }}</li>
+                                    <li data-name="{{ s.name }}" data-id="{{ s.pk }}"><a href=""><span>{{ s.name }}</span></a></li>
                                 {% endfor %}
                             </ul>
-                            <a class="more-activities" href="#">и още {{  u.skills.count|add:"-3" }} {% if u.skills.count > 4 %}дейности{% else %}дейност{% endif %}</a>
+                            {% if u.skills.count > 3 %}
+                                <a class="more-activities" href="#">и още {{  u.skills.count|add:"-3" }} {% if u.skills.count > 4 %}дейности{% else %}дейност{% endif %}</a>
+                            {% endif  %}
                         </div>
-
-                        <ol class="stripped user-projects">
-                            {% for p in u.projects_interests.all|slice:":3" %}
-                                <li>
+                        {% if u.projects_interests.count == 0 %}
+                            <h6 class="no-projects">няма избрани проекти</h6>
+                        {% else %}
+                        <ol class="stripped user-projects clearfix">
+                            {% for p in u.projects_interests.all %}
+                                <li data-name="{{ p.name }}" class="hint--info hint--top {% if forloop.counter > 3 %}hidden{% endif %}" data-hint="{{ p.name }}">
                                     <a href="#">
-                                        <img src="{% if p.logo_thumb %}{{ MEDIA_URL }}{{ p.logo_thumb }}{% else %}{% static 'img/nologo-thumb.png'%}{% endif %}" alt="" />
+                                        <img src="{% if p.logo_thumb %}{{ p.get_logo_thumb }}{% else %}{% static 'img/nologo-thumb.png'%}{% endif %}" alt="" />
                                     </a>
                                 </li>
                             {% endfor %}
-                            {% if u.projects_interests.count == 0 %}
-                                <h6 class="no-projects">няма избрани проекти</h6>
-                            {% endif %}
-                            {% if u.projects_interests.count > 3 %}
-                                <a class="bulky more" href="#">още</a>
-                            {% endif %}
                         </ol>
+                        {% endif %}
+                        {% if u.projects_interests.count > 3 %}
+                            <a class="bulky more" href="#">още</a>
+                        {% endif %}
                     </li>
                     {% endfor %}
                 </ul>
                 {% include '_footer.html' %}
+                {% verbatim %}
+                    <script id="popupTemplate" type="x-tmpl-mustache">
+                        <section class="user-popup round closed">
+                            <a class="close-popup" href="#nogo">&#x2715;</a>
+                            <h2 class="user-names">{{ name }}</h2>
+                            <div class="avatar">
+                                <figure>
+                                    <a href="#"><img src="{{ avatar }}" alt="" /></a>
+                                </figure>
+                                <a href="#" class="button standard blue">попитай</a>
+                            </div>
+                            <div class="user-desription">
+                                {{ desc }}
+                            </div>
+                            <ul class="activities-all stripped">
+                                {{#skills}}
+                                <li>{{name}}</li>
+                                {{/skills}}
+                            </ul>
+                            <ol class="stripped user-projects">
+                                {{#projects}}
+                                <li>
+                                    <a href="#">
+                                        <img src="{{logo}}" alt="" />
+                                        {{name}}
+                                    </a>
+                                </li>
+                                {{/projects}}
+                            </ol>
+                        </section>
+                    </script>
+                {% endverbatim %}
             </section>
         </section>
     </section>
@@ -142,6 +146,7 @@
 {% endblock %}
 
 {% block footerTag %}
+    <script src="{% static 'libs/mustache/mustache.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
     <script src="{% static 'js/select2grouped.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>

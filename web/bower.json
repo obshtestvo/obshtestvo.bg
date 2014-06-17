@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "pickadate": "*",
+    "mustache": "*",
     "isotope": "*",
     "select2": "*",
     "magnific-popup": "*"
