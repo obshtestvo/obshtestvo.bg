@@ -39,7 +39,7 @@ def install_dependencies():
 
 def run_migrations():
     run_manage('syncdb')
-    run_manage('migrate')
+    run_manage('migrate projects')
 
 def restart_app_server():
     with cd(env.project_root):
