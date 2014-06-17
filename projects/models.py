@@ -1,3 +1,5 @@
+import datetime
+
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -208,6 +210,12 @@ class User(AbstractUser):
                 uid = self.social_auth.all()[0].uid
             src = 'http://graph.facebook.com/' + uid + '/picture'
         return src
+
+    def is_currently_available(self):
+        if not self.available_after:
+            return True
+
+        return datetime.datetime.today() >= self.available_after
 
     class Meta(AbstractUser.Meta):
         swappable = 'AUTH_USER_MODEL'

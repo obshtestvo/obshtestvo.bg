@@ -3522,8 +3522,7 @@ form.small .select2.joinPosition {
     color: #a4a3a3;
 }
 
-.select2-container-multi .select2-search-choice-close,
-.select2-search-choice-close {
+.select2-container-multi .select2-search-choice-close {
     background: url('../img/select2.png') right top no-repeat;
     left: 4px!important;
     top: 3px!important;
@@ -3540,6 +3539,10 @@ form.small .select2.joinPosition {
 
 .select2-drop {
     color: #194352;
+}
+.select2-container .select2-choice abbr {
+    right: 35px;
+    top:10px;
 }
 
 form.small select[multiple] {
@@ -3603,6 +3606,11 @@ form.small button[type="submit"] {
 form.small .project {
     max-width: 240px;
     width: 72%;
+}
+
+.users-page form.small .project {
+    max-width: none;
+    width: 100%;
 }
 
 form.small .project.finance {
@@ -4236,15 +4244,15 @@ footer .quick-contacts li a {
 
 .nav-tabs {
     overflow: hidden;
-    position: relative;
     margin-left: 310px;
     max-width: 600px;
+}
+.filtering .nav-tabs {
+    margin-left: 500px;
 }
 
 .nav-tabs li {
     float:left;
-    padding-right: 3px;
-    padding-top: 3px;
 }
 .nav-tabs a.selected:hover,
 .nav-tabs a {
@@ -4332,6 +4340,10 @@ label.checkbox-second {
     height:100%;
 }
 
+.filtering .users .filter {
+    width: 500px;
+}
+
 .users .filter > form {
     height: 100%;
     overflow: hidden;
@@ -4342,6 +4354,9 @@ label.checkbox-second {
     background: #fff;
     position: relative;
     padding-top: 45px;
+}
+.filtering .users .list {
+    margin-left: 500px;
 }
 
 ul.filter-simple {
@@ -4368,7 +4383,7 @@ ul.filter-simple {
 
 .filter-advanced {
     padding: 5px 13px 40px 25px;
-    background: #eef0f1  url(../img/users-border.png) repeat-y 309px 0;
+    background: #eef0f1  url(../img/users-border.png) repeat-y right top;
     height: 100%;
 }
 .filter-advanced > label {
@@ -4425,8 +4440,7 @@ ul.users-list {
     padding: 0;
     width: 298px;
     height: 156px;
-    float: left;
-
+    display: none;
 }
 
 .users-list .user-preview a.bulky.more {

@@ -6,8 +6,8 @@
 {% block content %}
     {% include '_masthead_sample.html' %}
 
-        <section class="content">
-        <nav class="nav-tabs">
+    <section class="content">
+        <nav class="nav-tabs basic-transition-2x">
             <ul class="stripped clearfix">
                 <li><a class="selected" href="">Участници</a></li>
                 <li><a href="#">Юридическа сила</a></li>
@@ -19,12 +19,12 @@
             </ul>
         </nav>
         <section class="users">
-            <aside class="filter">
+            <aside class="filter basic-transition-2x">
                 <form class="small" action="">
                     <ul class="stripped filter-simple">
                         <li class="label"><label for="check-users-free">Само тези на разположение</label></li>
                         <li>
-                            <input class="checkbox" type="checkbox" id="check-users-free" />
+                            <input class="checkbox" type="checkbox" id="check-users-free" checked />
                             <label class="checkbox" for="check-users-free">custom checkbox</label>
                         </li>
                         <li class="label"><label for="check-category">Покажи в категории спрямо дейност</label></li>
@@ -38,7 +38,12 @@
                             <h3 class="title-primary">Интерес към проекти:</h3>
                             <h4 class="title-info">Намерете човек спрямо интереса му към дадени проекти</h4>
                         </label>
-                        <input type="text" />
+                        <select name="project" id="userProject" style="width:100%" class="project">
+                            <option value=""></option>
+                            {% for project in projects %}
+                                <option value="{{ project.id }}">&bdquo;{{ project.name }}&ldquo;</option>
+                            {% endfor %}
+                        </select>
                         <div class="users-free">
                             Участници неизбрали проекти
                             <input class="checkbox checkbox-second" type="checkbox" id="check-users-noprojects" />
@@ -53,12 +58,14 @@
                     </div>
                 </form>
             </aside>
-            <section class="list">
+            <section class="list basic-transition-2x">
+            {% spaceless %}
                 <ul class="stripped users-list">
-                    <li id="target">
-                    </li>
                     {% for u in users %}
-                    <li class="user-preview">
+                    <li class="user-preview"
+                        data-is-available="{% if u.is_currently_available %}1{% else %}0{% endif %}"
+                        data-project-count="{{ u.projects_interests.count }}"
+                    >
 
                         <h2 class="user-names">{{ u.first_name }} {{ u.last_name }}</h2>
                         <div class="avatar">
@@ -70,7 +77,7 @@
                         <div class="user-skills">
                             <ul class="stripped">
                                 {% for s in u.skills.all %}
-                                    <li data-name="{{ s.name }}" data-id="{{ s.pk }}"><a href=""><span>{{ s.name }}</span></a></li>
+                                    <li data-name="{{ s.name }}" data-id="{{ s.pk }}"><a href="">{{ s.name }}</a></li>
                                 {% endfor %}
                             </ul>
                             {% if u.skills.count > 3 %}
@@ -82,7 +89,10 @@
                         {% else %}
                         <ol class="stripped user-projects clearfix">
                             {% for p in u.projects_interests.all %}
-                                <li data-name="{{ p.name }}" class="hint--info hint--top {% if forloop.counter > 3 %}hidden{% endif %}" data-hint="{{ p.name }}">
+                                <li data-name="{{ p.name }}"
+                                    data-id="{{ p.id }}"
+                                    class="hint--info hint--top {% if forloop.counter > 3 %}hidden{% endif %}"
+                                    data-hint="{{ p.name }}">
                                     <a href="#">
                                         <img src="{% if p.logo_thumb %}{{ p.get_logo_thumb }}{% else %}{% static 'img/nologo-thumb.png'%}{% endif %}" alt="" />
                                     </a>
@@ -96,6 +106,7 @@
                     </li>
                     {% endfor %}
                 </ul>
+            {% endspaceless %}
                 {% include '_footer.html' %}
                 {% verbatim %}
                     <script id="popupTemplate" type="x-tmpl-mustache">
@@ -118,7 +129,7 @@
                             </ul>
                             <ol class="stripped user-projects">
                                 {{#projects}}
-                                <li>
+                                <li data-id="{{id}}">
                                     <a href="#">
                                         <img src="{{logo}}" alt="" />
                                         {{name}}
@@ -150,7 +161,8 @@
     <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
     <script src="{% static 'js/select2grouped.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-    <script src="{% static 'libs/isotope/dist/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'libs/mixitup/build/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'libs/packery/dist/packery.pkgd.min.js' %}"></script>
     {#    Тук се добавят допълнителни javascript файлове по примера на долния ред #}
     <script src="{% static 'js/users.js' %}"></script>
     {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}

@@ -2,15 +2,16 @@ var Select2Grouped;
 
 (function($) {
 
-    Select2Grouped = function($el, data, selected) {
+    Select2Grouped = function($el, data, selected, dontOpenOnFocus) {
         var expanded = false;
         var activeGroup = null;
         var highlightIndex = null;
+        var valueSep = '|';
 
         $el.select2({
             containerCssClass: 'select2',
-            separator: '|',
-            tokenSeparators: ['|'],
+            separator: valueSep,
+            tokenSeparators: [valueSep],
             closeOnSelect: false,
 
             createSearchChoice: function (term, data) {
@@ -49,10 +50,14 @@ var Select2Grouped;
             initSelection : function ($el, callback) {
                 var selection = [];
                 var selectedIds = [];
-                for (var i = 0; i < data.length; i++) {
-                    if (selected.indexOf(data[i].id.toString()) > -1 && selectedIds.indexOf(data[i].id) == -1) {
-                        selection.push(data[i])
-                        selectedIds.push(data[i].id)
+                var tokens = $el.val().split(valueSep)
+
+                if (tokens.length) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (tokens.indexOf(data[i].id.toString()) > -1 && selectedIds.indexOf(data[i].id) == -1) {
+                            selection.push(data[i])
+                            selectedIds.push(data[i].id)
+                        }
                     }
                 }
                 callback(selection);
@@ -85,10 +90,17 @@ var Select2Grouped;
             if (e.added) {
                 fixHighlight(highlightIndex);
             }
-        }).on('select2-focus', function(e) {
-            $el.select2('open')
         })
+
+        if (!dontOpenOnFocus) {
+            $el.on('select2-focus', function(e) {
+                $el.select2('open')
+            })
+        }
         if (selected) {
+            if (typeof selected == 'string') {
+                selected = selected.split(valueSep)
+            }
             $el.select2('val', selected)
         }
     }
