@@ -4323,6 +4323,12 @@ label.checkbox-second {
     top: 0;
     z-index: 1;
     width: 310px;
+    height:100%;
+}
+
+.users .filter > form {
+    height: 100%;
+    overflow: hidden;
 }
 
 .users .list {
@@ -4357,6 +4363,7 @@ ul.filter-simple {
 .filter-advanced {
     padding: 5px 13px 40px 25px;
     background: #eef0f1  url(../img/users-border.png) repeat-y 309px 0;
+    height: 100%;
 }
 .filter-advanced > label {
     display: block;
@@ -4444,14 +4451,20 @@ ul.users-list {
     min-width: 67px;
 }
 
-.users-list li > ul {
+.users-list li .user-skills {
     position: relative;
-    height: 92px;
+    margin-left: 94px;
+    height: 92px
+}
+
+.users-list li .user-skills > ul {
+    position: relative;
+    height: 65px;
     overflow: hidden;
     padding-right: 30px;
 }
 
-.users-list li > ul li {
+.users-list li .user-skills li {
     padding: 0 0 3px 15px;
     position: relative;
     font-size: 14px;
@@ -4462,22 +4475,7 @@ ul.users-list {
     text-overflow: ellipsis;
 }
 
-.users-list li > ul li:first-child {
-    position: absolute; 
-    left: 0;
-    bottom: -2px;
-    padding: 0 0 0 0;
-    width: 100%;
-    height: 27px;
-    z-index: 5;
-    background: #fff;
-}
-
-.users-list li > ul li:first-child:before {
-    display: none;
-}
-
-.users-list li > ul li:before {
+.users-list li .user-skills li:before {
     content: "\e006";
     position: absolute;
     left: -2px;
@@ -4488,11 +4486,17 @@ ul.users-list {
 }
 
 a.more-activities {
+    position: absolute;
     display: inline-block;
-    color: #0498cc;
-    position: relative;
+    left: 0;
+    top: auto;
+    bottom: 7px;
+    padding: 0 11px 0 0;
     font-size: 14px;
-    padding-right: 11px;
+    line-height: 14px;
+    z-index: 5;
+    color: #0498cc;
+    background: #fff;
     text-decoration: underline;
 }
 
@@ -4513,7 +4517,7 @@ a.more-activities:before {
     text-decoration: none;
 }
 a.more-activities:active {
-    top:0;
+    top:auto;
 }
 
 a.more-activities:after {

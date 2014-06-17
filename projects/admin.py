@@ -168,7 +168,7 @@ class MyUserAdmin(UserAdmin):
         ),
         (_('Permissions'), {
             'classes': ('suit-tab suit-tab-system',),
-            'fields': ('is_active', 'is_staff', 'is_superuser',
+            'fields': ('is_active', 'is_browsable', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')
 
         }),
@@ -178,7 +178,7 @@ class MyUserAdmin(UserAdmin):
         ),
         (_('Custom'), {
             'classes': ('suit-tab suit-tab-common',),
-            'fields': ('profession','is_available','available_after','bio', 'avatar')}
+            'fields': ('is_available', 'available_after', 'bio', 'avatar')}
         ),
     )
 

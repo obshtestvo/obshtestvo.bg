@@ -2,13 +2,15 @@ from django.views.generic.base import View
 
 from restful.decorators import restful_view_templates
 
-from projects.models import SkillGroup
+from projects.models import SkillGroup, User
 
 @restful_view_templates
 class UsersView(View):
 
     def get(self, request):
         skills_options = []
+        users = User.objects.select_related('skills', 'projects_interests').filter(is_active=True, is_browsable=True).order_by('first_name')
+
         for sgroup in SkillGroup.objects.select_related('skills').all():
             skills_options.append({
                 "text": sgroup.name,
@@ -24,5 +26,6 @@ class UsersView(View):
 
         return {
             'page': "users-page",
+            'users': users,
             'skills_options': skills_options
         }

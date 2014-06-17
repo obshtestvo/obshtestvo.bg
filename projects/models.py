@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.conf import settings
 from guardian.shortcuts import assign_perm
 from django.utils import timezone
 from django.contrib.contenttypes.generic import GenericForeignKey, GenericRelation, ContentType
@@ -187,15 +188,26 @@ def user_file_name(instance, filename):
     return '/'.join(['user', filename])
 
 class User(AbstractUser):
-    profession = models.CharField(_('profession'), max_length=30, blank=False)
-    is_available = models.BooleanField(_('Is the user available for work'), default=False)
+    is_browsable = models.BooleanField(_('Is this a user you can browse amongst others'), default=True)
+    is_available = models.BooleanField(_('Is the user available for work'), default=True)
     available_after = models.DateField(_('available after'), blank=True, null=True)
     has_confirmed_data = models.BooleanField(_('has confirmed custom data'), default=True)
-    bio = models.TextField(_('biography'))
-    avatar = models.FileField(_('avatar'), upload_to=user_file_name)
+    bio = models.TextField(_('biography'), blank=True, null=True)
+    avatar = models.FileField(_('avatar'), upload_to=user_file_name, blank=True, null=True)
     skills = models.ManyToManyField('Skill', related_name="users", blank=True,
                                       verbose_name=_("skills"))
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
+
+    def get_avatar(self):
+        src = settings.MEDIA_URL
+        if self.avatar:
+            pass
+        else:
+            uid = settings.SOCIAL_AUTH_FACEBOOK_KEY
+            if self.social_auth.all().count() > 0:
+                uid = self.social_auth.all()[0].uid
+            src = 'http://graph.facebook.com/' + uid + '/picture'
+        return src
 
     class Meta(AbstractUser.Meta):
         swappable = 'AUTH_USER_MODEL'
@@ -204,7 +216,7 @@ class User(AbstractUser):
 class UserPointSpending(models.Model):
     person = models.ForeignKey('User', related_name="spendings")
     points = models.PositiveIntegerField(_('points'), max_length=10)
-    product = models.CharField(_('profession'), max_length=30, blank=False)
+    product = models.CharField(_('product'), max_length=30, blank=False)
 
 class UserActivity(models.Model):
     person = models.ForeignKey('User', related_name="activities")

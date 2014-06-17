@@ -2,6 +2,6 @@
     <a class="logout" href="{% url 'logout' %}">Изход</a>
     <a href="{% url 'dash' %}" class="dash">
         Табло с проекти
-        <img {% if user.is_authenticated %}src{% else %}data-avatar-placeholder{% endif %}="http://graph.facebook.com/{% if user.is_authenticated %}{{ user.social_auth.all.0.uid }}{% else %}obshtestvo{% endif %}/picture?width=31" alt=""/>
+        <img {% if user.is_authenticated %}src{% else %}data-avatar-placeholder{% endif %}="{{ user.get_avatar }}?width=31&height=31" alt=""/>
     </a>
 </div>
