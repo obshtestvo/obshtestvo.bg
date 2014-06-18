@@ -15,6 +15,9 @@ $(function () {
         containerCssClass: 'userProject select2',
         allowClear: true
     })
+//    $('html').click(function() {
+//        $('.user-popup .close-popup').click()
+//    });
     var $users = $usersContainer.find('.user-preview');
     $users.each(function () {
         var $userContainer = $(this);
@@ -73,6 +76,9 @@ $(function () {
                 skills: skills
             });
             $popup = $(rendered)
+            $popup.on(function(e){
+                e.stopPropagation();
+            });
             if (!projects.length) $popup.find('.user-projects').remove()
             $userContainer.append($popup);
             $popup.css('opacity');
@@ -129,28 +135,6 @@ $(function () {
 
     $skills.change(function () {
         $usersContainer.mixItUp('filter', getVisibleUsers())
-    })
-    $('html').click(function() {
-        $content.removeClass('filtering')
-    });
-
-    $('.users .filter').click(function(event){
-        event.stopPropagation();
-    });
-    $skills.on('select2-opening', function(e) {
-        var $this = $(this)
-        if (!$content.hasClass('filtering')) {
-            e.preventDefault();
-            $content.addClass('filtering')
-            setTimeout(function(){
-                $this.select2('open')
-            },300)
-
-            return false;
-        }
-    })
-    $skills.on('select2-close', function() {
-        $content.removeClass('filtering')
     })
     $onlyAvailableTrigger.on('change', function () {
         $usersContainer.mixItUp('filter', getVisibleUsers())
