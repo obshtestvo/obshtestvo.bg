@@ -33,7 +33,7 @@ class TokenView(View):
                 }
             }, 202
         else:
-            login(stra, auth_result)
+            login(stra, auth_result, auth_result.social_user)
             return {
                 "result": {
                     "user": {
