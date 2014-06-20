@@ -2,6 +2,7 @@ $(function () {
     var $content = $('.content');
     var $skills = $('#joinSkills');
     var $userProject = $('#userProject');
+    var $name = $('#nameFilter');
     new Select2Grouped($skills, $skills.data('choices'), undefined, true);
 
     var $onlyAvailableTrigger = $('#check-users-free');
@@ -15,18 +16,23 @@ $(function () {
         containerCssClass: 'userProject select2',
         allowClear: true
     })
-//    $('html').click(function() {
-//        $('.user-popup .close-popup').click()
-//    });
+    $('html').click(function() {
+        $('.user-popup .close-popup').click()
+    });
     var $users = $usersContainer.find('.user-preview');
     $users.each(function () {
-        var $userContainer = $(this);
+        var $user = $(this);
         var $popup = null;
-        $userContainer.on('click', '.close-popup, .user-popup .avatar figure a', function (e) {
+        $user.on('click', '.close-popup, .user-popup .avatar figure a', function (e) {
             e.preventDefault()
             $popup.remove()
         })
-        $userContainer.on('click', '.user-skills li a', function (e) {
+        $user.on('click', function (e) {
+            if ($user.find('.user-popup').length) {
+                e.stopPropagation();
+            }
+        })
+        $user.on('click', '.user-skills li a', function (e) {
             e.preventDefault();
             var selectedSkills = $skills.select2('val');
             var id = $(this).parent().data('id').toString();
@@ -36,7 +42,7 @@ $(function () {
                 $skills.change()
             }
         })
-        $userContainer.on('click', '.user-projects li a', function (e) {
+        $user.on('click', '.user-projects li a', function (e) {
             e.preventDefault();
             var id = $(this).parent().data('id').toString();
             $userProject.select2('val', id)
@@ -46,7 +52,7 @@ $(function () {
         var skills = [];
         var skillsData = [];
         var projectData = [];
-        $userContainer.find('.user-projects li').each(function () {
+        $user.find('.user-projects li').each(function () {
             var $project = $(this);
             projectData.push($project.data('id'))
             projects.push({
@@ -55,7 +61,7 @@ $(function () {
                 logo: $project.find('img').attr('src')
             })
         });
-        $userContainer.find('.user-skills li').each(function () {
+        $user.find('.user-skills li').each(function () {
             var $skill = $(this);
             skillsData.push($skill.data('id'))
             skills.push({
@@ -63,24 +69,23 @@ $(function () {
                 id: $skill.data('id')
             })
         });
-        $userContainer.data('skills', skillsData)
-        $userContainer.data('projects', projectData)
-        $userContainer.find('.more-activities, .more, .avatar figure a').click(function (e) {
+        $user.data('skills', skillsData)
+        $user.data('projects', projectData)
+        $user.data('name', $user.find('.user-names').text().toLowerCase())
+        $user.find('.more-activities, .more, .avatar figure a').click(function (e) {
             e.preventDefault()
+            e.stopPropagation()
             $('.user-popup .close-popup').click()
             var rendered = Mustache.render(template, {
-                name: $userContainer.find('.user-names').text(),
-                avatar: $userContainer.find('.avatar figure img').attr('src'),
-                desc: $userContainer.data('desc'),
+                name: $user.find('.user-names').text(),
+                avatar: $user.find('.avatar figure img').attr('src'),
+                desc: $user.data('desc'),
                 projects: projects,
                 skills: skills
             });
             $popup = $(rendered)
-            $popup.on(function(e){
-                e.stopPropagation();
-            });
             if (!projects.length) $popup.find('.user-projects').remove()
-            $userContainer.append($popup);
+            $user.append($popup);
             $popup.css('opacity');
             $popup.removeClass('closed');
         })
@@ -97,8 +102,7 @@ $(function () {
     $usersContainer.mixItUp({
         animation: {
             duration: 300,
-//            effects: 'fade translateZ(-20px) stagger(34ms)',
-//            easing: 'ease'
+            easing: 'ease'
         },
         selectors: {
             target: '.user-preview'
@@ -112,21 +116,26 @@ $(function () {
         $('.user-popup .close-popup').click()
         return $users.filter(function() {
             var $this = $(this);
-            var skills = $this.data('skills');
-            var projects = $this.data('projects');
             var show = true;
-            $.each($skills.select2('val'), function() {
-                if (skills.indexOf(parseInt(this)) < 0 ) {
-                    show = false;
-                    return false;
-                }
-            })
             if ($onlyAvailableTrigger.prop('checked')) {
-                show = show && $this.data('isAvailable');
+                show = $this.data('isAvailable');
             }
-            if ($noProjectsTrigger.prop('checked')) {
+            if (show) {
+                show = $this.data('name').indexOf($name.val().toLowerCase()) > -1;
+            }
+            if (show) {
+                var skills = $this.data('skills');
+                $.each($skills.select2('val'), function() {
+                    if (skills.indexOf(parseInt(this)) < 0 ) {
+                        show = false;
+                        return false;
+                    }
+                })
+            }
+            if (show && $noProjectsTrigger.prop('checked')) {
                 show = show && $this.data('projectCount') == 0;
-            } else if ($userProject.val()) {
+            } else if (show && $userProject.val()) {
+                var projects = $this.data('projects');
                 show = show && projects.indexOf(parseInt($userProject.val()))>=0
             }
             return show;
@@ -146,5 +155,14 @@ $(function () {
         $userProject.select2("enable", !$noProjectsTrigger.prop('checked'));
         $usersContainer.mixItUp('filter', getVisibleUsers())
     })
+    var t = null;
+    $name.keyup(function() {
+        clearTimeout(t)
+        t = setTimeout(function() {
+            $usersContainer.mixItUp('filter', getVisibleUsers())
+        }, 200)
+    })
+
+    $(".nav-tabs a").magnificPopup();
 })
 

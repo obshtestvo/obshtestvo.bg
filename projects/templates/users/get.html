@@ -12,7 +12,7 @@
                 <li><a class="selected" href="">Участници</a></li>
                 <li><a href="#">Юридическа сила</a></li>
                 <li><a href="#">Оборудване</a></li>
-                <li><a href="#">Място</a></li>
+                <li><a href="#placeInfo">Място</a></li>
                 <li><a href="#">Публичност</a></li>
                 <li><a href="#">Експертиза</a></li>
                 <li><a href="#">Вдъхновение</a></li>
@@ -34,27 +34,37 @@
                         </li>
                     </ul>
                     <div class="filter-advanced">
-                        <label for="joinSkills">
-                            <h3 class="title-primary">Интерес към проекти:</h3>
-                            <h4 class="title-info">Намерете човек спрямо интереса му към дадени проекти</h4>
-                        </label>
-                        <select name="project" id="userProject" style="width:100%" class="project">
-                            <option value=""></option>
-                            {% for project in projects %}
-                                <option value="{{ project.id }}">&bdquo;{{ project.name }}&ldquo;</option>
-                            {% endfor %}
-                        </select>
-                        <div class="users-free">
-                            Участници неизбрали проекти
-                            <input class="checkbox checkbox-second" type="checkbox" id="check-users-noprojects" />
-                            <label class="checkbox checkbox-second" for="check-users-noprojects">custom checkbox</label>
-                        </div>
-
-                        <label for="joinSkills">
-                            <h3 class="title-primary">Избрани дейности:</h3>
-                            <h4 class="title-info">Намерете човек според дейността, в която иска да се включи</h4>
-                        </label>
-                        <input type="hidden" id="joinSkills" name="skills" style="width:100%" value="" data-choices="{{ skills_options|jsonify }}"/>
+                        <fieldset class="project">
+                            <label for="joinSkills">
+                                <h3 class="title-primary">Интерес към проекти:</h3>
+                                <h4 class="title-info">Намерете човек спрямо интереса му към дадени проекти</h4>
+                            </label>
+                            <select name="project" id="userProject" style="width:100%" class="project">
+                                <option value=""></option>
+                                {% for project in projects %}
+                                    <option value="{{ project.id }}">{% if project.slug == 'user'%}Проект по собствена идея{% else %}&bdquo;{{ project.name }}&ldquo;{% endif %}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="users-free">
+                                Участници неизбрали проекти
+                                <input class="checkbox checkbox-second" type="checkbox" id="check-users-noprojects" />
+                                <label class="checkbox checkbox-second" for="check-users-noprojects">custom checkbox</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="skills">
+                            <label for="joinSkills">
+                                <h3 class="title-primary">Избрани дейности:</h3>
+                                <h4 class="title-info">Намерете човек според дейността, в която иска да се включи</h4>
+                            </label>
+                            <input type="hidden" id="joinSkills" name="skills" style="width:100%" value="" data-choices="{{ skills_options|jsonify }}"/>
+                        </fieldset>
+                        <fieldset>
+                            <label for="name">
+                                <h3 class="title-primary">Име</h3>
+                                <h4 class="title-info">Допълнително филтрирайте по име</h4>
+                            </label>
+                            <input class="round" name="name" id="nameFilter" type="text"/>
+                        </fieldset>
                     </div>
                 </form>
             </aside>
@@ -66,7 +76,6 @@
                         data-is-available="{% if u.is_currently_available %}1{% else %}0{% endif %}"
                         data-project-count="{{ u.projects_interests.count }}"
                     >
-
                         <h2 class="user-names">{{ u.first_name }} {{ u.last_name }}</h2>
                         <div class="avatar">
                             <figure>
@@ -143,20 +152,33 @@
             </section>
         </section>
     </section>
+    <div id="placeInfo" class="transparent-popup mfp-with-anim round mfp-hide">
+        <div class="txt round">
+            <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
+            <p>В нея ще са описани местата, с които може да разполагате за срещи. Ще може да се "book"-ват и да каните хора към определно място.</p>
+            <p>Накратко възможни места са:</p>
+            <ul>
+                <li><a href="https://www.facebook.com/media/set/?set=oa.632672056768212&type=1">Убежище София</a> (10:00 - 20:30)</li>
+                <li><a href="http://soho.bg/">СОХО</a> (19:00 - 21:00, само веднъж месечно)</li>
+                <li><a href="http://www.betahaus.bg/">Betahaus</a> (вечер, 2 дни месечно)</li>
+                <li><a href="http://initlab.org/">Initlab</a> (когато и както се уговорим)</li>
+                <li>Намаления в <a href="http://www.krivoto.com/1.php?id=2">Кривото на ул. Будапеща</a> (когато и както се уговорим)</li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}
 
 {% block headTag %}
-    {#    Тук се добавят допълнителни CSS файлове по примера на долния ред #}
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/lib/select2/select2.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/lib/select2/select2.css' %}">
-    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-    {#    за файл вътре в нея "static/css/lib/select2/select2.css" #}
 {% endblock %}
 
 {% block footer %}
 {% endblock %}
 
 {% block footerTag %}
+    <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'libs/mustache/mustache.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
     <script src="{% static 'js/select2grouped.js' %}"></script>

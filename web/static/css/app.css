@@ -3410,13 +3410,17 @@ form.small .select2.joinPosition {
 .select2-container-multi.select2-container-active .select2-choices {
     border-color: #108eba;
 }
-
+.select2-dropdown-open.select2-drop-above .select2-choice,
 .select2-dropdown-open.select2-drop-above .select2-choices,
 .select2-container-multi .select2-choices {
     border: 1px solid #b5b5b5;
     padding-right: 4px;
     overflow: inherit;
     background: #fff;
+}
+.select2-dropdown-open.select2-drop-above .select2-choice,
+.select2-dropdown-open.select2-drop-above .select2-choices {
+    border: 1px solid #108eba;
 }
 
 .error .select2-container-multi .select2-choices,
@@ -4386,21 +4390,24 @@ ul.filter-simple {
     background: #eef0f1  url(../img/users-border.png) repeat-y right top;
     height: 100%;
 }
-.filter-advanced > label {
+.filter-advanced fieldset {
+    padding: 22px 0 4px 0;
+}
+.filter-advanced fieldset > label {
     display: block;
 }
 
-.filter-advanced input[type=text] {
-    margin: 10px 0 0 0;
-    display: inline-block;
-    color: #607d89;
-    font-size: 14px;
-    border: solid 1px #b5b5b5;
-    border-radius: 3px;
+.filter-advanced fieldset > input[type=text] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height:34px;
 }
 
+
 .filter-advanced .title-primary {
-    margin: 22px 0 0 0;
+    margin: 0;
     padding: 0 0 0 1px;
     color: #607d89;
     font-weight: normal;
@@ -4427,6 +4434,9 @@ ul.filter-simple {
 ul.users-list {
     padding: 0 30px;
 }
+ul.users-list a {
+    outline: none;
+}
 
 .users-list:after {
     display: block;
@@ -4440,6 +4450,9 @@ ul.users-list {
     padding: 0;
     width: 298px;
     height: 156px;
+    display: inline-block;
+}
+.users-list > .user-preview {
     display: none;
 }
 
@@ -4714,7 +4727,6 @@ ul.activities-all {
 
 .user-popup .user-projects a { 
     color: #516c7a;
-    font-weight: 17;
     text-decoration: none;
 }
 .user-popup .user-projects a:hover { 
@@ -4723,7 +4735,16 @@ ul.activities-all {
 
 .user-popup .user-projects a img {
     margin-right: 5px;
-} 
+}
+.mfp-content .alert {
+    background: none;
+    font-size: 18px;
+    padding-top: 20px;
+    margin: 0;
+}
+.mfp-content .alert .fi {
+    color: #f4902e ;
+}
 
 /* Примерни media queries, в които се пише код за браузър със специфична резолюция или размер на пиксела */
 
