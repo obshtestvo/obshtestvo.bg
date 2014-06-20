@@ -22,15 +22,14 @@
             <aside class="filter basic-transition-2x">
                 <form class="small" action="">
                     <ul class="stripped filter-simple">
-                        <li class="label"><label for="check-users-free">Само тези на разположение</label></li>
-                        <li>
+                        <li class="label">
                             <input class="checkbox" type="checkbox" id="check-users-free" checked />
-                            <label class="checkbox" for="check-users-free">custom checkbox</label>
+                            <label class="checkbox basic-transition" for="check-users-free">Само тези на разположение
+                                <i class="basic-transition round"></i> </label>
                         </li>
-                        <li class="label"><label for="check-category">Покажи в категории спрямо дейност</label></li>
-                        <li>
+                        <li class="label">
                             <input class="checkbox" type="checkbox" id="check-category" />
-                            <label class="checkbox" for="check-category">custom checkbox</label>
+                            <label class="checkbox basic-transition" for="check-category">Покажи в категории спрямо дейност <i class="basic-transition round"></i> </label>
                         </li>
                     </ul>
                     <div class="filter-advanced">
@@ -46,9 +45,9 @@
                                 {% endfor %}
                             </select>
                             <div class="users-free">
-                                Участници неизбрали проекти
-                                <input class="checkbox checkbox-second" type="checkbox" id="check-users-noprojects" />
-                                <label class="checkbox checkbox-second" for="check-users-noprojects">custom checkbox</label>
+                            <input class="checkbox" type="checkbox" id="check-users-noprojects" />
+                            <label class="checkbox light basic-transition" for="check-users-noprojects">Участници неизбрали проекти
+                                <i class="basic-transition round"></i> </label>
                             </div>
                         </fieldset>
                         <fieldset class="skills">
@@ -260,6 +259,7 @@
 {% endblock %}
 
 {% block footerTag %}
+    <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
     <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'libs/mustache/mustache.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>

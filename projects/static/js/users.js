@@ -41,13 +41,15 @@ $(function () {
                 $skills.select2('val', selectedSkills)
                 $skills.change()
             }
-        })
+        });
         $user.on('click', '.user-projects li a', function (e) {
             e.preventDefault();
             var id = $(this).parent().data('id').toString();
             $userProject.select2('val', id)
             $userProject.change()
-        })
+        });
+
+
         var projects = [];
         var skills = [];
         var skillsData = [];
@@ -71,7 +73,7 @@ $(function () {
         });
         $user.data('skills', skillsData)
         $user.data('projects', projectData)
-        $user.data('name', $user.find('.user-names').text().toLowerCase())
+        $user.data('name', getSlug($user.find('.user-names').text().toLowerCase()))
         $user.find('.more-activities, .more, .avatar figure a').click(function (e) {
             e.preventDefault()
             e.stopPropagation()
@@ -121,7 +123,7 @@ $(function () {
                 show = $this.data('isAvailable');
             }
             if (show) {
-                show = $this.data('name').indexOf($name.val().toLowerCase()) > -1;
+                show = $this.data('name').indexOf(getSlug($name.val().toLowerCase())) > -1;
             }
             if (show) {
                 var skills = $this.data('skills');
