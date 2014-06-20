@@ -163,6 +163,9 @@ $(function () {
         }, 200)
     })
 
-    $(".nav-tabs a").magnificPopup();
+    $(".nav-tabs a").magnificPopup({
+        enableEscapeKey: true,
+        closeOnBgClick: true
+    });
 })
 
