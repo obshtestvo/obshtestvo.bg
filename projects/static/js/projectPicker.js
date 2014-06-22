@@ -1,5 +1,6 @@
-
 $(function() {
+    'use strict';
+
     var $body = $('body');
 
     $body.on('click', '.project-picker .more.ask', function(e) {
@@ -86,5 +87,4 @@ $(function() {
             }
         })
     })
-})
-
+});

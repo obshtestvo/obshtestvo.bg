@@ -1,8 +1,7 @@
-var Select2Grouped;
-
 (function($) {
+    'use strict';
 
-    Select2Grouped = function($el, data, selected, dontOpenOnFocus) {
+    var Select2Grouped = function($el, data, selected, dontOpenOnFocus) {
         var expanded = false;
         var activeGroup = null;
         var highlightIndex = null;
@@ -112,4 +111,6 @@ var Select2Grouped;
         }
         $toHightlight.addClass('select2-highlighted')
     }
-})(jQuery)
+    window.Select2Grouped = Select2Grouped;
+
+})(jQuery);

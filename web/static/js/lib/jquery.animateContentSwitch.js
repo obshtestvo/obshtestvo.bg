@@ -7,7 +7,7 @@
                 unfinishedPreviousAnimation = $this.data('animateContentSwitch.previous'),
                 originalHeight = null,
                 originalWidth = null,
-                options = $.extend({}, {
+                options = deepmerge({
                     beforeShow: undefined,
                     step: undefined,
                     width: true,

@@ -3460,6 +3460,10 @@ form.small .select2.joinPosition {
     border-color: #b5b5b5;
 }
 
+li.heading {
+    background: red;
+    display: block;
+}
 .select2-container-active .select2-choice {
     border-color: #108eba;
 }
@@ -3475,7 +3479,7 @@ form.small .select2.joinPosition {
 }
 
 .select2-container .select2-choice .select2-arrow {
-    background: #f0f0f0;
+    background: #fff;
     border: 0;
     width: 30px;
     border-radius: 0 2px 2px 0;
@@ -4170,6 +4174,11 @@ form.small.signup .date :-ms-input-placeholder {
     margin-top: 15px;
 }
 
+.temp-join {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
 footer {
     padding-top: 100px;
     clear: both;
@@ -4528,6 +4537,11 @@ ul.users-list a {
     position: relative;
     width: 86px;
     height: 86px;
+}
+
+.users-list .avatar figure {
+    margin: 0;
+    padding:0;
 }
 
 .users-list .avatar figure a {

@@ -1,10 +1,9 @@
-var FacebookAuth;
 (function ($) {
 
     var urlParser = document.createElement('a');
     var fDomain = 'facebook.com';
 
-    FacebookAuth = function (options) {
+    var FacebookAuth = function (options) {
         var defaultOptions = {
             login: this._createLoginHandler(),
             serverGateway: "",
@@ -139,4 +138,6 @@ var FacebookAuth;
         }
     };
 
-})(jQuery)
+    window.FacebookAuth = FacebookAuth;
+
+})(jQuery);

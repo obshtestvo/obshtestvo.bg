@@ -7,13 +7,22 @@
     "**/*.txt"
   ],
   "dependencies": {
+    "normalize.css": "*",
+    "jquery": "*",
     "pickadate": "*",
+    "OwlCarousel": "*",
     "mustache": "*",
     "isotope": "*",
     "mixitup": "*",
     "speakingurl": "*",
     "packery": "*",
     "select2": "*",
-    "magnific-popup": "*"
+    "magnific-popup": "*",
+    "blockui": "*",
+    "deepmerge": "*",
+    "jquery-waypoints": "*",
+    "spin.js": "*",
+    "jquery.validation": "*",
+    "hint.css": "*"
   }
 }

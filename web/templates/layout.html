@@ -1,4 +1,6 @@
-{% load staticfiles %}<!DOCTYPE html>
+{% load staticfiles %}
+{% load compress %}
+<!DOCTYPE html>
 <html class="no-js" lang="bg">
 <head>
     <meta charset="utf-8">
@@ -9,15 +11,21 @@
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
     <link rel="icon" type="image/png" href="http://www.obshtestvo.bg/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lib/normalize.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lib/hint.min.css' %}">
+    {% compress css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/normalize.css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/hint.css/hint.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/lib/flaticon.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'css/lib/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/OwlCarousel/owl-carousel/owl.carousel.css' %}">
+    {% endcompress %}
+
+    {% compress css %}
     {% block headTag %}{% endblock %}
+    {% endcompress %}
+    {% compress css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
-    <!--<script src="{% static 'js/lib/modernizr.custom.js' %}"></script>-->
+    {% endcompress %}
+{#    <script src="{% static 'js/lib/modernizr.custom.js' %}"></script>#}
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 </head>
 <body class="{{ page }}">
@@ -95,15 +103,23 @@
     {% endblock %}
 </div>
 
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="{% static 'js/lib/owl-carousel/owl.carousel.min.js' %}"></script>
-<script src="{% static 'js/lib/waypoints.js' %}"></script>
-{% block footerTag %}{% endblock %}
+{% compress js %}
+<script src="{% static 'libs/jquery/dist/jquery.js' %}"></script>
+<script src="{% static 'libs/OwlCarousel/owl-carousel/owl.carousel.js' %}"></script>
+<script src="{% static 'libs/jquery-waypoints/waypoints.js' %}"></script>
+<script src="{% static 'libs/deepmerge/index.js' %}"></script>
 <script src="{% static 'js/utils.js' %}"></script>
 <script src="{% static 'js/nav.js' %}"></script>
-<script src="{% static 'js/sidebar.js' %}"></script>
-<script src="{% static 'js/slider.js' %}"></script>
-<script src="{% static 'js/support.js' %}"></script>
-<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+{% endcompress %}
+
+{% compress js %}
+{% block footerTag %}{% endblock %}>
+{% endcompress %}
+
+{% compress js %}
+<script src="{% static 'js/defaults.js' %}"></script>
+{% endcompress %}
+
 </body>
 </html>

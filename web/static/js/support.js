@@ -110,7 +110,6 @@ SupportPage.prototype = {
     },
     _detectSelected: function ($anchors, $options, $infos) {
         var $target = $anchors.filter(window.location.hash);
-        console.log(!$target.length)
         if (!$target.length) {
             $target = $anchors.filter('#time');
             document.location.hash = 'time';
@@ -175,4 +174,9 @@ SupportPage.prototype = {
             })
         })
     }
-}
+};
+
+$(function () {
+    var support = $('.inner.support')
+    if (support.length) support = new SupportPage(support);
+});

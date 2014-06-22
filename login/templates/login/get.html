@@ -77,29 +77,29 @@
 
 {% block headTag %}
     <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lib/select2/select2.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/compressed/themes/classic.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/compressed/themes/classic.date.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.date.css' %}">
 {% endblock %}
 
 {% block footerTag %}
     {{ block.super }}
     <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/lib/jquery.blockUI.js' %}"></script>
+    <script src="{% static 'libs/blockui/jquery.blockUI.js' %}"></script>
+    <script src="{% static 'libs/jquery.validation/dist/jquery.validate.js' %}"></script>
+    <script src="{% static 'libs/pickadate/lib/picker.js' %}"></script>
+    <script src="{% static 'libs/pickadate/lib/picker.date.js' %}"></script>
+    <script src="{% static 'libs/pickadate/lib/translations/bg_BG.js' %}"></script>
+    <script src="{% static 'libs/spin.js/spin.js' %}"></script>
     <script src="{% static 'js/lib/jquery.animateContentSwitch.js' %}"></script>
-    <script src="{% static 'libs/pickadate/lib/compressed/picker.js' %}"></script>
-    <script src="{% static 'libs/pickadate/lib/compressed/picker.date.js' %}"></script>
-    <script src="{% static 'libs/pickadate/lib/compressed/translations/bg_BG.js' %}"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
     <script src="{% static 'js/auth.js' %}"></script>
     <script src="{% static 'js/facebook.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
     <script src="{% static 'js/select2grouped.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-    <script src="{% static 'js/lib/jquery.validate.js' %}"></script>
     <script src="{% static 'js/ajaxForm.js' %}"></script>
-    <script src="{% static 'js/lib/spin.js' %}"></script>
     <script src="{% static 'js/login.js' %}"></script>
     <script src="{% static 'js/projectPicker.js' %}"></script>
     <script src="{% static 'js/whatCarousel.js' %}"></script>
-    {#{% include '_fbbutton.html' %}#}
 {% endblock %}

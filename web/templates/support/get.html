@@ -1,17 +1,18 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
 {% block headTag %}
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'css/lib/select2/select2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
 {% endblock %}
 {% block footerTag %}
-    <script src="{% static 'js/lib/select2/select2.min.js' %}"></script>
+    <script src="{% static 'libs/spin.js/spin.js' %}"></script>
+    <script src="{% static 'libs/jquery.validation/dist/jquery.validate.js' %}"></script>
+    <script src="{% static 'libs/blockui/jquery.blockUI.js' %}"></script>
+    <script src="{% static 'js/sidebar.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
     <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-    <script src="{% static 'js/lib/jquery.validate.js' %}"></script>
     <script src="{% static 'js/ajaxForm.js' %}"></script>
-    <script src="{% static 'js/lib/jquery.blockUI.js' %}"></script>
     <script src="{% static 'js/lib/jquery.animateContentSwitch.js' %}"></script>
-    <script src="{% static 'js/lib/spin.js' %}"></script>
+    <script src="{% static 'js/support.js' %}"></script>
 {% endblock %}
 {% block content %}
     {% include '_header_inner.html' with extra_sidebar_classes="fixed reduced" toc_title="Начини да ни подкрепите" screen_tmpl="support/_screen.html" headnav_tmpl="support/_headnav.html" toc_tmpl="support/_toc.html" page_title="Подкрепа" %}

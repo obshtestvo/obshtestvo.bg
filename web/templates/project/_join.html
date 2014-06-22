@@ -1,28 +1,4 @@
 <a name="join"></a>
-<form class="small join basic-transition-2x" method="post" action="{% url 'members' %}">
-    <div class="animation-container">
-        <div class="msg hidden">
-
-        </div>
-        <div class="controls">
-            <label for="joinPosition" class="joinPosition">И аз искам да
-                се включа с</label>
-            <select name="position" id="joinPosition"
-                    data-placeholder="дизайн, маркетинг, ръководство..."
-                    class="round basic-transition-2x" multiple required>
-                {% for value, label in positions.items %}
-                    <option value="{{ value }}">{{ label }}</option>
-                {% endfor %}
-            </select>
-            <span class="err position"></span>
-            <input type="text" name="email" id="joinEmail"
-                   class="round email basic-transition-2x"
-                   placeholder="email адрес (за връзка)" data-rule-required="true"
-                   data-rule-email="true"/>
-            <span class="err email"></span>
-            <input name="project" type="hidden" value="{{ project.name }}" required/>
-            <button type="submit" class="button small green"><b>Брой ме</b>
-            </button>
-        </div>
-    </div>
-</form>
+<a href="{% url 'join' %}" class="button small green temp-join">
+    <b>Искам и аз</b>
+</a>
