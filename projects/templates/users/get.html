@@ -2,6 +2,8 @@
 {% load staticfiles %}
 {% load url from future %}
 {% load restful %}
+{% load dict %}
+
 
 {% block content %}
     {% include '_masthead_sample.html' %}
@@ -70,10 +72,10 @@
             <section class="list basic-transition-2x">
             {% spaceless %}
                 <ul class="stripped users-list">
-                    {% for u in users %}
+                    {% for id, u in users.items %}
                     <li class="user-preview"
                         data-is-available="{% if u.is_currently_available %}1{% else %}0{% endif %}"
-                        data-project-count="{{ u.projects_interests.count }}"
+                        data-project-count="{{ u.preloaded_projects_interests|length }}"
                     >
                         <h2 class="user-names">{{ u.first_name }} {{ u.last_name }}</h2>
                         <div class="avatar">
@@ -82,21 +84,26 @@
                             </figure>
                             <a href="#" class="button standard blue">попитай</a>
                         </div>
+                        {% with skill_count=u.preloaded_skills|length %}
                         <div class="user-skills">
                             <ul class="stripped">
-                                {% for s in u.skills.all %}
-                                    <li data-name="{{ s.name }}" data-id="{{ s.pk }}"><a href="">{{ s.name }}</a></li>
+                                {% for g in u.skill_groups %}
+                                    {% for s in g.preloaded_per_user_skills|key_or_attr:u.id %}
+                                        <li data-name="{{ s.name }}" data-id="{{ s.pk }}" data-group="{{ g.name }}"><a href="">{{ s.name }}</a></li>
+                                    {% endfor %}
                                 {% endfor %}
                             </ul>
-                            {% if u.skills.count > 3 %}
-                                <a class="more-activities" href="#">и още {{  u.skills.count|add:"-3" }} {% if u.skills.count > 4 %}дейности{% else %}дейност{% endif %}</a>
+                            {% if skill_count > 3 %}
+                                <a class="more-activities" href="#">и още {{  skill_count|add:"-3" }} {% if skill_count > 4 %}дейности{% else %}дейност{% endif %}</a>
                             {% endif  %}
                         </div>
-                        {% if u.projects_interests.count == 0 %}
+                        {% endwith%}
+                        {% with project_count=u.preloaded_projects_interests|length %}
+                        {% if project_count == 0 %}
                             <h6 class="no-projects">няма избрани проекти</h6>
                         {% else %}
                         <ol class="stripped user-projects clearfix">
-                            {% for p in u.projects_interests.all %}
+                            {% for p in u.preloaded_projects_interests %}
                                 <li data-name="{{ p.name }}"
                                     data-id="{{ p.id }}"
                                     class="hint--info hint--top {% if forloop.counter > 3 %}hidden{% endif %}"
@@ -108,9 +115,10 @@
                             {% endfor %}
                         </ol>
                         {% endif %}
-                        {% if u.projects_interests.count > 3 %}
+                        {% if project_count > 3 %}
                             <a class="bulky more" href="#">още</a>
                         {% endif %}
+                        {% endwith%}
                     </li>
                     {% endfor %}
                 </ul>
@@ -130,11 +138,14 @@
                             <div class="user-desription">
                                 {{ desc }}
                             </div>
-                            <ul class="activities-all stripped">
-                                {{#skills}}
-                                <li>{{name}}</li>
-                                {{/skills}}
-                            </ul>
+                            {{#skillGroups}}
+                                <h4>{{name}}</h4>
+                                <ul class="activities-all stripped">
+                                    {{#skills}}
+                                        <li>{{name}}</li>
+                                    {{/skills}}
+                                </ul>
+                            {{/skillGroups}}
                             <ol class="stripped user-projects">
                                 {{#projects}}
                                 <li data-id="{{id}}">
@@ -251,8 +262,7 @@
 
 {% block headTag %}
     <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lib/select2/select2.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lib/select2/select2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
 {% endblock %}
 
 {% block footer %}
@@ -267,8 +277,8 @@
     <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
     <script src="{% static 'libs/mixitup/build/jquery.mixitup.min.js' %}"></script>
     <script src="{% static 'libs/packery/dist/packery.pkgd.min.js' %}"></script>
-    {#    Тук се добавят допълнителни javascript файлове по примера на долния ред #}
+        Тук се добавят допълнителни javascript файлове по примера на долния ред
     <script src="{% static 'js/users.js' %}"></script>
-    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-    {#    за файл вътре в нея "static/js/users.js" #}
+        Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея
+        за файл вътре в нея "static/js/users.js"
 {% endblock %}

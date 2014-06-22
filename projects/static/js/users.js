@@ -51,7 +51,8 @@ $(function () {
 
 
         var projects = [];
-        var skills = [];
+        var skillGroups = [];
+        var skillGroupsMap = {};
         var skillsData = [];
         var projectData = [];
         $user.find('.user-projects li').each(function () {
@@ -66,7 +67,19 @@ $(function () {
         $user.find('.user-skills li').each(function () {
             var $skill = $(this);
             skillsData.push($skill.data('id'))
-            skills.push({
+            var group = $skill.data('group')
+            var groupIdx = null;
+            if (group in skillGroupsMap) {
+                groupIdx = skillGroupsMap[group];
+            } else {
+                groupIdx = skillGroups.length;
+                skillGroupsMap[group] = groupIdx;
+                skillGroups[groupIdx] = {
+                    skills: [],
+                    name: group
+                }
+            }
+            skillGroups[groupIdx].skills.push({
                 name: $skill.data('name'),
                 id: $skill.data('id')
             })
@@ -83,7 +96,7 @@ $(function () {
                 avatar: $user.find('.avatar figure img').attr('src'),
                 desc: $user.data('desc'),
                 projects: projects,
-                skills: skills
+                skillGroups: skillGroups
             });
             $popup = $(rendered)
             if (!projects.length) $popup.find('.user-projects').remove()
