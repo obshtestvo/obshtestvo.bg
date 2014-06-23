@@ -24,12 +24,32 @@ if [ ! -f "$VAGRANT_DIR/server/settings_app.py" ]; then
     cp $VAGRANT_DIR/server/settings_app.py.vagrant-sample $VAGRANT_DIR/server/settings_app.py
 fi
 
-# nodejs for `bower` as frontend package management
+# nodejs
 wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh
 source $HOME/.nvm/nvm.sh
 nvm install 0.10
 nvm alias default 0.10
+ln -s `which node` $VAGRANT_DIR/server/nodejs
+
+# bower as frontned package manager
 npm install bower -g
+
+# ruby
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source $HOME/.zshrc
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 2.1.1
+rbenv global 2.1.1
+
+# sass as CSS precompiler
+gem install compass --pre
+source $HOME/.zshrc
+ln -s `which sass` $VAGRANT_DIR/server/sass
+
+# asset compiler packages
+sudo apt-get install libxml2-dev libxslt-dev -y
 
 # database
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password password'
@@ -43,7 +63,7 @@ sudo apt-get install python-dev libmysqlclient-dev -y
 sudo apt-get install python-pip -y
 sudo pip install virtualenvwrapper
 source virtualenvwrapper.sh
-mkvirtualenv $PROJECT_NAME --no-site-packages
+(cd $VAGRANT_DIR && mkvirtualenv $PROJECT_NAME --no-site-packages)
 workon $PROJECT_NAME
 pip install -r $VAGRANT_DIR/requirements.dev.txt
 
@@ -66,6 +86,7 @@ echo "start on vagrant-mounted
 script
   service nginx restart
   service uwsgi restart
+  (cd $VAGRANT_DIR && source virtualenvwrapper.sh && workon $PROJECT_NAME && pip install)
 end script" | sudo tee /etc/init/vagrant-fix.conf
 
 # bower

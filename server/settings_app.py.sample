@@ -30,3 +30,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'secret-provided-by-facebook'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+COMPRESS_ENABLED = True
+COMPRESS_JS_FILTERS = [] if DEBUG else ['compressor.filters.jsmin.JSMinFilter']
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter'] if DEBUG else ['compressor.filters.css_default.CssAbsoluteFilter', 'compressor.filters.cssmin.CSSMinFilter']

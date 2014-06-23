@@ -5000,19 +5000,13 @@ ul.activities-all {
     }
 
     /*
-     * Don't show links for images, or javascript/internal links
+* Don't show links that are fragment identifiers,
+* or use the `javascript:` pseudo protocol
      */
-    .ir a:after,
-    ul.channels li a:after,
-    a[href^="mailto:"]:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
 
-    footer .quick-contacts li a[href]:after {
-        font-size: 0.8em;
-        float: right;
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
     }
 
     pre,
@@ -5034,10 +5028,6 @@ ul.activities-all {
         max-width: 100% !important;
     }
 
-    @page {
-        margin: 0.5cm;
-    }
-
     p,
     h2,
     h3 {
@@ -5048,6 +5038,12 @@ ul.activities-all {
     h2,
     h3 {
         page-break-after: avoid;
+    }
+
+    .ir a:after,
+    ul.channels li a:after,
+    a[href^="mailto:"]:after {
+        content: "";
     }
 
     .inner .txt section.main .button,
@@ -5066,5 +5062,10 @@ ul.activities-all {
 
     .inner ul.partners li img {
         width: 90px;
+    }
+
+    footer .quick-contacts li a[href]:after {
+        font-size: 0.8em;
+        float: right;
     }
 }

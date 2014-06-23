@@ -1,5 +1,4 @@
 # coding=utf-8
-# Django settings for mysite project.
 from django.utils.datastructures import SortedDict
 from django.utils.translation import ugettext_lazy as _
 
@@ -109,6 +108,7 @@ INSTALLED_APPS = (
     'guardian',
     "south",
 )
+
 ANONYMOUS_USER_ID = -1
 LOGGING = {
     'version': 1,
@@ -339,4 +339,12 @@ SUIT_CONFIG = {
     )
 }
 PUBLIC_SETTINGS = ['SOCIAL_AUTH_FACEBOOK_KEY', 'SOCIAL_AUTH_FACEBOOK_SCOPE']
+
 from server.settings_app import *
+
+COMPRESS_PRECOMPILERS = (
+    ('text/less', os.path.join(PROJECT_ROOT, 'server', 'nodejs') + ' ' + os.path.join(PROJECT_ROOT, 'server', 'lessc') + ' {infile} {outfile}'),
+    ('text/x-sass', os.path.join(PROJECT_ROOT, 'server', 'sass') + ' --compass --sourcemap {infile} {outfile}'),
+    ('text/x-scss', os.path.join(PROJECT_ROOT, 'server', 'sass') + ' --compass --sourcemap {infile} {outfile}'),
+)
+COMPRESS_YUGLIFY_BINARY = os.path.join(PROJECT_ROOT, 'server', 'nodejs') + ' ' + os.path.join(PROJECT_ROOT, 'server', 'yuglify')

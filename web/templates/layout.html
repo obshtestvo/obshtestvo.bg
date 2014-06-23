@@ -22,8 +22,9 @@
     {% compress css %}
     {% block headTag %}{% endblock %}
     {% endcompress %}
+
     {% compress css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'css/app.scss' %}">
     {% endcompress %}
 {#    <script src="{% static 'js/lib/modernizr.custom.js' %}"></script>#}
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
