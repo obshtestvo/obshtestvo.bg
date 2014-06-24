@@ -1,5 +1,6 @@
-server/settings_app.py
 server/access.log
+.env
+.env.vagrant
 static/*
 *.pyc
 *.DS_Store

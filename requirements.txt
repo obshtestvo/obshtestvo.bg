@@ -15,3 +15,5 @@ cssmin
 python-social-auth==0.1.26
 lxml
 django-appconf
+django-dotenv
+django-getenv

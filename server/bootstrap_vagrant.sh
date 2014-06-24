@@ -20,16 +20,17 @@ echo "export LANG=en_US.UTF-8" >> $HOME/.zshrc
 
 
 # settings
-if [ ! -f "$VAGRANT_DIR/server/settings_app.py" ]; then
-    cp $VAGRANT_DIR/server/settings_app.py.vagrant-sample $VAGRANT_DIR/server/settings_app.py
+if [ -f "$VAGRANT_DIR/server/settings_app.py" ]; then
+    rm $VAGRANT_DIR/server/.env.vagrant
 fi
+cp $VAGRANT_DIR/server/.env.sample $VAGRANT_DIR/server/.env.vagrant
+sed -i.bak 's/^DATABASE_PASS=.*/DATABASE_PASS=/' $VAGRANT_DIR/server/.env.vagrant
 
 # nodejs
 wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh
 source $HOME/.nvm/nvm.sh
 nvm install 0.10
 nvm alias default 0.10
-ln -s `which node` $VAGRANT_DIR/server/nodejs
 
 # bower as frontned package manager
 npm install bower -g
@@ -46,7 +47,6 @@ rbenv global 2.1.1
 # sass as CSS precompiler
 gem install compass --pre
 source $HOME/.zshrc
-ln -s `which sass` $VAGRANT_DIR/server/sass
 
 # asset compiler packages
 sudo apt-get install libxml2-dev libxslt-dev -y
@@ -86,7 +86,7 @@ echo "start on vagrant-mounted
 script
   service nginx restart
   service uwsgi restart
-  (cd $VAGRANT_DIR && source virtualenvwrapper.sh && workon $PROJECT_NAME && pip install)
+  (cd $VAGRANT_DIR && source virtualenvwrapper.sh && workon $PROJECT_NAME && pip install -r requirements.dev.txt)
 end script" | sudo tee /etc/init/vagrant-fix.conf
 
 # bower
