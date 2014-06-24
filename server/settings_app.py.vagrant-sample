@@ -19,5 +19,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "upload")
 ALLOWED_HOSTS = ['.obshtestvo.bg']
 
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+COMPRESS_ENABLED = True
+COMPRESS_JS_FILTERS = [] if DEBUG else ['compressor.filters.jsmin.JSMinFilter']
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter'] if DEBUG else ['compressor.filters.css_default.CssAbsoluteFilter', 'compressor.filters.cssmin.CSSMinFilter']
