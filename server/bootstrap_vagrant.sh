@@ -14,7 +14,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 sudo mkdir -p $HOME/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git  $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 sudo chsh -s `which zsh` vagrant
-sed -i.bak 's/^plugins=(.*/plugins=(git django python pip virtualenvwrapper emoji-clock zsh-syntax-highlighting bower)/' $HOME/.zshrc
+sed -i 's/^plugins=(.*/plugins=(git django python pip virtualenvwrapper emoji-clock zsh-syntax-highlighting bower)/' $HOME/.zshrc
 echo "export LC_ALL=en_US.UTF-8" >> $HOME/.zshrc
 echo "export LANG=en_US.UTF-8" >> $HOME/.zshrc
 
@@ -24,7 +24,6 @@ if [ -f "$VAGRANT_DIR/server/settings_app.py" ]; then
     rm $VAGRANT_DIR/server/.env.vagrant
 fi
 cp $VAGRANT_DIR/server/.env.sample $VAGRANT_DIR/server/.env.vagrant
-sed -i.bak 's/^DATABASE_PASS=.*/DATABASE_PASS=/' $VAGRANT_DIR/server/.env.vagrant
 
 # nodejs
 wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh
@@ -56,6 +55,8 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password password'
 sudo apt-get install mysql-server -y
 mysql -uroot -ppassword -e "SET PASSWORD = PASSWORD('');"
+sed -i 's/^DATABASE_USER=.*/DATABASE_USER=root/' $VAGRANT_DIR/server/.env.vagrant
+sed -i 's/^DATABASE_PASS=.*/DATABASE_PASS=/' $VAGRANT_DIR/server/.env.vagrant
 mysql -uroot -e "CREATE DATABASE \`$DB_NAME\` CHARACTER SET utf8 COLLATE utf8_general_ci;"
 sudo apt-get install python-dev libmysqlclient-dev -y
 
