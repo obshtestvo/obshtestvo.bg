@@ -130,6 +130,5 @@ class SkillService:
                 })
 
         return {
-            'page': "users-page",
             'skills_options': skills_options
         }
