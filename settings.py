@@ -78,9 +78,9 @@ COMPRESS_PRECOMPILERS = (
 )
 
 COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = not DEBUG
 COMPRESS_JS_FILTERS = [] if DEBUG else ['compressor.filters.jsmin.JSMinFilter']
 COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter'] if DEBUG else ['compressor.filters.css_default.CssAbsoluteFilter', 'compressor.filters.cssmin.CSSMinFilter']
-
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = env("SECRET_KEY")
