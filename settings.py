@@ -12,6 +12,7 @@ PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
 dotenv.read_dotenv(os.path.join(PROJECT_ROOT, env('PROJECT_ENV_FILE', 'server/.env')))
 
 DEBUG = env("DEBUG")
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -48,6 +49,7 @@ USE_TZ = True
 
 EMAIL_HOST = 'localhost'
 ALLOWED_HOSTS = ['.obshtestvo.bg']
+INTERNAL_IPS = ['127.0.0.1', '10.0.2.2']
 
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
@@ -153,7 +155,11 @@ INSTALLED_APPS = (
     "pagedown",
     'guardian',
     "south",
+    'debug_toolbar',
 )
+if DEBUG:
+    INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
+    MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
 
 ANONYMOUS_USER_ID = -1
 LOGGING = {

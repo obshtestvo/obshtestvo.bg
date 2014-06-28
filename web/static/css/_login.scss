@@ -1,0 +1,212 @@
+.inner.entry header.masthead .slider-nav {
+  position: relative;
+}
+
+#explanations {
+  max-width: 430px;
+  margin: 0 auto;
+  padding-bottom: 54px;
+  .progress {
+    margin-bottom: 13px;
+  }
+  .slider {
+    overflow: hidden;
+    height: 120px;
+    line-height: 120px;
+    .owl-item {
+      height: 120px;
+    }
+    blockquote {
+      display: inline-block;
+      color: #dde3e6;
+      font-style: italic;
+      line-height: 1.2em;
+      font-size: 20px;
+      margin: 0 5%;
+      vertical-align: bottom;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+form.small.signup {
+  label {
+    display: block;
+  }
+  .control {
+    padding: 23px;
+    &.focus {
+      background: #10303c;
+      @include border-bottom-left-radius(0);
+      @include border-bottom-right-radius(0);
+      .select2-container-multi .select2-choices {
+        border-width: 2px;
+        border-color: #108eba;
+      }
+      &.error .select2-container-multi {
+        .select2-choices {
+          border-color: #D50000;
+        }
+        &.select2-dropdown-open .select2-choices {
+          border-color: #108eba;
+        }
+      }
+    }
+  }
+}
+
+
+form {
+  &.small {
+    &.signup {
+      .control {
+        &.faded {
+          background: #ebebeb;
+          border-bottom: 1px solid #c2c7c9;
+        }
+        &.focus {
+          &.date {
+            padding-bottom: 26px;
+          }
+          > label {
+            color: #108eba !important;
+            font-weight: bold;
+          }
+        }
+        &.faded > label {
+          color: #607d89;
+        }
+        &.focus {
+          span.err {
+            top: 0;
+          }
+          > label .help {
+            color: #9ba9ad !important;
+          }
+        }
+        &.faded > label .help {
+          color: #9ba9ad;
+        }
+        &.skills {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          > label {
+            padding-bottom: 5px;
+            font-size: 18px;
+            letter-spacing: -0.02em;
+            color: #607d89;
+            line-height: 1.1em;
+            margin-right: -0.2em;
+          }
+          &.focus > label {
+            letter-spacing: -0.04em;
+          }
+          > label {
+            &.secondary {
+              padding-bottom: 0;
+            }
+            strong {
+              text-decoration: underline;
+            }
+            .help {
+              letter-spacing: 0;
+              padding-top: 5px;
+              color: #7C8E94;
+            }
+          }
+        }
+        &.name input, &.email input {
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+          height: 36px;
+        }
+      }
+      select[multiple] {
+        width: 100%;
+      }
+      .control {
+        &.date {
+          input {
+            &.error {
+              border: 2px solid #D50000;
+              &:focus {
+                width: 100%;
+                font-size: 28px;
+                height: 50px;
+                color: #10303c;
+                border: 2px solid #108eba;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+              }
+            }
+            width: 100%;
+            font-size: 28px;
+            height: 50px;
+            color: #10303c;
+            border: 2px solid #108eba;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+          }
+          > label {
+            font-size: 27px;
+            line-height: 1em;
+            font-weight: bold;
+            letter-spacing: -0.04em;
+            padding-bottom: 5px;
+            padding-top: 0;
+          }
+          label .help {
+            letter-spacing: 0;
+            padding-top: 6px;
+            padding-bottom: 3px;
+          }
+        }
+        label .help {
+          font-weight: normal;
+          font-size: 14px;
+        }
+        &.personal {
+          padding-top: 16px;
+          padding-bottom: 9px;
+          background: #fff;
+          @include border-top-left-radius(0);
+          @include border-top-right-radius(0);
+          strong {
+            display: block;
+            font-weight: normal;
+            line-height: 1.2em;
+            color: #607a84;
+            font-size: 17px;
+          }
+          em {
+            display: block;
+            color: #9ba9ad;
+            line-height: 1.2em;
+            font-size: 14px;
+            font-style: normal;
+          }
+          a {
+            font-size: 14px;
+            position: relative;
+            display: inline-block;
+            top: -4px;
+            line-height: 1.2em;
+          }
+          .inputs {
+            padding-bottom: 10px;
+          }
+          input {
+            min-width: 190px;
+          }
+          .button {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}

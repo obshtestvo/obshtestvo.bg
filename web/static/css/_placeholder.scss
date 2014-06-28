@@ -1,0 +1,39 @@
+@mixin placeholder {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 14px;
+  color: #a4a3a3;
+  position: relative;
+  top: 2px;
+}
+@mixin big-placeholder {
+  @include placeholder;
+  font-size: 21px;
+  line-height: 28px;
+}
+
+::-webkit-input-placeholder {
+  @include placeholder
+}
+:-moz-placeholder {
+  @include placeholder
+}
+::-moz-placeholder {
+  @include placeholder
+}
+:-ms-input-placeholder {
+  @include placeholder
+}
+
+form.small.signup .date ::-webkit-input-placeholder {
+  @include big-placeholder
+}
+form.small.signup .date :-moz-placeholder {
+  @include big-placeholder
+}
+form.small.signup .date ::-moz-placeholder {
+  @include big-placeholder
+}
+form.small.signup .date :-ms-input-placeholder {
+  @include big-placeholder
+}

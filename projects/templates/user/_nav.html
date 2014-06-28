@@ -1,7 +1,10 @@
+{% spaceless %}
 <div class="user">
     <a class="logout" href="{% url 'logout' %}">Изход</a>
     <a href="{% url 'dash' %}" class="dash">
         Табло с проекти
-        <img {% if user.is_authenticated %}src{% else %}data-avatar-placeholder{% endif %}="{{ user.get_avatar }}?width=31&height=31" alt=""/>
+        <img {% if user.is_authenticated %}src{% else %}data-avatar-placeholder{% endif %}
+             ="{% if user.is_authenticated %}{{ user.get_avatar }}{% else %}replace-me{% endif %}?width=31&height=31" alt=""/>
     </a>
 </div>
+{% endspaceless %}
