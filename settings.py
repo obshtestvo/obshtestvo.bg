@@ -155,7 +155,6 @@ INSTALLED_APPS = (
     "pagedown",
     'guardian',
     "south",
-    'debug_toolbar',
 )
 if DEBUG:
     INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
