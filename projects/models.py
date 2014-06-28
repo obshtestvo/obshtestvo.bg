@@ -201,13 +201,14 @@ class User(AbstractUser):
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
 
     def get_avatar(self, uid=None):
-        src = None
         if self.avatar:
             src = settings.MEDIA_URL + self.avatar.url()
         else:
             uid = settings.SOCIAL_AUTH_FACEBOOK_KEY
-            if self.social_auth.all().count() > 0:
-                uid = self.social_auth.all()[0].uid
+            if hasattr(self, 'preloaded_uid'):
+                uid = self.preloaded_uid
+            elif self.social_auth.all().count() > 0:
+                    uid = self.social_auth.all()[0].uid
             src = self.get_facebook_avatar(uid)
         return src
 
