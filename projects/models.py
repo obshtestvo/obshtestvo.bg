@@ -200,7 +200,7 @@ class User(AbstractUser):
                                       verbose_name=_("skills"))
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
 
-    def get_avatar(self):
+    def get_avatar(self, uid=None):
         src = None
         if self.avatar:
             src = settings.MEDIA_URL + self.avatar.url()
@@ -208,8 +208,12 @@ class User(AbstractUser):
             uid = settings.SOCIAL_AUTH_FACEBOOK_KEY
             if self.social_auth.all().count() > 0:
                 uid = self.social_auth.all()[0].uid
-            src = 'http://graph.facebook.com/' + uid + '/picture'
+            src = self.get_facebook_avatar(uid)
         return src
+
+    @staticmethod
+    def get_facebook_avatar(uid):
+        return 'http://graph.facebook.com/' + uid + '/picture'
 
     def is_currently_available(self):
         if not self.available_after:

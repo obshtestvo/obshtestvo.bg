@@ -29,9 +29,11 @@ class ExtraDataView(View):
                     "group": sgroup.name,
                 })
 
+        uid = request.session['partial_pipeline']['kwargs']['uid']
         return {
             'details': details,
-            'uid': request.session['partial_pipeline']['kwargs']['uid'],
+            'uid': uid,
+            'avatar': User.get_facebook_avatar(uid),
             'skills': Skill.objects.all(),
             'skills_options': skills_options,
             'member': member,
