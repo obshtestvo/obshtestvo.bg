@@ -207,8 +207,8 @@ MEMBER_POSITIONS = {
 }
 FAKE_DB = SortedDict()
 FAKE_DB["openparliament"] = {
-    "name": "Отворен Парламент",
-    "name_full": "Отворен Парламент",
+    "name": "Следи парламента",
+    "name_full": "Следи парламента",
     "preview": "openparliament.png",
     "fb_group": "https://www.facebook.com/groups/obshtestvo.parlament/",
     "repo": "https://github.com/obshtestvo/rating-gov-representatives",
