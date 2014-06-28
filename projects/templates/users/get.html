@@ -109,7 +109,10 @@
                                     class="hint--info hint--top {% if forloop.counter > 3 %}hidden{% endif %}"
                                     data-hint="{{ p.name }}">
                                     <a href="#">
-                                        <img src="{% if p.logo_thumb %}{{ p.get_logo_thumb }}{% else %}{% static 'img/nologo-thumb.png'%}{% endif %}" alt="" />
+                                        <img
+                                            src="{% if p.logo_thumb %}{{ p.get_logo_thumb }}{% else %}{% static 'img/nologo-thumb.png'%}{% endif %}"
+                                            alt=""
+                                            {% if p.complimenting_color %} style="border-color: {{ p.complimenting_color }}"{% endif %}/>
                                     </a>
                                 </li>
                             {% endfor %}

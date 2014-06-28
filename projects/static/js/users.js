@@ -124,6 +124,9 @@ $(function () {
         },
         controls: {
 		    enable: false
+	    },
+        load: {
+		    filter: getVisibleUsers()
 	    }
     });
 
