@@ -1,0 +1,28 @@
+.blockUI.blockMsg.blockPage {
+  padding: 0px;
+  margin: 0px;
+  width: 30%;
+  top: 40%;
+  left: 35%;
+  font-size: 18px;
+  text-align: center;
+  color: #bdebfd;
+  .message {
+    padding-top: 25px;
+    padding-bottom: 20px;
+  }
+  a {
+    @extend %standard-link
+  }
+  .inner.entry & .message {
+    p {
+      margin: 0;
+    }
+    .button {
+      margin-top: 15px;
+    }
+  }
+  .spinner {
+    display: inline-block;
+  }
+}

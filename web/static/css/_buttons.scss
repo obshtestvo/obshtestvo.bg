@@ -1,0 +1,243 @@
+.button {
+  @extend .basic-transition;
+  @extend .round;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: -0.025em;
+
+  &:after {
+    @extend .basic-transition-2x;
+  }
+
+  b {
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    top: 0;
+  }
+
+  &:active {
+    @include border-radius(1px);
+    b {
+      top: 1px;
+    }
+  }
+
+  &.small {
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 10px 16px 2px 16px;
+    height: 23px;
+    letter-spacing: 0;
+  }
+
+  &.green {
+    background: #7bc142;
+
+    &:focus, &:hover {
+      background: #469704;
+    }
+    &:active {
+      background: #CAE0B9;
+      color: #469704;
+    }
+    .donation &.more {
+      background: #89A275;
+
+      &:focus, &:hover {
+        background: #469704;
+      }
+    }
+  }
+
+  &.orange {
+    background: #ff7e00;
+
+    &:focus, &:hover {
+      background: #d65600;
+    }
+    &:active {
+      background: #ffc389;
+      color: #d65600;
+    }
+  }
+
+  &.red {
+    background: #c14242;
+    &:focus, &:hover {
+      background: #9d2727;
+    }
+    &:active {
+      background: #fe9797;
+      color: #9d2727;
+    }
+  }
+
+  &.blue {
+    background: #2296c1;
+    &:focus, &:hover {
+      background: #197A9E;
+    }
+    &:active {
+      background: #97C1D1;
+      color: #197A9E;
+    }
+  }
+
+  &.single:active {
+    @include border-radius(1px);
+    top: 1px;
+  }
+
+  .project-actions & {
+    min-width: inherit;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  &.standard, header.masthead .project-actions li.see & {
+    padding: 10px 10px 9px 10px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  header.masthead .project-actions li.see:first-child &.standard {
+    padding-left: 0;
+  }
+  header.masthead .project-actions li.see & {
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #b0bfc5;
+    padding-top: 2px;
+    position: relative;
+    font-weight: normal;
+    left: 1px;
+
+    &:focus, &:hover {
+      color: #fff;
+    }
+    &:after {
+      font-family: Flaticon;
+      content: "\e006"; /*.flaticon-chevron15*/
+      font-size: 95px;
+      line-height: 35px;
+      position: absolute;
+      top: -2px;
+      right: -50px;
+      font-weight: normal;
+      bottom: 0;
+      opacity: 0;
+      color: #377086;
+    }
+    &:hover:after {
+      opacity: 1;
+      right: -58px;
+    }
+    &:active:after {
+      color: #2296c1;
+      right: -60px;
+    }
+    .label {
+      display: block;
+      text-transform: uppercase;
+      color: #2296c1;
+      font-size: 13px;
+      font-weight: 900;
+      position: relative;
+      left: -1px;
+    }
+    &:focus .label, &:hover .label {
+      color: #4ACEFF;
+    }
+    &:active .label {
+      color: #2296c1;
+    }
+  }
+
+  header.masthead #sidebar .project-actions li.see & {
+    &:focus, &:hover {
+      color: #6FCCEE;
+    }
+    &:active {
+      color: #2296c1;
+      left: 3px;
+      &:after {
+        color: #6FCCEE;
+      }
+    }
+  }
+
+  .important-actions & {
+    min-width: 130px;
+    margin-bottom: 1px;
+
+    &:active {
+      padding-right: 8px;
+      padding-left: 8px;
+      top: 2px;
+    }
+    &.green:active {
+      top: -2px;
+    }
+    &:active b {
+      top: 0;
+    }
+  }
+}
+
+button.button {
+  &::-moz-focus-inner {
+    &:hover, &:active {
+      padding: 0;
+      border: 0;
+      outline: none;
+    }
+    padding: 0;
+    border: 0;
+    outline: none;
+  }
+  outline: none;
+  padding: 0;
+  border: 0;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input.button {
+  outline: none;
+  padding: 0;
+  border: 0;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+button.button.small, input.button.small {
+  height: 14px;
+  padding-bottom: 9px;
+}
+
+.donation button.button {
+  text-transform: none;
+}
+
+.donation .button.green.more:active {
+  background: #CAE0B9;
+  color: #469704;
+}
+
+.home #projects .button.small:active b {
+  top: 0;
+  left: 2px;
+}

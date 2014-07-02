@@ -1,0 +1,199 @@
+.inner.support .txt > section#act .option {
+  margin-top: 10px;
+  &:first-child {
+    margin-top: 0;
+  }
+  &.active  {
+    header {
+      background: #108eba;
+      cursor: inherit;
+      &:after {
+        color: #108eba;
+        right: -42px;
+      }
+      h2 {
+        color: #fff;
+      }
+      p {
+        color: #D7F5FF;
+      }
+      .fi {
+        opacity: 1;
+        right: 11px;
+      }
+    }
+  }
+
+  &.time .info-content {
+    max-width: 395px;
+  }
+  &.finance .info-content {
+    max-width: 405px;
+  }
+  &.media .info-content {
+    max-width: 430px;
+  }
+  &.bank .info-content {
+    max-width: 410px;
+  }
+  &.donation .info-content {
+    max-width: 450px;
+  }
+  &.fellowship .info-content, &.physical .info-content {
+    max-width: 420px;
+  }
+  &.donation a.adjust {
+    top: -240px;
+  }
+
+  a.adjust {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    top: -210px;
+  }
+  .info p {
+    margin-top: 1em;
+    line-height: 1.2em;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .info-holder {
+    height: 0;
+    overflow: hidden;
+  }
+  .info-content {
+    padding: 15px 3.19% 15px 3.19%;
+    background: #f5f5f5;
+    color: #7d888c;
+  }
+  header {
+    cursor: pointer;
+    position: relative;
+    padding-right: 12%;
+    margin-left: -4.22%;
+    padding-left: 4.22%;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    clear: both;
+
+    &:after {
+      font-family: Flaticon;
+      content: "\e006"; /*.flaticon-chevron15*/
+      font-size: 150px;
+      line-height: 35px;
+      position: absolute;
+      top: 50%;
+      @include transform(translateY(-50%));
+      right: -42px;
+      font-weight: normal;
+      opacity: 0;
+      color: #25bff4;
+      z-index: 1;
+    }
+    &:hover:after {
+      opacity: 1;
+      right: -50px;
+    }
+    &:active:after {
+      color: #108eba;
+      right: -58px;
+    }
+    .fi {
+      @extend .basic-transition-2x;
+      font-size: 40px;
+      line-height: 35px;
+      position: absolute;
+      color: #2eb5e4;
+      top: 50%;
+      @include transform(translateY(-50%));
+      right: -8px;
+      font-weight: normal;
+      z-index: 2;
+      opacity: 0;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: #7E95A0;
+      line-height: 1.2em;
+    }
+    &:hover p {
+      color: #25bff4;
+    }
+    h2 {
+      font-size: 22px;
+      color: #108eba;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    &:hover h2 {
+      color: #25bff4;
+    }
+  }
+}
+
+
+form.small label.pgateway {
+  float: left;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 2%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  left: -2%;
+  &:hover {
+    background: #C0DDE9;
+  }
+  &.paypal {
+    width: 41%;
+    margin-right: -7%;
+    padding-left: 4%;
+    left: -3.19%;
+  }
+  &.epay {
+    width: 55%;
+    left: 3.6%;
+    padding-right: 5%;
+  }
+  input {
+    float: left;
+    vertical-align: top;
+    margin-top: 2px;
+  }
+  span.cards {
+    display: block;
+    margin-top: 5px;
+    background: url("../img/cards.png") no-repeat;
+    height: 20px;
+  }
+  &.epay span.cards {
+    width: 65px;
+  }
+}
+
+.inner.support .txt > section#act .option form.small label.pgateway {
+  p.description {
+    padding: 0;
+    margin: 0 0 0 20px;
+  }
+  &.epay p.description {
+    margin-right: 0;
+  }
+}
+
+
+
+.support form.small .msg {
+  padding: 10px 3%;
+}
+
+form {
+  &.pgateway {
+    display: none;
+  }
+}

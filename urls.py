@@ -4,6 +4,7 @@ from web.views import home, about, project, support, members, contact, faq, repo
 from login.views import login
 from auth.views import extra_data, entry
 from projects.views import dashboard, user, users, temp
+from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -29,3 +30,11 @@ urlpatterns = patterns('',
     url(r'^temp/$', temp.TempView.as_view(), name='temp'),
     url(r'^dashboard/$', dashboard.DashboardView.as_view(), name='dash'),
 )
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    import debug_toolbar
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += patterns('',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )

@@ -75,7 +75,7 @@ $(function() {
             revalPersonalFields()
         })
         var $form = $('form.signup')
-        var uid = $form.data('uid')
+        var avatar = $form.data('avatar')
         $form.find('.msg.hidden, .personal .hidden').css('display', 'none').removeClass('hidden')
         new AjaxForm($form, {
             dataType: "html",
@@ -88,7 +88,7 @@ $(function() {
                 toggleFixedHeight($transitionContainer, true)
                 var $userNav = $('.user').hide();
                 var $userAvatar = $userNav.find('img');
-                $userAvatar.attr('src', $userAvatar.data('avatarPlaceholder').replace('obshtestvo', uid))
+                $userAvatar.attr('src', $userAvatar.data('avatarPlaceholder').replace('replace-me', avatar))
                 $userNav.appendTo($('nav.main .layout'))
                 setTimeout(function() {
                     $userNav.show()

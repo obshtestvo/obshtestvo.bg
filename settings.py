@@ -1,6 +1,19 @@
 # coding=utf-8
+import os
+
+import dotenv
+from getenv import env
+
 from django.utils.datastructures import SortedDict
 from django.utils.translation import ugettext_lazy as _
+
+PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+dotenv.read_dotenv(os.path.join(PROJECT_ROOT, env('PROJECT_ENV_FILE', 'server/.env')))
+
+DEBUG = env("DEBUG")
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
 # ('Your Name', 'your_email@example.com'),
@@ -32,6 +45,17 @@ USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
+
+
+EMAIL_HOST = 'localhost'
+ALLOWED_HOSTS = ['.obshtestvo.bg']
+INTERNAL_IPS = ['127.0.0.1', '10.0.2.2']
+
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "upload")
+
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
@@ -50,6 +74,30 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+COMPRESS_PRECOMPILERS = (
+    ('text/x-sass', env("SASS_BINARY_PATH") + ' --compass --sourcemap {infile} {outfile}'),
+    ('text/x-scss', env("SASS_BINARY_PATH") + ' --compass --sourcemap {infile} {outfile}'),
+)
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = not DEBUG
+COMPRESS_JS_FILTERS = [] if DEBUG else ['compressor.filters.jsmin.JSMinFilter']
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter'] if DEBUG else ['compressor.filters.css_default.CssAbsoluteFilter', 'compressor.filters.cssmin.CSSMinFilter']
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = env("SECRET_KEY")
+
+DATABASES = {
+    'default': {
+        # CREATE DATABASE obshtestvo CHARACTER SET utf8 COLLATE utf8_general_ci;
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env("DATABASE_NAME"), # Or path to database file if using sqlite3.
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASS"),
+        # 'HOST': '127.0.0.1',
+        # 'PORT': 3307,
+    }
+}
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -108,6 +156,9 @@ INSTALLED_APPS = (
     'guardian',
     "south",
 )
+if DEBUG:
+    INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
+    MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
 
 ANONYMOUS_USER_ID = -1
 LOGGING = {
@@ -156,8 +207,8 @@ MEMBER_POSITIONS = {
 }
 FAKE_DB = SortedDict()
 FAKE_DB["openparliament"] = {
-    "name": "Отворен Парламент",
-    "name_full": "Отворен Парламент",
+    "name": "Следи парламента",
+    "name_full": "Следи парламента",
     "preview": "openparliament.png",
     "fb_group": "https://www.facebook.com/groups/obshtestvo.parlament/",
     "repo": "https://github.com/obshtestvo/rating-gov-representatives",
@@ -284,6 +335,7 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 SOCIAL_AUTH_FACEBOOK_KEY = '1489028994643386'
+SOCIAL_AUTH_FACEBOOK_SECRET = env("SOCIAL_AUTH_FACEBOOK_SECRET")
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {'locale': 'bg_BG'}
 EMAIL_FROM = 'info@obshtestvo.bg'
 AUTH_USER_MODEL = 'projects.User'
@@ -339,12 +391,3 @@ SUIT_CONFIG = {
     )
 }
 PUBLIC_SETTINGS = ['SOCIAL_AUTH_FACEBOOK_KEY', 'SOCIAL_AUTH_FACEBOOK_SCOPE']
-
-from server.settings_app import *
-
-COMPRESS_PRECOMPILERS = (
-    ('text/less', os.path.join(PROJECT_ROOT, 'server', 'nodejs') + ' ' + os.path.join(PROJECT_ROOT, 'server', 'lessc') + ' {infile} {outfile}'),
-    ('text/x-sass', os.path.join(PROJECT_ROOT, 'server', 'sass') + ' --compass --sourcemap {infile} {outfile}'),
-    ('text/x-scss', os.path.join(PROJECT_ROOT, 'server', 'sass') + ' --compass --sourcemap {infile} {outfile}'),
-)
-COMPRESS_YUGLIFY_BINARY = os.path.join(PROJECT_ROOT, 'server', 'nodejs') + ' ' + os.path.join(PROJECT_ROOT, 'server', 'yuglify')

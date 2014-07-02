@@ -1,0 +1,65 @@
+@mixin hint-bottom {
+  @include transform(translateY(8px) translateX(-50%));
+}
+@mixin hint-top{
+  @include transform(translateY(-8px) translateX(-50%));
+}
+@mixin hint-afterbefore{
+  @include transform(translateX(-50%));
+}
+
+.hint--bottom {
+  &:after, &:before {
+    @include hint-afterbefore;
+  }
+  &:hover {
+    &:after, &:before {
+      @include hint-bottom;
+    }
+  }
+  &:focus {
+    &:after, &:before {
+      @include hint-bottom;
+    }
+  }
+}
+
+.hint--top {
+  &:after, &:before {
+    @include hint-afterbefore;
+  }
+  &:hover {
+    &:after, &:before {
+      @include hint-top;
+    }
+  }
+  &:focus {
+    &:after, &:before {
+      @include hint-top;
+    }
+  }
+}
+
+.hint--bottom:after, .hint--top:after {
+  margin-left: 0;
+}
+
+.hint--info {
+  &:after {
+    background-color: #108eba;
+    text-shadow: none;
+  }
+  &.hint--top:before {
+    border-top-color: #108eba;
+  }
+  &.hint--bottom:before {
+    border-bottom-color: #108eba;
+  }
+}
+
+.hint:after, [data-hint]:after {
+  font-size: 12px;
+  line-height: 12px;
+  white-space: nowrap;
+  @include box-shadow(4px 4px 20px 0px rgba(0, 0, 0, 0.1));
+}

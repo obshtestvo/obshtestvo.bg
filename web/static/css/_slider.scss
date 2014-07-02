@@ -1,0 +1,18 @@
+.slider-nav .progress {
+  position: relative;
+  margin-top: -1px;
+  z-index: 1;
+}
+
+#explanations .slider-nav .progress {
+  background: #286076;
+}
+
+.slider-nav .progress .bar {
+  height: 1px;
+  background: #1b3640;
+}
+
+#explanations .slider-nav .progress .bar {
+  background: #108eba;
+}

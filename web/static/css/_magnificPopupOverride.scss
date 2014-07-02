@@ -80,3 +80,14 @@
 .mfp-zoom-in.mfp-removing.mfp-bg {
   opacity: 0;
 }
+
+
+.mfp-content .alert {
+  background: none;
+  font-size: 18px;
+  padding-top: 20px;
+  margin: 0;
+  .fi {
+    color: #f4902e;
+  }
+}
