@@ -74,9 +74,10 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+SASS_BINARY_PATH = env("SASS_BINARY_PATH")
 COMPRESS_PRECOMPILERS = (
-    ('text/x-sass', env("SASS_BINARY_PATH") + ' --compass --sourcemap {infile} {outfile}'),
-    ('text/x-scss', env("SASS_BINARY_PATH") + ' --compass --sourcemap {infile} {outfile}'),
+    ('text/x-sass', 'web.static_helpers.SassFilter'),
+    ('text/x-scss', 'web.static_helpers.SassFilter'),
 )
 
 COMPRESS_ENABLED = True
