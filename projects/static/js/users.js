@@ -210,5 +210,17 @@ $(function () {
         $('.content').removeClass('filtering')
     });
 
+    var phtml = $('.test').html();
+    $.magnificPopup.open({
+        items: {
+            src: '<div class="popup default-popup mfp-with-anim round"> '+phtml+' </div>'
+        }
+    });
+    $('.popup form .focus select').select2({
+        containerCssClass: 'project select2',
+        dropdownCssClass: 'in-popup in-focus-area',
+        allowClear: true
+    });
+
 })
 
