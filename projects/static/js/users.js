@@ -3,7 +3,7 @@ $(function () {
     var $skills = $('#joinSkills');
     var $userProject = $('#userProject');
     var $name = $('#nameFilter');
-    new Select2Grouped($skills, $skills.data('choices'), undefined, true);
+    new Select2Grouped($skills, $skills.data('choices'), undefined, true, true);
 
     var $onlyAvailableTrigger = $('#check-users-free');
     var $noProjectsTrigger = $('#check-users-noprojects');
@@ -15,6 +15,9 @@ $(function () {
     $userProject.select2({
         containerCssClass: 'userProject select2',
         allowClear: true
+    })
+    $userProject.on('select2-open', function() {
+        $content.removeClass('filtering')
     })
     $('html').click(function() {
         $('.user-popup .close-popup').click()
@@ -90,6 +93,7 @@ $(function () {
         $user.find('.more-activities, .more, .avatar figure a').click(function (e) {
             e.preventDefault()
             e.stopPropagation()
+            $content.removeClass('filtering')
             $('.user-popup .close-popup').click()
             var rendered = Mustache.render(template, {
                 name: $user.find('.user-names').text(),
@@ -173,6 +177,7 @@ $(function () {
         $userProject.select2("enable", !$noProjectsTrigger.prop('checked'));
         $usersContainer.mixItUp('filter', getVisibleUsers())
     })
+
     var t = null;
     $name.keyup(function() {
         clearTimeout(t)
@@ -185,5 +190,25 @@ $(function () {
         enableEscapeKey: true,
         closeOnBgClick: true
     });
+
+    $skills.on("select2-opening", function(e) {
+        if (!$content.hasClass('filtering')) {
+            var i = setInterval(function() {
+                $skills.select2('positionDropdown')
+            },8)
+            $content.addClass('filtering')
+            setTimeout(function() {
+                clearInterval(i)
+            },
+            500)
+        }
+    })
+    $('fieldset.skills').click(function(e) {
+        e.stopPropagation()
+    })
+    $('html').click(function() {
+        $('.content').removeClass('filtering')
+    });
+
 })
 

@@ -1,7 +1,7 @@
 (function($) {
     'use strict';
 
-    var Select2Grouped = function($el, data, selected, dontOpenOnFocus) {
+    var Select2Grouped = function($el, data, selected, dontOpenOnFocus, closeOnSelect) {
         var expanded = false;
         var activeGroup = null;
         var highlightIndex = null;
@@ -11,7 +11,7 @@
             containerCssClass: 'select2',
             separator: valueSep,
             tokenSeparators: [valueSep],
-            closeOnSelect: false,
+            closeOnSelect: closeOnSelect === true,
 
             createSearchChoice: function (term, data) {
                 if (expanded && $(data).filter(function () {

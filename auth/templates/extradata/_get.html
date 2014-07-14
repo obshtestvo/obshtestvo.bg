@@ -1,7 +1,7 @@
 {% load url from future %}
 {% load restful %}
 <form
-    class="signup small clearfix"
+    class="signup small compact clearfix"
     role="form"
     data-uid="{{uid}}"
     data-avatar="{{avatar}}"
@@ -12,7 +12,7 @@
         <div class="msg hidden"></div>
         <div class="controls">
             {% if usecase == 'notnow' %}
-                <div class="control date focus round">
+                <div class="control large date focus round">
                     <label for="availabelAfter">Кога ще можете да се включите? <span class="help">Поне приблизително. Няма да ви безпокоим до тази дата</span> </label>
                     <input id="availabelAfter"
                            type="date"
@@ -35,7 +35,7 @@
                     </span>
                 </label>
             </div>
-            <div class="personal control round">
+            <div class="last predefined contrasted personal control round">
                 <button type="submit"
                         class="button standard green"><b>Изпрати</b>
                 </button>

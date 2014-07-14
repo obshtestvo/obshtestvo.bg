@@ -6,18 +6,11 @@
     color: #ccc;
   }
 }
-
 .nav-tabs {
   overflow: hidden;
   margin-left: 310px;
   max-width: 600px;
-}
 
-.filtering .nav-tabs {
-  margin-left: 500px;
-}
-
-.nav-tabs {
   li {
     float: left;
   }
@@ -160,20 +153,18 @@ label.checkbox {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 100;
     width: 310px;
     height: 100%;
   }
 }
 
-.filtering .users .filter {
-  width: 500px;
-}
 
 .users {
   .filter > form {
-    height: 100%;
-    overflow: hidden;
+    position: absolute;
+    top:0;
+    bottom: 0;
   }
   .list {
     margin-left: 310px;
@@ -181,10 +172,6 @@ label.checkbox {
     position: relative;
     padding-top: 45px;
   }
-}
-
-.filtering .users .list {
-  margin-left: 500px;
 }
 
 ul.filter-simple {
@@ -207,19 +194,41 @@ ul.filter-simple {
 }
 
 .filter-advanced {
-  padding: 5px 13px 40px 25px;
+  padding: 5px 13px 40px 0;
   background: #eef0f1 url(../img/users-border.png) repeat-y right top;
   height: 100%;
+  width:297px;
   fieldset {
-    padding: 22px 0 4px 0;
+    width: 272px;
+    padding: 22px 0 4px 20px;
+    &.project {
+      padding-bottom: 8px;
+    }
+    &.skills {
+      @extend .basic-transition-2x;
+      background: #eef0f1;
+      padding-top: 20px;
+      .filtering & {
+        @include border-top-right-radius(3px);
+        @include border-bottom-right-radius(3px);
+        @include box-shadow(0 0 100px 3px rgba(0, 0, 0, 0.31));
+        padding-bottom: 31px;
+        width: 500px;
+        padding-right: 20px;
+        margin-right: -253px;
+        background: #10303c ;
+//        background: #10303c url("../img/header-bg.jpg") bottom right no-repeat;
+        .title-primary {
+          color: #108EBA;
+        }
+      }
+    }
     > {
       label {
         display: block;
       }
       input[type=text] {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+        @include box-sizing(border-box);
         width: 100%;
         height: 34px;
       }
@@ -240,6 +249,9 @@ ul.filter-simple {
     line-height: 16px;
     padding: 4px 0 3px 1px;
   }
+  .skills .title-info {
+    max-width: 270px;
+  }
   .users-free {
     padding: 9px 0 0 0;
     font-size: 14px;
@@ -248,20 +260,10 @@ ul.filter-simple {
     text-align: right;
   }
 }
-
 ul.users-list {
   padding: 0 30px;
   a {
     outline: none;
-  }
-}
-
-.users-list {
-  li .user-skills li a {
-    @extend .basic-transition;
-    &:before {
-      @extend .basic-transition;
-    }
   }
   .avatar figure a {
     @extend .basic-transition;
@@ -283,24 +285,11 @@ ul.users-list {
       margin-left: 3px;
     }
   }
+
   > .user-preview {
     display: none;
   }
-}
 
-.user-names {
-  margin: 0;
-  padding: 0;
-  height: 32px;
-  overflow: hidden;
-  font-weight: normal;
-  color: #194352;
-  font-size: 21px;
-  left: -1px;
-  position: relative;
-}
-
-.users-list {
   .avatar {
     width: 94px;
     height: 126px;
@@ -322,9 +311,7 @@ ul.users-list {
         margin-top: -2px;
         &:hover {
           border-color: #97C1D1;
-          /*-webkit-box-shadow: 0 0 5px 3px rgba(0,0,0,0.31);*/
-          /*-moz-box-shadow: 0 0 5px 3px rgba(0,0,0,0.31);*/
-          box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.1);
+          @include box-shadow(0 0 70px 0 rgba(0, 0, 0, 0.1));
         }
       }
     }
@@ -353,6 +340,7 @@ ul.users-list {
       overflow: hidden;
       text-overflow: ellipsis;
       a {
+        @extend .basic-transition;
         text-decoration: none;
         color: #3a768e;
         &:hover {
@@ -363,13 +351,13 @@ ul.users-list {
           top: 0;
         }
         &:before {
-          content: "\e007";
+          @extend .basic-transition;
+          @include icon($icon-chevronRightBold);
           position: absolute;
           left: -15px;
           top: -1px;
           font-size: 9px;
           color: #BAD3DE;
-          font-family: "Flaticon";
         }
         &:hover:before {
           color: #2296c1;
@@ -385,6 +373,20 @@ ul.users-list {
     }
   }
 }
+
+
+.user-names {
+  margin: 0;
+  padding: 0;
+  height: 32px;
+  overflow: hidden;
+  font-weight: normal;
+  color: #194352;
+  font-size: 21px;
+  left: -1px;
+  position: relative;
+}
+
 
 a.more-activities {
   @extend %mini-more-link;
@@ -542,11 +544,4 @@ ul.activities-all {
   .avatar figure a {
     @extend .basic-transition;
   }
-}
-
-
-
-.users-page form.small .project {
-  max-width: none;
-  width: 100%;
 }

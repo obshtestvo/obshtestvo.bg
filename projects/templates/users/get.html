@@ -9,9 +9,9 @@
     {% include '_masthead_sample.html' %}
 
     <section class="content">
-        <nav class="nav-tabs basic-transition-2x">
+        <nav class="nav-tabs">
             <ul class="stripped clearfix">
-                <li><a class="selected" href="">Участници</a></li>
+                <li><a class="selected" href="">Хора</a></li>
                 <li><a href="#equipmentInfo">Оборудване</a></li>
                 <li><a href="#placeInfo">Място</a></li>
                 <li><a href="#entityInfo">Юридическа сила</a></li>
@@ -21,7 +21,7 @@
             </ul>
         </nav>
         <section class="users">
-            <aside class="filter basic-transition-2x">
+            <aside class="filter">
                 <form class="small" action="">
                     <ul class="stripped filter-simple">
                         <li class="label">
@@ -69,7 +69,7 @@
                     </div>
                 </form>
             </aside>
-            <section class="list basic-transition-2x">
+            <section class="list">
             {% spaceless %}
                 <ul class="stripped users-list">
                     {% for id, u in users.items %}
@@ -142,7 +142,7 @@
                                 {{ desc }}
                             </div>
                             {{#skillGroups}}
-                                <h4>{{name}}</h4>
+                                <h4 classs="skill-group">{{name}}</h4>
                                 <ul class="activities-all stripped">
                                     {{#skills}}
                                         <li>{{name}}</li>
@@ -165,7 +165,7 @@
             </section>
         </section>
     </section>
-    <div id="placeInfo" class="transparent-popup mfp-with-anim round mfp-hide">
+    <div id="placeInfo" class="popup default-popup mfp-with-anim round mfp-hide">
         <div class="txt round">
             <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
 
@@ -186,7 +186,7 @@
             </ul>
         </div>
     </div>
-    <div id="reachInfo" class="transparent-popup mfp-with-anim round mfp-hide">
+    <div id="reachInfo" class="popup default-popup mfp-with-anim round mfp-hide">
         <div class="txt round">
             <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
 
@@ -204,7 +204,7 @@
 
         </div>
     </div>
-    <div id="equipmentInfo" class="transparent-popup mfp-with-anim round mfp-hide">
+    <div id="equipmentInfo" class="popup default-popup mfp-with-anim round mfp-hide">
         <div class="txt round">
             <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
 
@@ -226,7 +226,7 @@
 
         </div>
     </div>
-    <div id="entityInfo" class="transparent-popup mfp-with-anim round mfp-hide">
+    <div id="entityInfo" class="popup default-popup mfp-with-anim round mfp-hide">
         <div class="txt round">
             <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
 
@@ -242,7 +242,7 @@
             </ul>
         </div>
     </div>
-    <div id="inspirationInfo" class="transparent-popup mfp-with-anim round mfp-hide">
+    <div id="inspirationInfo" class="popup default-popup mfp-with-anim round mfp-hide">
         <div class="txt round">
             <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
 
@@ -253,12 +253,12 @@
                 с надхъващи и усилващи доверието references.</p>
         </div>
     </div>
-    <div id="expertInfo" class="transparent-popup mfp-with-anim round mfp-hide">
+    <div id="expertInfo" class="popup default-popup mfp-with-anim round mfp-hide">
         <div class="txt round">
             <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
 
             <p>В нея ще се изреждат участници, както и на тази страница, но фокусът ще бъде
-               експертните им умения, с които са познати.</p>
+                експертните им умения, с които са познати.</p>
         </div>
     </div>
 {% endblock %}

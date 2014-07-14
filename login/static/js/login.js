@@ -42,7 +42,7 @@ $(function() {
         $.unblockUI()
         $.magnificPopup.open({
             items: {
-                src: '<div class="transparent-popup mfp-with-anim round"> '+html+' </div>'
+                src: '<div class="popup default-popup mfp-with-anim round"> '+html+' </div>'
             }
         });
 
