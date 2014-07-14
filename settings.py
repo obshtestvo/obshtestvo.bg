@@ -120,8 +120,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'restful.middleware.ResponseFormatDetection',
     'restful.error_handler.ErrorHandler',
+    'restful.middleware.ResponseFormatDetection',
 )
 
 ROOT_URLCONF = 'urls'
