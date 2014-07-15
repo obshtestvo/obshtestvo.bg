@@ -226,6 +226,13 @@ class User(AbstractUser):
         swappable = 'AUTH_USER_MODEL'
         abstract = False
 
+
+class UserAutoLogin:
+    user = models.ForeignKey('User', related_name="member", blank=True, null=True)
+    created_at = models.DateTimeField(_('created at'), default=timezone.now)
+    token = models.CharField(max_length=255, verbose_name=_("Token"))
+
+
 class UserPointSpending(models.Model):
     person = models.ForeignKey('User', related_name="spendings")
     points = models.PositiveIntegerField(_('points'), max_length=10)
@@ -385,16 +392,17 @@ class ProjectUsageExampleStep(models.Model):
     def __unicode__(self):
         return unicode(self.title)
 
-
 class Task(models.Model):
     class Meta:
         verbose_name = _('task')
         verbose_name_plural = _('tasks')
-    activity = models.ForeignKey('ProjectActivity', related_name="tasks")
+    project = models.ForeignKey('Project', related_name="tasks")
+    skill = models.ForeignKey('Skill', related_name="tasks")
     name = models.CharField(_('name'), max_length=30, blank=False)
-    points = models.PositiveIntegerField(_('points'), max_length=4, default=5)
+    description = models.TextField(_('description'), blank=True)
     is_complete = models.BooleanField(_('is this complete'), default=False)
     order = models.PositiveIntegerField()
+    points = models.PositiveIntegerField(_('points'), max_length=4, default=5)
 
 
     # return RecycleSpot.objects.select_related("type").filter(materials__name__in=types).only(*cls.FIELDS).distinct()
@@ -403,3 +411,28 @@ class Task(models.Model):
     # ref: https://docs.djangoproject.com/en/dev/ref/models/queries/
     # ref: https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related
     # .select_related('blog')
+
+class Invitation:
+    task = models.ForeignKey('Task', related_name="invitations", blank=True, null=True)
+    inviter = models.ForeignKey('User', related_name="inviters", blank=True, null=True)
+    created_at = models.DateTimeField(_('created at'), default=timezone.now)
+
+class InvitationAnswer:
+    NEED_CLARIFICATION = 'clarify'
+    YES = 'yes'
+    NO = 'no'
+    ANSWER_CHOICES = (
+        (NEED_CLARIFICATION, _('Needs clarification')),
+        (YES, _('Yes')),
+        (NO, _('No')),
+    )
+    invitation = models.ForeignKey('Invitation', related_name="answers", blank=True, null=True)
+    invitee = models.ForeignKey('User', related_name="invitees", blank=True, null=True)
+    answered_at = models.DateTimeField(_('answered at'), default=timezone.now)
+    answer = models.CharField(max_length=20,
+                              choices=ANSWER_CHOICES,
+                              verbose_name=_("Answer"),
+                              blank=True,
+                              null=True)
+    answer_notes = models.CharField(_('notes'), max_length=280)
+

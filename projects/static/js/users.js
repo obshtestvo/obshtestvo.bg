@@ -105,10 +105,6 @@ $(function () {
             $popup = $(rendered)
             if (!projects.length) $popup.find('.user-projects').remove()
             $user.append($popup);
-            $('.user-popup .avatar .button').magnificPopup({
-                enableEscapeKey: true,
-                closeOnBgClick: true
-            });
             $popup.css('opacity');
             $popup.removeClass('closed');
         })
@@ -195,11 +191,6 @@ $(function () {
         closeOnBgClick: true
     });
 
-    $(".avatar .button").magnificPopup({
-        enableEscapeKey: true,
-        closeOnBgClick: true
-    });
-
     $skills.on("select2-opening", function(e) {
         if (!$content.hasClass('filtering')) {
             var i = setInterval(function() {
@@ -224,6 +215,18 @@ $(function () {
     setTimeout(function() {
         $preload.remove()
     },500)
+
+    var phtml = $('.test').html();
+    $.magnificPopup.open({
+        items: {
+            src: '<div class="popup default-popup mfp-with-anim round"> '+phtml+' </div>'
+        }
+    });
+    $('.popup form .focus select').select2({
+        containerCssClass: 'project select2',
+        dropdownCssClass: 'in-popup in-focus-area',
+        allowClear: true
+    });
 
 })
 

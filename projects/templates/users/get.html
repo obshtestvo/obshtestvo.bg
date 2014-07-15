@@ -29,6 +29,10 @@
                             <label class="checkbox basic-transition" for="check-users-free">Само тези на разположение
                                 <i class="basic-transition round"></i> </label>
                         </li>
+{#                        <li class="label">#}
+{#                            <input class="checkbox" type="checkbox" id="check-category" />#}
+{#                            <label class="checkbox basic-transition" for="check-category">Покажи в категории спрямо дейност <i class="basic-transition round"></i> </label>#}
+{#                        </li>#}
                     </ul>
                     <div class="filter-advanced">
                         <fieldset class="project">
@@ -85,18 +89,16 @@
                 <p class="summary">Общо <strong>{{ users|length }}</strong> участника, подредени по <strong>най-рядко избирана дейност</strong> и <strong>най-малко избрани дейности</strong></p>
                 <ul class="stripped users-list">
                     {% for id, u in users.items %}
-                    {% with name=anonymous|random %}
                     <li class="user-preview"
-                        data-desc="Когато е готова редакцията на профил, тук, отдясно, ще се появи отговор от всеки учасник на въпроса &OpenCurlyDoubleQuote;Какво се надяваш да стане с Общество след 1г?&OpenCurlyDoubleQuote;"
                         data-is-available="{% if u.is_currently_available %}1{% else %}0{% endif %}"
                         data-project-count="{{ u.preloaded_projects_interests|length }}"
                     >
-                        <h2 class="user-names">{{ name.name }}</h2>
+                        <h2 class="user-names">{{ u.first_name }} {{ u.last_name }}</h2>
                         <div class="avatar">
                             <figure>
-                                <a href="#" class="round"><img src="{% static 'img/user-silhouette-'|add:name.type|add:'.png' %}" alt="" /></a>
+                                <a href="#" class="round"><img src="{{ u.get_avatar }}?width=86&height=86" alt="" /></a>
                             </figure>
-                            <a href="#invitationExample" class="button standard blue">попитай</a>
+                            <a href="#" class="button standard blue">попитай</a>
                         </div>
                         {% with skill_count=u.preloaded_skills|length %}
                         <div class="user-skills">
@@ -137,7 +139,6 @@
                         {% endif %}
                         {% endwith%}
                     </li>
-                    {% endwith %}
                     {% endfor %}
                 </ul>
             {% endspaceless %}
@@ -151,7 +152,7 @@
                                 <figure>
                                     <a href="#"><img src="{{ avatar }}" alt="" /></a>
                                 </figure>
-                                <a href="#invitationExample" class="button standard blue">Попитай</a>
+                                <a href="#" class="button standard blue">попитай</a>
                             </div>
                             <div class="user-desription">
                                 {{ desc }}
@@ -277,18 +278,90 @@
                 експертните им умения, с които са познати.</p>
         </div>
     </div>
-    <div id="invitationExample" class="popup default-popup mfp-with-anim round mfp-hide">
-        <div class="txt round">
-            <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
-            <p>Чрез нея ще може да се кани участник към дадена задача. Процесът се стреми да бъде възможно най-улеснен и да автоматизира
-            повтарящите се моменти.</p>
-            <img src="{% static 'img/example-invitation.png' %}"/>
-        </div>
+{#    inviatiton/form/ #}
+    <div class="test hidden">
+        <form class="small compact clearfix"
+              role="form"
+              data-uid="1503558699872852"
+              data-avatar="http://graph.facebook.com/1503558699872852/picture"
+{#              we must check for permissions if not admin and is nt current user#}
+{#        -> cant send invitations as someone else#}
+              action="invitations?from=current_user&to="
+              method="post"
+              novalidate="novalidate">
+            <div class="animation-container">
+                <div class="msg" style="display: none;"></div>
+                <div class="controls">
+
+                    <div class="control large focus round">
+                        <label for="availabelAfter">Опишете за какво става дума </label>
+                        <fieldset class="main">
+                            <label for="">Дейност</label>
+                            <select name="project" id="project">
+                                <option value="">lqlqlq</option>
+                                <option value="proekt1">proekt 1</option>
+                                <option value="proekt2">proekt 2</option>
+                            </select>
+                            <label for="">Дейност</label>
+                            <select name="project" id="project">
+                                <option value="">lqlqlq</option>
+                                <option value="proekt1">proekt 1</option>
+                                <option value="proekt2">proekt 2</option>
+                            </select>
+                        </fieldset>
+                        <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%"
+                               value="" data-selection="
+                                {% for s in member.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
+                               data-choices=""/>
+                        <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%"
+                               value="" data-selection="
+                                {% for s in member.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
+                               data-choices=""/>
+
+                        <span class="err available_after"></span>
+                    </div>
+
+                    <div class="control clearfix faded">
+                        <label for="joinSkills">
+                            Създайте или изберете задача:
+                        </label>
+                        <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%"
+                               value="" data-selection="
+                                {% for s in member.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
+                               data-choices=""/>
+                        <span class="err skills"></span>
+                        <label for="joinSkills" class="secondary">
+                    <span class="help">Ако не виждате това, което искате, просто го напишете и натиснете „Enter“, за да го добавите.
+                    </span>
+                        </label>
+                    </div>
+                    <div class="last predefined contrasted control round">
+                        <label for="joinSkills">
+                            Съобщение
+                        </label>
+                        <button type="submit" class="button standard green"><b>Изпрати</b>
+                        </button>
+                        <div class="animation-container">
+                            <div>
+                                <strong>Anton Stoychev</strong>
+                                <em>antitoxic@gmail.com</em>
+                                <a href="#" class="change">промени</a>
+                            </div>
+                            <div class="inputs" style="display: none;">
+                                <input type="text" name="name" class="form-control round" placeholder="Име"
+                                       value="Anton Stoychev" data-rule-required="true" aria-required="true">
+                                <span class="err name"></span>
+                                <input type="text" name="email" class="form-control round" placeholder="Email адрес"
+                                       value="antitoxic@gmail.com" data-rule-required="true" data-rule-email="true"
+                                       aria-required="true">
+                                <span class="err email"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-    <div id="preload"></div>
-    <script>
-        genSpinner().spin(document.getElementById('preload'))
-    </script>
 {% endblock %}
 
 {% block headTag %}

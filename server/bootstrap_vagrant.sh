@@ -87,7 +87,6 @@ echo "start on vagrant-mounted
 script
   service nginx restart
   service uwsgi restart
-  (cd $VAGRANT_DIR && source virtualenvwrapper.sh && workon $PROJECT_NAME && pip install -r requirements.dev.txt)
 end script" | sudo tee /etc/init/vagrant-fix.conf
 
 # bower
