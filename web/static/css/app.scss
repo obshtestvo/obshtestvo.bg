@@ -543,6 +543,36 @@ form.small.error {
     text-align: left;
   }
 }
+.alert.orange {
+  background: #7E6043;
+  color: #fff;
+  i.fi {
+    color: #F8912C;
+  }
+}
+h1.center,
+.masthead .head h1.wide {
+  clear: both;
+  margin-left: 4.22%;
+  color: #108eba;
+  line-height: 1em;
+  letter-spacing: -0.05em;
+  padding-bottom: 25px;
+  padding-top: 11px;
+  font-size: 64px;
+}
+h1.center {
+  font-size: 42px;
+}
+.inner.entry h1.center {
+  margin: 0;
+  padding: 0;
+  padding-top: 31px;
+}
+.masthead #sidebar .head h1.wide {
+  font-size: 39px;
+  padding-top: 2px;
+}
 
 #projects .divider.section-heading {
   margin: 36px 0 19px 0;

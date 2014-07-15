@@ -11,13 +11,13 @@
     <section class="content">
         <nav class="nav-tabs">
             <ul class="stripped clearfix">
-                <li><a class="selected" href="">Хора</a></li>
-                <li><a href="#equipmentInfo">Оборудване</a></li>
-                <li><a href="#placeInfo">Място</a></li>
-                <li><a href="#entityInfo">Юридическа сила</a></li>
-                <li><a href="#reachInfo">Публичност</a></li>
-                <li><a href="#expertInfo">Експертиза</a></li>
-                <li><a href="#inspirationInfo">Вдъхновение</a></li>
+                <li class="people selected"><a href="">Хора</a></li>
+                <li class="equipment"><a href="#equipmentInfo">Оборудване</a></li>
+                <li class="place"><a href="#placeInfo">Място</a></li>
+                <li class="entity"><a href="#entityInfo">Юридическа сила</a></li>
+                <li class="publicity"><a href="#reachInfo">Публичност</a></li>
+                <li class="expertise"><a href="#expertInfo">Експертиза</a></li>
+                <li class="inspiration"><a href="#inspirationInfo">Вдъхновение</a></li>
             </ul>
         </nav>
         <section class="users">
@@ -28,10 +28,6 @@
                             <input class="checkbox" type="checkbox" id="check-users-free" checked />
                             <label class="checkbox basic-transition" for="check-users-free">Само тези на разположение
                                 <i class="basic-transition round"></i> </label>
-                        </li>
-                        <li class="label">
-                            <input class="checkbox" type="checkbox" id="check-category" />
-                            <label class="checkbox basic-transition" for="check-category">Покажи в категории спрямо дейност <i class="basic-transition round"></i> </label>
                         </li>
                     </ul>
                     <div class="filter-advanced">
@@ -71,18 +67,36 @@
             </aside>
             <section class="list">
             {% spaceless %}
+                <div class="alert center warning">
+                    <div class="layout">
+                        <p class="left">
+                            Тази страничка още не е готова.
+                            Долу са изброени реални профили, но с примерни имена и снимки вместо тези на участниците.
+                        </p>
+
+                        <i class="fi flaticon-warning18"></i>
+                        <p class="right">
+                            <span class="prompt"><a class="button standard green" href="https://github.com/obshtestvo/obshtestvo.bg/issues?state=open">Включи се</a> в доработката</span>
+                            За да е готова страницата, в сайтът трябва да има
+                            работещи редакция на профил и email известия
+                        </p>
+                    </div>
+                </div>
+                <p class="summary">Общо {{ users|length }} участника, подредени по <strong>най-рядко избирана дейност</strong> и <strong>най-малко избрани дейности</strong></p>
                 <ul class="stripped users-list">
                     {% for id, u in users.items %}
+                    {% with name=anonymous|random %}
                     <li class="user-preview"
+                        data-desc="Когато е готова редакцията на профил, тук, отдясно, ще се появи отговор от всеки учасник на въпроса &OpenCurlyDoubleQuote;Какво се надяваш да стане с Общество след 1г?&OpenCurlyDoubleQuote;"
                         data-is-available="{% if u.is_currently_available %}1{% else %}0{% endif %}"
                         data-project-count="{{ u.preloaded_projects_interests|length }}"
                     >
-                        <h2 class="user-names">{{ u.first_name }} {{ u.last_name }}</h2>
+                        <h2 class="user-names">{{ name.name }}</h2>
                         <div class="avatar">
                             <figure>
-                                <a href="#" class="round"><img src="{{ u.get_avatar }}?width=86&height=86" alt="" /></a>
+                                <a href="#" class="round"><img src="{% static 'img/user-silhouette-'|add:name.type|add:'.png' %}" alt="" /></a>
                             </figure>
-                            <a href="#" class="button standard blue">попитай</a>
+                            <a href="#invitationExample" class="button standard blue">попитай</a>
                         </div>
                         {% with skill_count=u.preloaded_skills|length %}
                         <div class="user-skills">
@@ -123,6 +137,7 @@
                         {% endif %}
                         {% endwith%}
                     </li>
+                    {% endwith %}
                     {% endfor %}
                 </ul>
             {% endspaceless %}
@@ -136,13 +151,13 @@
                                 <figure>
                                     <a href="#"><img src="{{ avatar }}" alt="" /></a>
                                 </figure>
-                                <a href="#" class="button standard blue">попитай</a>
+                                <a href="#invitationExample" class="button standard blue">Попитай</a>
                             </div>
                             <div class="user-desription">
                                 {{ desc }}
                             </div>
                             {{#skillGroups}}
-                                <h4 classs="skill-group">{{name}}</h4>
+                                <h4 class="skill-group">{{name}}</h4>
                                 <ul class="activities-all stripped">
                                     {{#skills}}
                                         <li>{{name}}</li>
@@ -232,11 +247,12 @@
 
             <p>В нея ще се описват възможностите, които Общество.бг, като регистрирано НПО, дава на проектите и всеки участник .</p>
 
-            <p>Примери, които е трудно без да има формална организация:</p>
+            <p>Следните примери са трудни или невъзможни без да има формална организация:</p>
             <ul>
-                <li>Участия в обществена дискусия (това е невъзможно ако не сме НПО) и предложения за промени на закони </li>
+                <li>Участия в обществена дискусия и предложения за промени на закони </li>
                 <li>Натиск по важни въпроси в ролята на организация, състояща се от доста участници и партниращи организации</li>
                 <li>Преговори за дарения към проекта, който Ви интересува, в ролята на организация.</li>
+                <li>Възможности за кандидатстване към курсове, които изискват номинация от НПО</li>
                 <li>Възможност за кандидатстване за финансиране</li>
                 <li>...</li>
             </ul>
@@ -261,11 +277,27 @@
                 експертните им умения, с които са познати.</p>
         </div>
     </div>
+    <div id="invitationExample" class="popup default-popup mfp-with-anim round mfp-hide">
+        <div class="txt round">
+            <p class="alert"><i class="fi flaticon-warning18"></i> Тази страничка още не е готова.</p>
+            <p>Чрез нея ще може да се кани участник към дадена задача. Процесът се стреми да бъде възможно най-улеснен и да автоматизира
+            повтарящите се моменти.</p>
+            <img src="{% static 'img/example-invitation.png' %}"/>
+        </div>
+    </div>
+    <div id="preload"></div>
+    <script>
+        genSpinner().spin(document.getElementById('preload'))
+    </script>
 {% endblock %}
 
 {% block headTag %}
     <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
+{% endblock %}
+
+{% block headScript %}
+    <script src="{% static 'libs/spin.js/spin.js' %}"></script>
 {% endblock %}
 
 {% block footer %}
@@ -280,8 +312,5 @@
     <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
     <script src="{% static 'libs/mixitup/build/jquery.mixitup.min.js' %}"></script>
     <script src="{% static 'libs/packery/dist/packery.pkgd.min.js' %}"></script>
-        Тук се добавят допълнителни javascript файлове по примера на долния ред
     <script src="{% static 'js/users.js' %}"></script>
-        Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея
-        за файл вътре в нея "static/js/users.js"
 {% endblock %}

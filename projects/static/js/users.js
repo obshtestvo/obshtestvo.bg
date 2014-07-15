@@ -105,6 +105,10 @@ $(function () {
             $popup = $(rendered)
             if (!projects.length) $popup.find('.user-projects').remove()
             $user.append($popup);
+            $('.user-popup .avatar .button').magnificPopup({
+                enableEscapeKey: true,
+                closeOnBgClick: true
+            });
             $popup.css('opacity');
             $popup.removeClass('closed');
         })
@@ -191,6 +195,11 @@ $(function () {
         closeOnBgClick: true
     });
 
+    $(".avatar .button").magnificPopup({
+        enableEscapeKey: true,
+        closeOnBgClick: true
+    });
+
     $skills.on("select2-opening", function(e) {
         if (!$content.hasClass('filtering')) {
             var i = setInterval(function() {
@@ -209,6 +218,12 @@ $(function () {
     $('html').click(function() {
         $('.content').removeClass('filtering')
     });
+
+    var $preload = $('#preload');
+    $preload.addClass('done')
+    setTimeout(function() {
+        $preload.remove()
+    },500)
 
 })
 

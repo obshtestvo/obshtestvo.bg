@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.views.generic.base import View
 
 from restful.decorators import restful_view_templates
@@ -37,4 +38,15 @@ class UsersView(View):
 
         result["page"] = "users-page"
         result["skills_options"] = skills_options
+        result["anonymous"] = [
+            {'name': 'Анонимко Анонимков', "type": "male" },
+            {'name': "Анонимка Анонимкова", "type": "female" },
+            {'name': "Минзухар Лешников", "type": "male" },
+            {'name': "Портокалка Табореткова", "type": "female" },
+            {'name': "Пъпешка Оризова", "type": "female" },
+            {'name': "Авокадо Де Парло", "type": "male" },
+            {'name': "Нар Народен", "type": "male" },
+            {'name': "Фъстъчка Пъдпъдъкова", "type": "female" },
+            {'name': "Tиква царевичкова","type": "female" },
+        ]
         return result
