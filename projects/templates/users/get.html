@@ -82,7 +82,7 @@
                         </p>
                     </div>
                 </div>
-                <p class="summary">Общо {{ users|length }} участника, подредени по <strong>най-рядко избирана дейност</strong> и <strong>най-малко избрани дейности</strong></p>
+                <p class="summary">Общо <strong>{{ users|length }}</strong> участника, подредени по <strong>най-рядко избирана дейност</strong> и <strong>най-малко избрани дейности</strong></p>
                 <ul class="stripped users-list">
                     {% for id, u in users.items %}
                     {% with name=anonymous|random %}
