@@ -42,7 +42,7 @@ class UsersView(View):
             {'name': 'Анонимко Анонимков', "type": "male" },
             {'name': "Анонимка Анонимкова", "type": "female" },
             {'name': "Минзухар Лешников", "type": "male" },
-            {'name': "Портокалка Табореткова", "type": "female" },
+            {'name': "Портокалка Табуреткова", "type": "female" },
             {'name': "Пъпешка Оризова", "type": "female" },
             {'name': "Авокадо Де Парло", "type": "male" },
             {'name': "Нар Народен", "type": "male" },
