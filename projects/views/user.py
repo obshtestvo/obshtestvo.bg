@@ -46,14 +46,18 @@ class UserProfileView(View):
     def get(self, request, id):
         user = User.objects.select_related('skills').get(pk=id)
         skills = SkillPickerService().all()
+        form = UserModelForm();
+        user.get_avatar();
         #raise Exception("Error with select2grouped bad string searching leads to fake skills")
 
-        return {"profile": user,
+        return {"form" : form,
+                "profile": user,
                 "all_skills": skills}
 
 
     def post(self, request, id):
         user = User.objects.get(pk=id)
+        full_name = request.params['full_name'].split(' ')
         submitted_skills_ids = request.params['skills'].split('|')
 
         processed_skills_ids = []
@@ -66,9 +70,11 @@ class UserProfileView(View):
             processed_skills_ids.append(s_id)
 
         new_data = request.params.copy()
+        new_data['first_name'] = full_name[0]
+        new_data['last_name'] = full_name[1]
         new_data.setlist('skills', processed_skills_ids)
         #raise Exception(request.params.getlist('skills'))
-        form = UserModelForm(data=get_updated_data(user, new_data), instance=user)
+        form = UserModelForm(data=get_updated_data(user, new_data), files=request.FILES, instance=user)
         if form.is_valid():
             form.save()
         else:
@@ -80,4 +86,4 @@ class UserProfileView(View):
 class UserModelForm(ModelForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'skills']
+        fields = ['first_name', 'last_name', 'email', 'skills', "avatar", "profession", "motivation", "location"]

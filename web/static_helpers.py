@@ -16,14 +16,14 @@ class SassFilter(CompilerFilter):
         super(SassFilter, self).__init__(content, command=self.command, *args, **kwargs)
 
     def input(self, **kwargs):
-        cachefilename = self.get_cachefilename()
-        if os.path.isfile(cachefilename):
-            cache = open(cachefilename, 'r')
-            return cache.read()
+        # cachefilename = self.get_cachefilename()
+        # if os.path.isfile(cachefilename):
+        #     cache = open(cachefilename, 'r')
+        #     return cache.read()
 
         content = super(SassFilter, self).input(**kwargs)
-        cache = open(cachefilename, 'w')
-        cache.write(content)
+        # cache = open(cachefilename, 'w')
+        # cache.write(content)
         return content
 
     def get_cachefilename(self):

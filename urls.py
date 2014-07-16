@@ -27,6 +27,7 @@ urlpatterns = patterns('',
     url(r'^user/(?P<id>\d+)$', user.UserView.as_view(), name='user'),
     url(r'^user/profile/(?P<id>\d+)$', user.UserProfileView.as_view(), name='user-profile'),
     url(r'^users/$', users.UsersView.as_view(), name='users'),
+    url(r'^supplies/$', users.UsersView.as_view(), name='users'),
     url(r'^temp/$', temp.TempView.as_view(), name='temp'),
     url(r'^dashboard/$', dashboard.DashboardView.as_view(), name='dash'),
 )

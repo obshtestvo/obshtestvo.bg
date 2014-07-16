@@ -26,9 +26,13 @@
     {% compress css %}
     <link rel="stylesheet" type="text/x-scss" href="{% static 'css/app.scss' %}">
     {% endcompress %}
-{#    <script src="{% static 'js/lib/modernizr.custom.js' %}"></script>#}
     {% compress js %}
         <script src="{% static "libs/modernizer/modernizr.js" %}"></script>
+        <script src="{% static 'libs/deepmerge/index.js' %}"></script>
+        <script src="{% static 'js/utils.js' %}"></script>
+    {% endcompress %}
+    {% compress js %}
+        {% block headScript %}{% endblock %}
     {% endcompress %}
 </head>
 <body class="{{ page }}">
@@ -55,8 +59,7 @@
                            class="basic-transition-2x"
                                 >Obshtestvo.bg</a>
                     </li>
-                    <li class="basic-transition-mid"><a href="{% url 'support' %}#online">Подкрепи
-                        проектите</a></li>
+                    <li class="basic-transition-mid"><a href="{% url 'users' %}">Всичко за участниците</a></li>
                 </ul>
                 {% block navExtra %}{% endblock %}
                 {% if user.is_authenticated %}
@@ -88,6 +91,8 @@
                     <li class="basic-transition-mid"><a href="{% url 'faq' %}"
                                                         class="basic-transition-2x">Често
                         задавани въпроси</a></li>
+                    <li class="basic-transition-mid"><a href="{% url 'support' %}#online"
+                                                        class="basic-transition-2x">Подкрепи проектите</a>
                     <li class="basic-transition-mid"><a href="{% url 'about' %}"
                                                         class="basic-transition-2x">За
                         инициативата </a></li>
@@ -110,8 +115,6 @@
 <script src="{% static 'libs/jquery/dist/jquery.js' %}"></script>
 <script src="{% static 'libs/OwlCarousel/owl-carousel/owl.carousel.js' %}"></script>
 <script src="{% static 'libs/jquery-waypoints/waypoints.js' %}"></script>
-<script src="{% static 'libs/deepmerge/index.js' %}"></script>
-<script src="{% static 'js/utils.js' %}"></script>
 <script src="{% static 'js/nav.js' %}"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
 {% endcompress %}

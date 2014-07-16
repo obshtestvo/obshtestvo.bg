@@ -196,13 +196,18 @@ class User(AbstractUser):
     has_confirmed_data = models.BooleanField(_('has confirmed custom data'), default=True)
     bio = models.TextField(_('biography'), blank=True, null=True)
     avatar = models.FileField(_('avatar'), upload_to=user_file_name, blank=True, null=True)
+    profession = models.CharField(_('profession'), max_length=70, blank=True)
+    motivation = models.CharField(_('motivation'), max_length=140, blank=True)
+    location = models.TextField(_('location'), blank=True, null=True)  # geoJSON
+
     skills = models.ManyToManyField('Skill', related_name="users", blank=True,
                                       verbose_name=_("skills"))
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
 
+
     def get_avatar(self, uid=None):
         if self.avatar:
-            src = settings.MEDIA_URL + self.avatar.url()
+            src = self.avatar.url
         else:
             uid = settings.SOCIAL_AUTH_FACEBOOK_KEY
             if hasattr(self, 'preloaded_uid'):

@@ -150,18 +150,7 @@
     }
 
     AjaxForm._genSpinner = function () {
-        return new Spinner({
-            lines: 40, // The number of lines to draw
-            length: 0, // The length of each line
-            width: 5, // The line thickness
-            radius: 7, // The radius of the inner circle
-            corners: 1, // Corner roundness (0..1)
-            color: '#74c731', // #rgb or #rrggbb
-            speed: 1, // Rounds per second
-            trail: 50, // Afterglow percentage
-            shadow: false, // Whether to render a shadow
-            hwaccel: true // Whether to use hardware acceleration
-        })
+        return genSpinner();
     }
 
     window.AjaxForm = AjaxForm;

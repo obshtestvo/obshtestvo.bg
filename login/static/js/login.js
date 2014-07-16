@@ -42,7 +42,7 @@ $(function() {
         $.unblockUI()
         $.magnificPopup.open({
             items: {
-                src: '<div class="transparent-popup mfp-with-anim round"> '+html+' </div>'
+                src: '<div class="popup default-popup mfp-with-anim round"> '+html+' </div>'
             }
         });
 
@@ -164,19 +164,9 @@ $(function() {
                     .css('display', 'none')
                 var $msg =  $('<div class="animation-container">').append($msg1, $msg2, $msg3)
                 var $msgWrapper = $('<div>').append($msg, $cancelTrigger)
-                var spinner =   new Spinner({
+                var spinner =  genSpinner({
                     top: '-10px',
-                    left: 'auto',
-                    lines: 40, // The number of lines to draw
-                    length: 0, // The length of each line
-                    width: 5, // The line thickness
-                    radius: 7, // The radius of the inner circle
-                    corners: 1, // Corner roundness (0..1)
-                    color: '#74c731', // #rgb or #rrggbb
-                    speed: 1, // Rounds per second
-                    trail: 50, // Afterglow percentage
-                    shadow: false, // Whether to render a shadow
-                    hwaccel: true // Whether to use hardware acceleration
+                    left: 'auto'
                 })
                 spinner.spin($msgWrapper.get(0))
                 $.blockUI({
