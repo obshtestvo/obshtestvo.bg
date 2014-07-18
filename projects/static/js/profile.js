@@ -2,7 +2,8 @@ $(function () {
     var $skills = $('#joinSkills'),
         avatarPicker = $('#avatar'),
         avatarPrev = $('#prev_avatar'),
-
+        location = $('#location'),
+        geoLoc = JSON.parse(location.attr('value')),
     // The overlay layer for our marker, with a simple diamond as symbol
         overlay = new OpenLayers.Layer.Vector('Overlay', {
             styleMap: new OpenLayers.StyleMap({
@@ -11,14 +12,20 @@ $(function () {
             })
         }),
 
-        myLocation = new OpenLayers.Geometry.Point(10.2, 48.9)
+
+
+        myLocation = new OpenLayers.LonLat(geoLoc.location[0], geoLoc.location[1]),
 
     // Finally we create the map
         map = new OpenLayers.Map({
             div: "map",
             layers: [new OpenLayers.Layer.OSM(), overlay],
-            center: myLocation.getBounds().getCenterLonLat(), zoom: 3
+            center: myLocation, zoom: 3
         });
+
+    myLocation.transform("EPSG:4326", "EPSG:900913");
+
+    console.log(myLocation);
 
     // We add the marker with a tooltip text to the overlay
     overlay.addFeatures([
