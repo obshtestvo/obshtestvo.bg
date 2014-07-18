@@ -32,13 +32,22 @@
         <div style="padding-top:1.5%"><label style="display:block;" class="full_width" for="email">Емайл:</label>
             <input style="width: 75%;" name="email" value="{{ profile.email }} "/>
             <span class="err"></span></div>
+        <div style="padding-top:1.5%"><label style="display:block;" for="location">Местоположение:</label>
+            <input style="display: none; width: 75%;" name="location" id="location" value="{{ profile.location }}"/>
+            <div id="map" style="height: 150px; width: 75%;"></div>
+            <span class="err"></span></div>
+        <div style="padding-top:1.5%"><label style="display:block;" for="profession">Професия:</label>
+            <input style="width: 75%;" name="profession" value="{{ profile.profession }}"/>
+            <span class="err"></span></div>
+        <div style="padding-top:1.5%"><label style="display:block;" for="motivation">Мотивация:</label>
+            <textarea style="width: 75%;" name="motivation">{{ profile.motivation }}</textarea>
+            <span class="err"></span></div>
         <div style="padding-top:1.5%"><label style="display:block;" for="skills">Умения:</label>
             <input type="hidden" id="joinSkills" name="skills" style="width:76%" value=""
                    data-selection="[{% for s in profile.skills.all %}{{ s.id }}{% if not forloop.last %},{% endif %}{% endfor %}]"
                    data-choices="{{ all_skills|jsonify }}"
             />
             <span class="err"></span></div>
-        <button style="float: right; margin-top:2%; margin-right: 24%" class="button small blue" id="update_user_btn">Актуалицирай
-        </button>
+        <button style="float: right; margin-top:2%; margin-right: 24%" class="button small blue" id="update_user_btn">Актуалицирай</button>
     </form>
 {% endblock %}
