@@ -75,6 +75,7 @@ STATICFILES_FINDERS = (
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 SASS_BINARY_PATH = env("SASS_BINARY_PATH")
+IS_PROCESS_RUNNING_SCRIPT = env("IS_PROCESS_RUNNING_SCRIPT", os.path.join(PROJECT_ROOT, 'server/is_process_running_by_keyword.sh'))
 COMPRESS_PRECOMPILERS = (
     ('text/x-sass', 'web.static_helpers.SassFilter'),
     ('text/x-scss', 'web.static_helpers.SassFilter'),
