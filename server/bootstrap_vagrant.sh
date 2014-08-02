@@ -20,7 +20,7 @@ echo "export LANG=en_US.UTF-8" >> $HOME/.zshrc
 
 
 # settings
-if [ -f "$VAGRANT_DIR/server/settings_app.py" ]; then
+if [ -f "$VAGRANT_DIR/server/.env.vagrant" ]; then
     rm $VAGRANT_DIR/server/.env.vagrant
 fi
 cp $VAGRANT_DIR/server/.env.sample $VAGRANT_DIR/server/.env.vagrant
@@ -30,9 +30,11 @@ wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh
 source $HOME/.nvm/nvm.sh
 nvm install 0.10
 nvm alias default 0.10
+NODE_BINARY=`which node`
 
 # bower as frontned package manager
 npm install bower -g
+BOWER_BINARY=`which bower`
 
 # ruby
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
@@ -69,6 +71,7 @@ workon $PROJECT_NAME
 pip install -r $VAGRANT_DIR/requirements.dev.txt
 
 # django database init
+export PROJECT_ENV_FILE=$VAGRANT_DIR/server/.env.vagrant
 python $VAGRANT_DIR/manage.py syncdb --noinput
 python $VAGRANT_DIR/manage.py migrate
 expect -c "spawn python $VAGRANT_DIR/manage.py createsuperuser --username=admin --email=" -c "expect \"Password:\"" -c "send \"admin\n\"" -c "expect \"Password (again):\"" -c "send \"admin\n\"" -c "expect eof"
@@ -87,6 +90,8 @@ echo "start on vagrant-mounted
 script
   service nginx restart
   service uwsgi restart
+  su vagrant -c 'source /home/vagrant/.virtualenvs/$PROJECT_NAME/bin/activate && pip install -r $VAGRANT_DIR/requirements.dev.txt'
+  su vagrant -c 'cd $VAGRANT_DIR/web && $NODE_BINARY $BOWER_BINARY install'
 end script" | sudo tee /etc/init/vagrant-fix.conf
 
 # bower
