@@ -352,11 +352,13 @@ SUIT_CONFIG = {
     'SEARCH_URL': '',
     'ADMIN_NAME': 'Obshtestvo.bg',
     'MENU': (
-        {'label': _('community'), 'icon':'icon-star', 'models': (
-            {'model': 'projects.member', 'label': _('all')},
-            {'model': 'projects.availablemember', 'label': _('ready to help')},
-            {'model': 'projects.readermember', 'label': _('only looking')},
-            {'model': 'projects.paidmember', 'label': _('only paid work')},
+        {'label': _('community'), 'icon':'icon-user', 'models': (
+            {'model': 'projects.user', 'label': _('users')},
+            {'model': 'projects.userprojectpause', 'label': _('project pauses')},
+            {'model': 'projects.useractivity', 'label': _('activities')},
+            {'model': 'default.usersocialauth', 'label': _('social auth')},
+            {'model': 'default.association', 'label': _('social associations')},
+            'auth.group',
         )},
         {'label': _('Partnership & Events'), 'icon':'icon-heart', 'models': (
             {'model': 'projects.organisation', 'label': _('all organisations')},
@@ -385,14 +387,6 @@ SUIT_CONFIG = {
                 {'model': 'projects.skillgroup', 'label': _('skill groups')},
             )
         },
-        {'label': _('System users'), 'icon':'icon-user', 'models': (
-            {'model': 'projects.user', 'label': _('users')},
-            {'model': 'projects.userprojectpause', 'label': _('project pauses')},
-            {'model': 'projects.useractivity', 'label': _('activities')},
-            {'model': 'default.usersocialauth', 'label': _('social auth')},
-            {'model': 'default.association', 'label': _('social associations')},
-            'auth.group',
-        )},
     )
 }
 PUBLIC_SETTINGS = ['SOCIAL_AUTH_FACEBOOK_KEY', 'SOCIAL_AUTH_FACEBOOK_SCOPE']
