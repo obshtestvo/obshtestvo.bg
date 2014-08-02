@@ -73,45 +73,22 @@ python manage.py
 
 #### Ръчна настройка
 
-
-1. Нужен ви е Python 2.7. Проектът не е тестван на други версии.
-1. Трябва да имате **MySQL 5.x**, плюс header файлове. Както и **Node.js**.
-1. Инсталирайте **pip**, ако нямате – `easy_install pip` или `sudo easy_install pip`
-1. Инсталирайте **bower**, ако нямате – `npm install -g bower` или `sudo npm install -g bower`.
-1. Инсталирайте **virtualenvwrapper** – `pip install virtualenvwrapper` или `sudo pip install virtualenvwrapper`.
-1. Заредете командите на **virtualenvwrapper**: `source /usr/local/bin/virtualenvwrapper.sh` – дава достъп до `mkvirtualenv` и други.
-1. `mkvirtualenv recycle --no-site-packages` – ще създаде виртуална среда за инсталиране на pip пакети в `~/.virtualenvs/obshtestvobg`.
-1. `workon recycle` за да превключите на това обкръжение.
-1. Клонирайте хранилището и влезте в директорията на проекта.
-1. Зависимостите за frontend (CSS и JS): `(cd web && bower install)`
-1. Зависимостите на проекта: `pip install -r requirements.txt`
-
-    Ако компилацията на MySQL адаптера не мине, може да се наложи да се изпълни `export CFLAGS=-Qunused-arguments` ([реф.](http://stackoverflow.com/questions/22313407/clang-error-unknown-argument-mno-fused-madd-python-package-installation-fa)) и да се стартира отново командата.
-1. Създайте база данни в MySQL:
-
-    ```
-    mysql -uroot -p -e "CREATE DATABASE recycle CHARACTER SET utf8 COLLATE utf8_general_ci"
-    ```
-1. Създайте файл със специфичните за локалното ви копие настройки, като копирате `server/settings_app.py.sample` като `server/settings_app.py` и въведете там параметрите за достъп до MySQL базата данни.
-1. Подгответе базата за първото пускане на миграциите: `python manage.py syncdb  --noinput`
-1. Пуснете миграциите: `python manage.py migrate`
-1. Направете си админ потребител с `python manage.py createsuperuser`
-1. Пуснете си сървър с `python manage.py runserver`
-
-Би трябвало да може да достъпите приложението на [http://localhost:8000/](http://localhost:8000/).
+Моля разгледайте [скрипта, който инсталира проекта във виртуалната машина](server/bootstrap_vagrant.sh).
+Написан е за *debian*-базирани системи. Ако не го разбирате напълно,
+и искате още инфо, моля [отворете *issue*](https://github.com/obshtestvo/obshtestvo.bg/issues/new).
 
 ### Production среда
 
-Инсталирайте приложението, използвайки инструкциите в предишната секция за ръчни настройки, с тези разлики:
+След инсталация:
 
-1. В `server/settings_app.py`:
+1. В `server/.env`:
 
-	- Променете `DEBUG = True` на `DEBUG = False`.
+	- Променете `DEBUG=True` на `DEBUG=Frue`.
 	- Генерирайте нова стойност на `SECRET_KEY` (с `apg -m32` например).
 
-2. Настройте уеб сървъра си да сервира статичните файлове, намиращи се в `STATIC_ROOT` (обикновено папката `static/` в корена на проекта) на URL `/static/`.
-3. Уверете се, че по време на deployment се изпълнява командата `python manage.py collectstatic -l`, за да се копират статичните файлове от приложението в `STATIC_ROOT`.
-4. Използвайте Nginx или Apache сървър, плюс uwsgi server и uwsgi python plugin. Могат да се използват съответните конфигурационни файлове в папка `server/`.
+2. Настройте уеб сървъра си да сервира статичните файлове, намиращи се в папката `static/` в корена на проекта на URL `/static/`.
+3. Уверете се, че по време на deployment се изпълнява командата `python manage.py collectstatic -l`, за да се копират статичните файлове от приложението в `static/`.
+4. Използвайте Nginx плюс uwsgi server и uwsgi python plugin. Могат да се използват съответните конфигурационни файлове в папка `server/`.
 
 ##### Почистване на кеша на production системата
 
