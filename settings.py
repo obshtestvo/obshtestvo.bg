@@ -161,6 +161,9 @@ if DEBUG:
     INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
     MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
 
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = os.path.join(PROJECT_ROOT, 'server/mail')
+
 ANONYMOUS_USER_ID = -1
 LOGGING = {
     'version': 1,
