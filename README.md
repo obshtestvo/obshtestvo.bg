@@ -35,7 +35,7 @@ vagrant up
 vagrant box add hashicorp/precise32 https://vagrantcloud.com/hashicorp/precise32/version/1/provider/virtualbox.box
 ```
 
-##### Ако се случи да не сайта да спре да работи след като pull-нете
+##### Ако се случи сайтът да спре да работи след като pull-нете
 
 Пробвайте да рестартирате vagrant:
 
