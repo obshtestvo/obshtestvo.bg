@@ -11,8 +11,8 @@ class SassFilter(CompilerFilter):
     type = 'css'
     options = (
         ("binary", settings.SASS_BINARY_PATH),
-        ("compile_args", " --compass --sourcemap"),
-        ("watch_args", " --watch --compass --sourcemap"),
+        ("compile_args", " --compass --sourcemap --cache-location=/var/tmp"),
+        ("watch_args", " --watch --compass --cache-location=/var/tmp --sourcemap --poll"),
     )
 
     def __init__(self, content, attrs, *args, **kwargs):
@@ -32,7 +32,7 @@ class SassFilter(CompilerFilter):
             options["outfile"] = cachefilename
             options["infile"] = self.filename
             command = self.command.format(**options)
-            subprocess.Popen(command, shell=True, stderr=self.stderr)
+            subprocess.Popen(command, shell=True, stderr=self.stderr, cwd=os.path.dirname(self.filename))
 
         cache = codecs.open(cachefilename, "r", "utf-8")
         return cache.read()
