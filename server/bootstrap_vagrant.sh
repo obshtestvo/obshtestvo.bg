@@ -46,6 +46,7 @@ rbenv install 2.1.1
 rbenv global 2.1.1
 
 # sass as CSS precompiler
+gem install sass
 gem install compass --pre
 source $HOME/.zshrc
 
