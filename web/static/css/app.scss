@@ -211,6 +211,7 @@ a.continue {
 
 
 @import "nav";
+@import "form";
 @import "masthead";
 @import "buttons";
 @import "home/home";
@@ -808,6 +809,7 @@ h1.center {
 @import "blockUI";
 @import "footer";
 @import "users";
+@import "styleguide";
 
 @media only screen and (min-width: 1200px) {
   .layout {

@@ -24,6 +24,7 @@
     "jquery-waypoints": "*",
     "spin.js": "*",
     "jquery.validation": "*",
+    "zeroclipboard": "*",
     "hint.css": "*"
   }
 }
