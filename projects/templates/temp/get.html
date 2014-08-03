@@ -1,80 +1,74 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
 {% load url from future %}
-{% load restful %}
 
 {% block content %}
     {% include '_masthead_sample.html' %}
 
-    <section>
-        <p><strong>Главната идеята на <a href="http://localhost:8888/users">страницата с участниците</a></strong>, както е по PSD, да се показват всички участници и да може да се филтрират
-            по дейности и проекти, по това дали са избрали проекти и дали са свободни.</p>
-        <p>По-долу са дадени технически примери и инфо за frontend-a.</p>
-    </section>
-    <section>
-        <div class="layout">
-            пример за съдържание орграничено в layout
-        </div>
-    </section>
-    <section>
-        пример за съдържание извън layout
-    </section>
-    <section>
-        <div class="layout">
-            пример за dropdown-a за дейностите
-            <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%" value=""
-                   data-selection="
-                           {% for s in member.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
-                   data-choices="{{ skills_options|jsonify }}"/>
-        </div>
-    </section>
-    <section>
-        <p>Главния CSS файл "грамадан" се намира в <code>web/static/css/app.css</code>. Препоръки по ре-структурирането
-            или convert-ването му в LESS са добре дошли</p>
-
-        <p>Повечето JS файлове се намират <code>web/static/js</code></p>
-
-        <p>Някой JS/CSS библиотеки се намират <code>web/static/libs</code></p>
-
-        <p>HTML файлът за тази страница се намира в <code>projects/templates/temp/get.html</code></p>
-
-        <p>Вътре във файла има примери как се добавят допълнителни CSS или JS файлове</p>
-    </section>
-    <section>
-        <p>Ако трябва да се style-не нещо което го има на сайта вече, най-лесно е да се inspect-не елемента
-            в сайта и да се види кои класове му дават стила</p>
-    </section>
-    <section>
-        <p>Някои Javascript и css библиотеки и plugin-и които се ползват:</p>
-        <ul>
-            <li><a href="http://necolas.github.io/normalize.css/">normalise.css</a></li>
-            <li><a href="http://jqueryvalidation.org/">jquery validation</a></li>
-            <li><a href="http://ivaynberg.github.io/select2/">select2</a> - за по-добри dropdown, имаме и надградена опция за
-                това в <code>/home/ubuntu/projects/obshtestvo.bg/login/static/js/select2grouped.js</code>, която се
-                ползва за дейностите.
-            </li>
-            <li><a href="http://malsup.com/jquery/block/">block ui</a> - за да се блокира част от екрана докато нещо
-                зарежда или нещо се анимира, така че потребителя да не кликне друго и да се счупи
-            </li>
-            <li><a href="http://dimsemenov.com/plugins/magnific-popup/">magnific-popup</a> - за modal прозорци, подобие на lightbox
-            </li>
-            <li><a href="http://fgnass.github.io/spin.js/">spin.js</a> - за preloader анимацийка, това кръгчето което се върти
-            </li>
-            <li><a href="http://os.alfajango.com/easytabs/">easytabs</a> - за табове
-            </li>
-            <li><a href="http://os.alfajango.com/easytabs/">easytabs</a> - за табове
-            </li>
-            <li><a href="http://isotope.metafizzy.co/filtering.html">istotope</a> - за анимирано филтриране (като това на хорат в PSD-то)
-            </li>
-            <li><a href="http://www.flaticon.com/">http://www.flaticon.com/</a> -  за генратор на иконки като шрифт</li>
-            <li><a href="http://kushagragour.in/lab/hint/">HINT.css</a> -  за ефектни tooltip-и</li>
-            <li><a href="http://www.owlgraphic.com/owlcarousel/">owl carousel</a></li>
-            <li><a href="http://imakewebthings.com/jquery-waypoints/#get-started">waypoints</a></li>
-            <li>... може спокойно да се добавят други.
-            </li>
-        </ul>
-        <p>За това как се ползват разгледайте кода или питайте.</p>
-    </section>
+    
+    <div class="layout">
+        
+        <form>
+            <fieldset class="name">
+                <label for="name">
+                    <h3 class="title-primary">Име и фамилия:</h3>
+                </label>
+                <input type="text" name="name" id="name" value="Цветелина Константинова">
+            </fieldset>
+            <fieldset class="email">
+                <label for="email">
+                    <h3 class="title-primary">Имейл:</h3>
+                    <h4 class="title-info">Адресът ви няма да бъде публично достъпен и няма да ви 
+изпращаме спам. Ще го използваме, за да...</h4>
+                </label>
+                <input type="text" name="email" id="email" value="tsvetelina@konstantinova.bg">
+            </fieldset>
+            <fieldset class="skills">
+                <label for="skills">
+                    <h3 class="title-primary">Избрани дейности:</h3>
+                    <h4 class="title-info">С какво бихте искали да се включите? Не е нужно да е това,
+което умеете най-добре.</h4>
+                </label>
+                <input type="text" name="skills" id="skills" value="Графичен дизайн, UX">
+            </fieldset>
+            <fieldset class="availability">
+                <h3 class="title-primary">Мога да се включа:</h3>
+                <input type="radio" name="now" id="now" value="още сега">
+                <label for="now">още сега</label>
+                <input type="radio" name="later" id="later" value="по-късно">
+                <label for="later">по-късно</label>
+                <label for="date">
+                    <h4 class="title-info">Моля въведете датата, след която ще бъдете на разположение.</h4>
+                </label>
+                <input type="text" name="date" id="date" value="05.09.2014">
+            </fieldset>
+            <fieldset class="location">
+                <label for="location">
+                    <h3 class="title-primary">Местоположение:</h3>
+                </label>
+                <input type="text" name="location" id="location" value="София">
+            </fieldset>
+            <fieldset class="motivation">
+                <label for="motivation">
+                    <h3 class="title-primary">Мотивация:</h3>
+                    <h4 class="title-info">Защо искате да сте част от Общество?</h4>
+                </label>
+                <textarea name="motivation" id="motivation">Защото съм готина и искам да съм още по-готина.</textarea>
+            </fieldset>
+            <input type="submit" value="Запази промените">    
+        </form>
+        <aside>
+            <img alt="Профилна снимка на Цветелина Константинова">
+            <a href="">+ Нова снимка</a>
+            <h3 class="title-primary">Интерес към проекти:</h3>
+            <img alt="Питай ги">
+            <img alt="Recycle"> 
+            <h4 class="title-info">За да промените проектите, които  сте 
+избрали, отидете в <a href="">Таблото с проекти</a>.</h4>
+            <h4 class="title-info">Публичният ви профил е достъпен в <a href="">Хора</a>.</h4>
+        </aside>
+    </div>
+    
 
 {% endblock %}
 
