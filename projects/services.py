@@ -1,4 +1,4 @@
-from models import User, Skill
+from models import User, Skill, SkillGroup, Task
 from collections import OrderedDict
 
 class UsersService:
@@ -110,3 +110,26 @@ class UsersService:
                         if result["skill_groups"][gid] not in result["users"][uid].skill_groups:
                             result["users"][uid].skill_groups.append(result["skill_groups"][gid])
         return result
+
+
+class SkillService:
+
+    def all_grouped_as_picker_options(self):
+        skills_options = []
+        for sgroup in SkillGroup.objects.prefetch_related('skills').all():
+            skills_options.append({
+                "text": sgroup.name,
+                "id": -1,
+                "group": sgroup.name,
+            })
+            for skill in sgroup.skills.all():
+                skills_options.append({
+                    "text": skill.name,
+                    "id": skill.id,
+                    "group": sgroup.name,
+                })
+
+        return {
+            'page': "users-page",
+            'skills_options': skills_options
+        }
