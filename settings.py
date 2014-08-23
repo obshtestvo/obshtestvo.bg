@@ -75,6 +75,7 @@ STATICFILES_FINDERS = (
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 SASS_BINARY_PATH = env("SASS_BINARY_PATH")
+IS_PROCESS_RUNNING_SCRIPT = env("IS_PROCESS_RUNNING_SCRIPT", os.path.join(PROJECT_ROOT, 'server/is_process_running_by_keyword.sh'))
 COMPRESS_PRECOMPILERS = (
     ('text/x-sass', 'web.static_helpers.SassFilter'),
     ('text/x-scss', 'web.static_helpers.SassFilter'),
@@ -120,7 +121,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'restful.error_handler.ErrorHandler',
+    # 'restful.error_handler.ErrorHandler',
     'restful.middleware.ResponseFormatDetection',
 )
 
@@ -160,6 +161,9 @@ INSTALLED_APPS = (
 if DEBUG:
     INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
     MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
+
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = os.path.join(PROJECT_ROOT, 'server/mail')
 
 ANONYMOUS_USER_ID = -1
 LOGGING = {
@@ -348,11 +352,13 @@ SUIT_CONFIG = {
     'SEARCH_URL': '',
     'ADMIN_NAME': 'Obshtestvo.bg',
     'MENU': (
-        {'label': _('community'), 'icon':'icon-star', 'models': (
-            {'model': 'projects.member', 'label': _('all')},
-            {'model': 'projects.availablemember', 'label': _('ready to help')},
-            {'model': 'projects.readermember', 'label': _('only looking')},
-            {'model': 'projects.paidmember', 'label': _('only paid work')},
+        {'label': _('community'), 'icon':'icon-user', 'models': (
+            {'model': 'projects.user', 'label': _('users')},
+            {'model': 'projects.userprojectpause', 'label': _('project pauses')},
+            {'model': 'projects.useractivity', 'label': _('activities')},
+            {'model': 'default.usersocialauth', 'label': _('social auth')},
+            {'model': 'default.association', 'label': _('social associations')},
+            'auth.group',
         )},
         {'label': _('Partnership & Events'), 'icon':'icon-heart', 'models': (
             {'model': 'projects.organisation', 'label': _('all organisations')},
@@ -381,14 +387,6 @@ SUIT_CONFIG = {
                 {'model': 'projects.skillgroup', 'label': _('skill groups')},
             )
         },
-        {'label': _('System users'), 'icon':'icon-user', 'models': (
-            {'model': 'projects.user', 'label': _('users')},
-            {'model': 'projects.userprojectpause', 'label': _('project pauses')},
-            {'model': 'projects.useractivity', 'label': _('activities')},
-            {'model': 'default.usersocialauth', 'label': _('social auth')},
-            {'model': 'default.association', 'label': _('social associations')},
-            'auth.group',
-        )},
     )
 }
 PUBLIC_SETTINGS = ['SOCIAL_AUTH_FACEBOOK_KEY', 'SOCIAL_AUTH_FACEBOOK_SCOPE']

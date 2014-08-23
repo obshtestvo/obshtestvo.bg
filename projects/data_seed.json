@@ -1,0 +1,6035 @@
+[
+{
+    "pk": 1, 
+    "model": "projects.event", 
+    "fields": {
+        "comment": "", 
+        "organizers": [], 
+        "name": "Test Event 0", 
+        "strategy": "", 
+        "contact": "", 
+        "date": null
+    }
+},
+{
+    "pk": 2, 
+    "model": "projects.event", 
+    "fields": {
+        "comment": "", 
+        "organizers": [], 
+        "name": "Test Event 1", 
+        "strategy": "", 
+        "contact": "", 
+        "date": null
+    }
+},
+{
+    "pk": 3, 
+    "model": "projects.event", 
+    "fields": {
+        "comment": "", 
+        "organizers": [], 
+        "name": "Test Event 2", 
+        "strategy": "", 
+        "contact": "", 
+        "date": null
+    }
+},
+{
+    "pk": 4, 
+    "model": "projects.event", 
+    "fields": {
+        "comment": "", 
+        "organizers": [], 
+        "name": "Test Event 3", 
+        "strategy": "", 
+        "contact": "", 
+        "date": null
+    }
+},
+{
+    "pk": 5, 
+    "model": "projects.event", 
+    "fields": {
+        "comment": "", 
+        "organizers": [], 
+        "name": "Test Event 4", 
+        "strategy": "", 
+        "contact": "", 
+        "date": null
+    }
+},
+{
+    "pk": 6, 
+    "model": "projects.event", 
+    "fields": {
+        "comment": "", 
+        "organizers": [], 
+        "name": "Test Event 5", 
+        "strategy": "", 
+        "contact": "", 
+        "date": null
+    }
+},
+{
+    "pk": 7, 
+    "model": "projects.event", 
+    "fields": {
+        "comment": "", 
+        "organizers": [], 
+        "name": "Test Event 6", 
+        "strategy": "", 
+        "contact": "", 
+        "date": null
+    }
+},
+{
+    "pk": 1, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 0", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": []
+    }
+},
+{
+    "pk": 2, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 1", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": []
+    }
+},
+{
+    "pk": 3, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 2", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": []
+    }
+},
+{
+    "pk": 4, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 3", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": []
+    }
+},
+{
+    "pk": 5, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 4", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": []
+    }
+},
+{
+    "pk": 6, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 5", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": []
+    }
+},
+{
+    "pk": 7, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 6", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 8, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 7", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 9, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 8", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            4
+        ]
+    }
+},
+{
+    "pk": 10, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 9", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            4
+        ]
+    }
+},
+{
+    "pk": 11, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 10", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            4
+        ]
+    }
+},
+{
+    "pk": 12, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 11", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 13, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 12", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 14, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 13", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 15, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 14", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            4
+        ]
+    }
+},
+{
+    "pk": 16, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 15", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 17, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 16", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            1
+        ]
+    }
+},
+{
+    "pk": 18, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 17", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            1
+        ]
+    }
+},
+{
+    "pk": 19, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 18", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 20, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 19", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 21, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 20", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 22, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 21", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            3
+        ]
+    }
+},
+{
+    "pk": 23, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 22", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            3
+        ]
+    }
+},
+{
+    "pk": 24, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 23", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 25, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 24", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            3
+        ]
+    }
+},
+{
+    "pk": 26, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 25", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2
+        ]
+    }
+},
+{
+    "pk": 27, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 26", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            3
+        ]
+    }
+},
+{
+    "pk": 28, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 27", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            4
+        ]
+    }
+},
+{
+    "pk": 29, 
+    "model": "projects.organisation", 
+    "fields": {
+        "comment": "", 
+        "name": "Test Organisation 28", 
+        "partnered_project": null, 
+        "found_via": "", 
+        "representatives": "", 
+        "strategy": "", 
+        "middlemen": [], 
+        "provided_help": "", 
+        "contact": "", 
+        "working_with": "", 
+        "types": [
+            2, 
+            3
+        ]
+    }
+},
+{
+    "pk": 1, 
+    "model": "projects.organisationtype", 
+    "fields": {
+        "name": "\u041c\u0435\u0434\u0438\u0439\u043d\u0430 \u043f\u043e\u0434\u043a\u0440\u0435\u043f\u0430"
+    }
+},
+{
+    "pk": 2, 
+    "model": "projects.organisationtype", 
+    "fields": {
+        "name": "\u0421\u043f\u043e\u043d\u0441\u043e\u0440\u0441\u0442\u0432\u043e"
+    }
+},
+{
+    "pk": 3, 
+    "model": "projects.organisationtype", 
+    "fields": {
+        "name": "\u041f\u0430\u0440\u0442\u044c\u043e\u0440\u0441\u0442\u0432\u043e"
+    }
+},
+{
+    "pk": 4, 
+    "model": "projects.organisationtype", 
+    "fields": {
+        "name": "\u0411\u0435\u0437\u043f\u043b\u0430\u0442\u043d\u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0438"
+    }
+},
+{
+    "pk": 1, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0438\u0441\u0430\u043d\u0435 \u043d\u0430 \u043f\u0440\u043e\u0435\u043a\u0442 \u0437\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0440\u0430\u043d\u0435", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 2, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0413\u0440\u0430\u0444\u0438\u0447\u0435\u043d \u0434\u0438\u0437\u0430\u0439\u043d", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 3, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0423\u0435\u0431 \u0434\u0438\u0437\u0430\u0439\u043d", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 4, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041c\u0430\u0440\u043a\u0435\u0442\u0438\u043d\u0433", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 5, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0435\u0432\u043e\u0434\u0438", 
+        "groups": [
+            2
+        ]
+    }
+},
+{
+    "pk": 6, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Business development", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 8, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "iPhone native (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 10, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "PHP (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 11, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0438\u0440\u0430\u043d\u0435, \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0438\u0440\u0430\u043d\u0435", 
+        "groups": [
+            5
+        ]
+    }
+},
+{
+    "pk": 12, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u044f \u043d\u0430 \u0444\u0438\u043b\u043c", 
+        "groups": [
+            4, 
+            5, 
+            2
+        ]
+    }
+},
+{
+    "pk": 13, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u044f \u0441 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0438 \u043c\u0435\u0434\u0438\u0438", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 14, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Frontend (css, html, javascript)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 15, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Ruby (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 16, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u0438 (Prezi)", 
+        "groups": [
+            3, 
+            6
+        ]
+    }
+},
+{
+    "pk": 17, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Podio", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 18, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "PM (\u0440\u044a\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u043d\u0430 \u043f\u0440\u043e\u0435\u043a\u0442\u0438)", 
+        "groups": [
+            5
+        ]
+    }
+},
+{
+    "pk": 19, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Python (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 20, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Java (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 21, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041b\u0438\u043d\u0433\u0432\u0438\u0441\u0442\u0438\u043a\u0430", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 22, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "PR (\u0432\u0440\u044a\u0437\u043a\u0438 \u0441 \u043e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043e\u0441\u0442\u0442\u0430)", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 23, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044f\u043d\u0435 \u043d\u0430 \u0438\u0434\u0435\u0438, sales", 
+        "groups": [
+            3, 
+            9, 
+            7
+        ]
+    }
+},
+{
+    "pk": 24, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043d\u0430 \u043e\u043a\u043e\u043b\u043d\u0430\u0442\u0430 \u0441\u0440\u0435\u0434\u0430", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 25, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Content (\u0441\u044a\u0434\u044a\u0440\u0436\u0430\u043d\u0438\u0435)", 
+        "groups": [
+            2
+        ]
+    }
+},
+{
+    "pk": 26, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0418\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0438 \u043a\u0430\u0440\u0438\u043a\u0430\u0442\u0443\u0440\u0438", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 27, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0410\u043d\u0438\u043c\u0430\u0446\u0438\u044f (3d)", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 28, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0410\u043d\u0438\u043c\u0430\u0446\u0438\u044f (2d)", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 29, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Nodejs (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 30, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Mysql (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 31, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Sysadmin (\u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u043d\u0430 \u0441\u044a\u0440\u0432\u044a\u0440\u0438)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 32, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043b, \u043f\u043e\u0435\u043c\u0430\u043d\u0435 \u043d\u0430 \u0441\u0440\u0435\u0449\u0438", 
+        "groups": [
+            5, 
+            3, 
+            8
+        ]
+    }
+},
+{
+    "pk": 33, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "C# .NET (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 34, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "UX", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 36, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0421\u0447\u0435\u0442\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 37, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Product Development", 
+        "groups": [
+            5, 
+            9
+        ]
+    }
+},
+{
+    "pk": 38, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0430\u0432\u043e", 
+        "groups": [
+            9, 
+            7
+        ]
+    }
+},
+{
+    "pk": 39, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f \u043d\u0430 \u0441\u044a\u0431\u0438\u0442\u0438\u044f", 
+        "groups": [
+            5, 
+            3, 
+            8
+        ]
+    }
+},
+{
+    "pk": 40, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "EU \u043f\u0440\u0430\u0432\u043d\u0438 \u043f\u044a\u0442\u0435\u043a\u0438", 
+        "groups": [
+            3, 
+            9
+        ]
+    }
+},
+{
+    "pk": 41, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0424\u043e\u043d\u0434\u043e\u043d\u0430\u0431\u0438\u0440\u0430\u043d\u0435", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 43, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 44, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Android native (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 45, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0410\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 46, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0424\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u044f", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 47, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0430\u0432\u043e (\u0434\u0430\u043d\u044a\u0447\u043d\u043e)", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 48, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0414\u044a\u0440\u0436\u0430\u0432\u043d\u0430 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f", 
+        "groups": [
+            3, 
+            9
+        ]
+    }
+},
+{
+    "pk": 49, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0430\u0432\u043e (\u0434\u0440\u0443\u0436\u0435\u0441\u0442\u0432\u0435\u043d\u043e)", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 50, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Oracle", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 51, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "QA", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 53, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0435\u0433\u043e\u0432\u043e\u0440\u0438", 
+        "groups": [
+            5, 
+            6, 
+            7
+        ]
+    }
+},
+{
+    "pk": 54, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Usability testing", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 55, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0416\u0443\u0440\u043d\u0430\u043b\u0438\u0441\u0442\u0438\u043a\u0430", 
+        "groups": [
+            3, 
+            2, 
+            9, 
+            7
+        ]
+    }
+},
+{
+    "pk": 56, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041a\u0440\u0438\u043c\u0438\u043d\u043e\u043b\u043e\u0433\u0438\u044f", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 57, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Research", 
+        "groups": [
+            3, 
+            9
+        ]
+    }
+},
+{
+    "pk": 58, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f", 
+        "groups": [
+            2
+        ]
+    }
+},
+{
+    "pk": 59, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0424\u0438\u043d\u0430\u043d\u0441\u0438", 
+        "groups": [
+            5, 
+            6
+        ]
+    }
+},
+{
+    "pk": 60, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0438 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044f", 
+        "groups": [
+            9, 
+            7
+        ]
+    }
+},
+{
+    "pk": 62, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Adobe Air (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 63, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Starling (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 64, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u043e\u043c\u043e\u0446\u0438\u0438", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 65, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Wordpress (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 68, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Phonegap", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 69, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Cordova (\u043a\u043e\u0434)", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 70, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Mongo DB", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 72, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041c\u043e\u0434\u0435\u0440\u0430\u0446\u0438\u044f \u043d\u0430 \u0441\u044a\u0434\u044a\u0440\u0436\u0430\u043d\u0438\u0435", 
+        "groups": [
+            2
+        ]
+    }
+},
+{
+    "pk": 73, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Proofreading", 
+        "groups": [
+            2
+        ]
+    }
+},
+{
+    "pk": 74, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u0434\u043e\u043d\u043e\u0440\u0441\u043a\u0438 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 75, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u043a\u043e\u043d\u043a\u0443\u0440\u0441\u0438 \u0437\u0430 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0440\u0430\u043d\u0435", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 76, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Email \u043a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u044f \u0441 \u043f\u0430\u0440\u0442\u043d\u044c\u043e\u0440\u0438", 
+        "groups": [
+            3, 
+            6
+        ]
+    }
+},
+{
+    "pk": 77, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0438\u0441\u0430\u043d\u0435 \u043d\u0430 \u0441\u044a\u0434\u044a\u0440\u0436\u0430\u043d\u0438\u0435 \u0437\u0430 \u043f\u0440\u043e\u0435\u043a\u0442\u0438", 
+        "groups": [
+            2
+        ]
+    }
+},
+{
+    "pk": 78, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u043d\u0430 \u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0442\u0435", 
+        "groups": [
+            3, 
+            2
+        ]
+    }
+},
+{
+    "pk": 79, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "Crowdsourcing \u0434\u0430\u043d\u043d\u0438 \u0437\u0430 \u043c\u0435\u0441\u0442\u0430 \u0438 \u0443\u0441\u043b\u0443\u0433\u0438", 
+        "groups": [
+            2, 
+            8
+        ]
+    }
+},
+{
+    "pk": 80, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u043e\u0441\u0440\u0435\u0434\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u043e", 
+        "groups": [
+            3, 
+            6, 
+            7
+        ]
+    }
+},
+{
+    "pk": 81, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041c\u043e\u0442\u043e, taglines", 
+        "groups": [
+            2
+        ]
+    }
+},
+{
+    "pk": 82, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0421\u0442\u0430\u0442\u0438\u0438 \u0438 \u0438\u043d\u0442\u0435\u0440\u0432\u044e\u0442\u0430", 
+        "groups": [
+            3, 
+            2
+        ]
+    }
+},
+{
+    "pk": 83, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0421\u043b\u0435\u0434\u0435\u043d\u0435 \u043d\u0430 \u043d\u043e\u0432\u043e\u0441\u0442\u0438, \u0430\u043a\u0442\u0443\u0430\u043b\u043d\u043e\u0441\u0442", 
+        "groups": [
+            5, 
+            3, 
+            6, 
+            8
+        ]
+    }
+},
+{
+    "pk": 84, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u044f, \u043f\u0440\u0435\u043f\u043e\u0440\u044a\u043a\u0438 \u043a\u044a\u043c \u043f\u0440\u0430\u0432\u0438\u0442\u0435\u043b\u0441\u0442\u0432\u043e\u0442\u043e", 
+        "groups": [
+            3, 
+            2, 
+            7
+        ]
+    }
+},
+{
+    "pk": 85, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0412\u044a\u0432\u0435\u0436\u0434\u0430\u043d\u0435 \u043d\u0430 \u043d\u043e\u0432\u0438 it \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u0438 \u0438 \u0442\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u0438", 
+        "groups": [
+            1
+        ]
+    }
+},
+{
+    "pk": 86, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0410\u043d\u0430\u043b\u0438\u0437\u0430 \u0438 \u0441\u044a\u0432\u0435\u0442\u0438 \u0437\u0430 \u043a\u043e\u0440\u0435\u043a\u0446\u0438\u0438", 
+        "groups": [
+            5, 
+            9
+        ]
+    }
+},
+{
+    "pk": 87, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041d\u0430\u0431\u043b\u044e\u0434\u0435\u043d\u0438\u0435 \u0438 \u0432\u0440\u044a\u0437\u043a\u0430 \u0441 \u043d\u043e\u0432\u0438 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f \u0438 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u043f\u043e\u0434\u043e\u0431\u043d\u0438 \u0446\u0435\u043b\u0438", 
+        "groups": [
+            5, 
+            3
+        ]
+    }
+},
+{
+    "pk": 88, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0422\u044a\u0440\u0441\u0435\u043d\u0435 \u043d\u0430 \u0441\u044a\u0431\u0438\u0442\u0438\u044f  \u0437\u0430 \u0438\u0437\u044f\u0432\u0438", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 89, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u043e\u0434\u0434\u044a\u0440\u0436\u0430\u043d\u0435 \u043d\u0430 \u0430\u043a\u0430\u0443\u043d\u0442\u0438 \u0432 \u0441\u043e\u0446\u0438\u0430\u043b\u043d\u0438\u0442\u0435 \u043c\u0440\u0435\u0436\u0438", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 90, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u043e\u0434\u0434\u044a\u0440\u0436\u0430\u043d\u0435 \u043d\u0430 \u0431\u043b\u043e\u0433", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 91, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0412\u043e\u0434\u0435\u043d\u0435 \u043d\u0430 \u0437\u0430\u043f\u0438\u0441\u043a\u0438", 
+        "groups": [
+            5, 
+            8
+        ]
+    }
+},
+{
+    "pk": 92, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0430\u0442\u0440\u043e\u043d \u043d\u0430 \u043a\u0430\u0443\u0437\u0430, \u043f\u0440\u043e\u043c\u043e\u0443\u0442\u044a\u0440 \u0441 \u0430\u0432\u0442\u043e\u0440\u0438\u0442\u0435\u0442", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 93, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0421\u0440\u0435\u0449\u0438 \u0441 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u0446\u0438\u0442\u0435, \u0433\u0440\u0438\u0436\u0430 \u0437\u0430 \u043e\u0431\u0449\u043d\u043e\u0441\u0442\u0442\u0430", 
+        "groups": [
+            5, 
+            3
+        ]
+    }
+},
+{
+    "pk": 94, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0418\u0434\u0435\u0438 \u0437\u0430 \u043c\u043e\u0442\u0438\u0432\u0430\u0446\u0438\u044f \u043d\u0430 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u0446\u0438\u0442\u0435 \u0438 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0438\u0440\u0430\u043d\u0442\u043e \u0438\u043c", 
+        "groups": [
+            5, 
+            3
+        ]
+    }
+},
+{
+    "pk": 95, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0417\u0430\u0435\u043c\u0430\u043d\u0435 \u043d\u0430 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e \u043e\u0431\u043e\u0440\u0443\u0434\u0432\u0430\u043d\u0435", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 96, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0417\u0430\u0435\u043c\u0430\u043d\u0435 \u043d\u0430 \u0437\u0430\u043b\u0430, \u043c\u044f\u0441\u0442\u043e", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 97, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0417\u0430\u043f\u0438\u0441 \u043d\u0430 \u0441\u0440\u0435\u0449\u0438 \u0438 \u0432\u0440\u044a\u0437\u043a\u0430 online/offline \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u0446\u0438\u0442\u0435", 
+        "groups": [
+            8
+        ]
+    }
+},
+{
+    "pk": 98, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041a\u0430\u043d\u0446\u0435\u043b\u0430\u0440\u0438\u044f (\u043f\u0435\u0447\u0430\u0442\u0430\u043d\u0435, \u043f\u043e\u0434\u0432\u044a\u0437\u0432\u0430\u043d\u0435, \u0431\u0430\u0442\u0435\u0440\u0438\u0438, \u0444\u043b\u0430\u0448\u043a\u0438..)", 
+        "groups": [
+            6, 
+            8
+        ]
+    }
+},
+{
+    "pk": 99, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0412\u0438\u0434\u0435\u043e \u0438 \u0430\u0443\u0434\u0438\u043e \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0430", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 100, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0435\u0447\u0430\u0442\u0430\u043d\u0435 \u043d\u0430 \u0440\u0435\u043a\u043b\u0430\u043c\u043d\u0438 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0438", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 101, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0420\u0435\u0436\u0438\u0441\u0443\u0440\u0430, \u0445\u043e\u0440\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u044f", 
+        "groups": [
+            4
+        ]
+    }
+},
+{
+    "pk": 102, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0423\u0440\u0431\u0430\u043d\u0438\u0441\u0442\u0438\u043a\u0430", 
+        "groups": [
+            4, 
+            9
+        ]
+    }
+},
+{
+    "pk": 103, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f \u0438 \u043d\u0430\u0441\u0440\u043e\u0447\u0432\u0430\u043d\u0435 \u043d\u0430 \u0441\u0440\u0435\u0449\u0438", 
+        "groups": [
+            5, 
+            3
+        ]
+    }
+},
+{
+    "pk": 104, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u043e\u0434\u0434\u044a\u0440\u0436\u0430\u043d\u0435 \u043d\u0430 \u0432\u0440\u044a\u0437\u043a\u0430 \u0441 \u043f\u0430\u0440\u0442\u043d\u044c\u043e\u0440\u0438", 
+        "groups": [
+            7
+        ]
+    }
+},
+{
+    "pk": 105, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0421\u0431\u0438\u0440\u043a\u0438 \u0442\u0438\u043f \u043e\u0442\u0432\u043e\u0440\u0435\u043d\u0438 \u0432\u0440\u0430\u0442\u0438", 
+        "groups": [
+            3
+        ]
+    }
+},
+{
+    "pk": 106, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f \u0438 \u043f\u043e\u0441\u0440\u0435\u0449\u0430\u043d\u0435 \u043d\u0430 \u0433\u043e\u0441\u0442\u0438 \u0438\u0437\u0432\u044a\u043d \u0421\u043e\u0444\u0438\u044f \u0438\u043b\u0438 \u0441\u0442\u0440\u0430\u043d\u0430\u0442\u0430", 
+        "groups": [
+            5, 
+            3, 
+            6
+        ]
+    }
+},
+{
+    "pk": 107, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0414\u043e\u043c\u0435\u0439\u043d\u0438 \u0438 \u0441\u044a\u0440\u0432\u044a\u0440 \u0437\u0430 \u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0442\u0435", 
+        "groups": [
+            6
+        ]
+    }
+},
+{
+    "pk": 108, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0430", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 109, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 110, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u043c\u0430\u043b\u0446\u0438\u043d\u0441\u0442\u0432\u0430", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 111, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u0445\u043e\u0440\u0430 \u0441 \u0443\u0432\u0435\u0436\u0434\u0430\u043d\u0438\u044f", 
+        "groups": [
+            9
+        ]
+    }
+},
+{
+    "pk": 112, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u0430 \u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0430", 
+        "groups": [
+            4, 
+            5
+        ]
+    }
+},
+{
+    "pk": 113, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "ElasticSearch", 
+        "groups": []
+    }
+},
+{
+    "pk": 114, 
+    "model": "projects.skill", 
+    "fields": {
+        "name": "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u0438 \u0434\u0430 \u0438\u043c\u0430 - \u0440\u0435\u0448\u0435\u043d\u0438\u044f \u0441\u0435 \u043d\u0430\u043c\u0438\u0440\u0430\u0442", 
+        "groups": []
+    }
+},
+{
+    "pk": 1, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u0421\u043e\u0444\u0442\u0443\u0435\u0440", 
+        "order": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u0421\u044a\u0434\u044a\u0440\u0436\u0430\u043d\u0438\u0435 \u0438 copywrite", 
+        "order": 4
+    }
+},
+{
+    "pk": 3, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u041f\u0443\u0431\u043b\u0438\u0447\u043d\u043e\u0441\u0442 \u0438 \u043a\u043e\u043c\u0443\u043d\u0438\u043a\u0430\u0446\u0438\u044f", 
+        "order": 3
+    }
+},
+{
+    "pk": 4, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u0412\u0438\u0437\u0443\u0430\u043b\u043d\u0438 \u0438 \u0430\u0443\u0434\u0438\u043e", 
+        "order": 0
+    }
+},
+{
+    "pk": 5, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u041a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0446\u0438\u044f \u0438 \u0440\u044a\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e", 
+        "order": 2
+    }
+},
+{
+    "pk": 6, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u0424\u0438\u043d\u0430\u043d\u0441\u0438\u0440\u0430\u043d\u0435, \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043d\u043e \u043e\u0431\u0435\u0437\u043f\u0435\u0447\u0430\u0432\u0430\u043d\u0435", 
+        "order": 6
+    }
+},
+{
+    "pk": 7, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0438 \u0438 \u043f\u0430\u0440\u0442\u043d\u044c\u043e\u0440\u0441\u0442\u0432\u0430 \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0438, \u043d\u0430\u0434\u0435\u0436\u0434\u043d\u043e\u0441\u0442", 
+        "order": 7
+    }
+},
+{
+    "pk": 8, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u041f\u043e\u043b\u0435\u0432\u0430 \u0440\u0430\u0431\u043e\u0442\u0430", 
+        "order": 8
+    }
+},
+{
+    "pk": 9, 
+    "model": "projects.skillgroup", 
+    "fields": {
+        "name": "\u0420\u0430\u0437\u043d\u043e\u0440\u043e\u0434\u043d\u0430 \u0435\u043a\u0441\u043f\u0435\u0440\u0442\u0438\u0437\u0430 \u0437\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0438", 
+        "order": 5
+    }
+},
+{
+    "pk": -1, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser0", 
+        "bio": "", 
+        "first_name": "TestFirstName0", 
+        "last_name": "TestLastName0", 
+        "has_confirmed_data": true, 
+        "skills": [], 
+        "is_browsable": false, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$Rx8hgfBkoyob$Or/0sKoRCfhRoVjdBywMGw7vH3nKuNaZOOI1DhVhvz4=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser1", 
+        "bio": "", 
+        "first_name": "TestFirstName1", 
+        "last_name": "TestLastName1", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            32, 
+            53, 
+            76, 
+            80, 
+            84, 
+            87, 
+            103
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            20
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$SWkWzc7GAJcb$6d4KyNl1BsSuj/iifQIr7yJ8S9wHGAFvTc6I2jN342M=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser2", 
+        "bio": "", 
+        "first_name": "TestFirstName2", 
+        "last_name": "TestLastName2", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            15, 
+            18, 
+            19, 
+            93
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$JIP302FHG6QB$A7pUZKaXby5R0WSXTJ+VrRaqjZLGJoKRc+IPrWU/WFc=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 7, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser3", 
+        "bio": "", 
+        "first_name": "TestFirstName3", 
+        "last_name": "TestLastName3", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            11, 
+            14, 
+            18, 
+            19, 
+            20, 
+            29, 
+            30, 
+            32, 
+            33, 
+            37, 
+            39, 
+            57, 
+            76, 
+            78, 
+            86, 
+            87, 
+            91, 
+            93, 
+            94, 
+            101, 
+            103, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            9
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$V8aposQPRDAE$U6FLAminNGRMwEH/jASR+nDw3+rLY8S0IGEI7uarFdM=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 8, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser4", 
+        "bio": "", 
+        "first_name": "TestFirstName4", 
+        "last_name": "TestLastName4", 
+        "has_confirmed_data": true, 
+        "skills": [
+            21, 
+            58, 
+            94, 
+            109
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$Kq1Z7i0uX5Sg$k7J20QWW3OFysa539X4h0BGsWBMtfNMo6Gss6lKvGzQ=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 9, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser5", 
+        "bio": "", 
+        "first_name": "TestFirstName5", 
+        "last_name": "TestLastName5", 
+        "has_confirmed_data": true, 
+        "skills": [
+            39, 
+            46, 
+            86, 
+            94, 
+            108, 
+            109, 
+            111
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$wvBpGG520jvG$CFjvMuTKKOTrUEk/PBjIOD3U6y0/S2dQDsaXCxRKGpU=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 10, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser6", 
+        "bio": "", 
+        "first_name": "TestFirstName6", 
+        "last_name": "TestLastName6", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            14, 
+            30
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            7
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$BizwUCGP15Eo$rSEUfqvEGRx89O5Ab4fr6hiWjUwmoJmQia52IOSGeo0=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 11, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser7", 
+        "bio": "", 
+        "first_name": "TestFirstName7", 
+        "last_name": "TestLastName7", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            15, 
+            16, 
+            29, 
+            37, 
+            39, 
+            57, 
+            68, 
+            69, 
+            70, 
+            78, 
+            82, 
+            85, 
+            87, 
+            89, 
+            90, 
+            94, 
+            105
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$eheNkp8NsXva$JKvLK/ODqPKZIRrQGXcVzPXXHmVGaSv6aBXz2MBsWcY=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 12, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser8", 
+        "bio": "", 
+        "first_name": "TestFirstName8", 
+        "last_name": "TestLastName8", 
+        "has_confirmed_data": true, 
+        "skills": [
+            23, 
+            45, 
+            53, 
+            80, 
+            83, 
+            84, 
+            102, 
+            104, 
+            109
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$1xYM63GulRAT$nlpvcZe/dLTo5jjDGNn/8SG40ayuyx6FWVEi/sxY6B8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 13, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser9", 
+        "bio": "", 
+        "first_name": "TestFirstName9", 
+        "last_name": "TestLastName9", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            11, 
+            14, 
+            15, 
+            30, 
+            31, 
+            32, 
+            37, 
+            39, 
+            65, 
+            85, 
+            91, 
+            93, 
+            94, 
+            103, 
+            106
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            1, 
+            2, 
+            9
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$W9wtkWa1UmEl$VyeQ1L14E618JmATxLxbffOmvVvJNUcSznGLI4kF/qI=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 14, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser10", 
+        "bio": "", 
+        "first_name": "TestFirstName10", 
+        "last_name": "TestLastName10", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4, 
+            13, 
+            16, 
+            25, 
+            32, 
+            86, 
+            89
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$YPrepzAJB6WF$cs0H7b3/Ja/ZtYL9iruaPTvh6ylDqSvnlhdNF2gS7Fo=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 15, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser11", 
+        "bio": "", 
+        "first_name": "TestFirstName11", 
+        "last_name": "TestLastName11", 
+        "has_confirmed_data": true, 
+        "skills": [
+            1, 
+            38
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-10", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$LQfT4VfmYPSX$awAMjz5lmL9aBxT0o0jz1Y+zMWgvA10vYRM6yz5Znko=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 16, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser12", 
+        "bio": "", 
+        "first_name": "TestFirstName12", 
+        "last_name": "TestLastName12", 
+        "has_confirmed_data": true, 
+        "skills": [
+            6, 
+            10, 
+            11, 
+            14, 
+            18, 
+            19, 
+            30, 
+            31, 
+            32, 
+            37, 
+            43, 
+            53, 
+            57, 
+            85, 
+            86, 
+            109, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            22
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$9vDaUieHciq8$43uiDh12ylYRl1GQYyvmD0aUkLHZbZ/2dKKObdAbcIE=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 17, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser13", 
+        "bio": "", 
+        "first_name": "TestFirstName13", 
+        "last_name": "TestLastName13", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            11, 
+            34, 
+            37, 
+            46, 
+            86, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$whU9rFbgJMyf$1VK/Fap9swZAtDSgJcC0kTND9C4llsQrScaywGdjLEg=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 18, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser14", 
+        "bio": "", 
+        "first_name": "TestFirstName14", 
+        "last_name": "TestLastName14", 
+        "has_confirmed_data": true, 
+        "skills": [
+            3, 
+            14, 
+            34, 
+            37
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$jvCGCXUIQPGQ$J5E88nZEs7Rh+vCsTo3yy96XA32XXVeujzNwd9Hjea0=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 19, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser15", 
+        "bio": "", 
+        "first_name": "TestFirstName15", 
+        "last_name": "TestLastName15", 
+        "has_confirmed_data": true, 
+        "skills": [
+            5
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$OuB900Gtjya1$uHBtC8A4UBd2q8KXgdd/6u4gd5Hz9P3xdfxYLVlEwsA=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 20, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser16", 
+        "bio": "", 
+        "first_name": "TestFirstName16", 
+        "last_name": "TestLastName16", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            26, 
+            27, 
+            28, 
+            34, 
+            46
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-07-17", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$xYRy70vLvE7R$qU1bTGBhLGkf224t/R9I1j2FWtlcq/xdWJttNjaKytQ=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 21, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser17", 
+        "bio": "", 
+        "first_name": "TestFirstName17", 
+        "last_name": "TestLastName17", 
+        "has_confirmed_data": true, 
+        "skills": [
+            48, 
+            53, 
+            55, 
+            57, 
+            60, 
+            82, 
+            84, 
+            87, 
+            104, 
+            105
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            15
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$z5RnhEJw7d6F$0VgF2zC0SRSisAtQ8Ot2FoDWWYhAXim9qNuefu1Gszk=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 22, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser18", 
+        "bio": "", 
+        "first_name": "TestFirstName18", 
+        "last_name": "TestLastName18", 
+        "has_confirmed_data": true, 
+        "skills": [
+            55, 
+            84
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$PXMbmmeuvS3s$I9O2BxxZSSkf1YsrMALpxjwYAp+dgVxSjqxcp1xgNXo=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 23, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser19", 
+        "bio": "", 
+        "first_name": "TestFirstName19", 
+        "last_name": "TestLastName19", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            5, 
+            16, 
+            25, 
+            34, 
+            54, 
+            57, 
+            73, 
+            78, 
+            84, 
+            99
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$kG0bEFBh0ooI$IoHFEvfs7e5v55K56pYKpnLGFVe4TxeE5jLP8eELsao=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 24, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser20", 
+        "bio": "", 
+        "first_name": "TestFirstName20", 
+        "last_name": "TestLastName20", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$6NqJvxIzUMa4$PtBjLJit6M4ZmG7Pf8Kh6QhOYJHAk0Aqq9QTZCfEWM8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 25, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser21", 
+        "bio": "", 
+        "first_name": "TestFirstName21", 
+        "last_name": "TestLastName21", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            15
+        ], 
+        "available_after": "2014-07-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$dP2nP2aagKc4$EzUvWJiZbwvyGeQt6XONAbmltVnmVkNNE7UerPd3tq8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 26, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser22", 
+        "bio": "", 
+        "first_name": "TestFirstName22", 
+        "last_name": "TestLastName22", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$Css8NIqT3mOK$aRCbc/2die6iWwjxtwoc1s+fDgZzM7sYMb62f0DuBco=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 27, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser23", 
+        "bio": "", 
+        "first_name": "TestFirstName23", 
+        "last_name": "TestLastName23", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            14, 
+            28, 
+            34, 
+            54, 
+            57, 
+            81
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            3, 
+            9
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$oCaLLCvxrC9V$cfQhwIcuRImGbYYnB8RmOYwv7XFjB6rQ+E5F3fWrWdY=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 28, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser24", 
+        "bio": "", 
+        "first_name": "TestFirstName24", 
+        "last_name": "TestLastName24", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            12, 
+            13, 
+            16, 
+            18, 
+            32, 
+            37, 
+            39, 
+            55, 
+            58, 
+            79, 
+            81, 
+            82, 
+            86, 
+            87, 
+            88, 
+            104, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            15, 
+            22
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$pgoKCX59t94V$4j9IuCcyGTv5znuWhf2moQu5BWiARguLU5Y7b1AtmDg=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 29, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser25", 
+        "bio": "", 
+        "first_name": "TestFirstName25", 
+        "last_name": "TestLastName25", 
+        "has_confirmed_data": true, 
+        "skills": [
+            39
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-07-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$KYZtoZl0JBaY$Ej17LPkI3px35BZNsBKnADMP4Agar2iAJW3gL3vbmZs=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 30, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser26", 
+        "bio": "", 
+        "first_name": "TestFirstName26", 
+        "last_name": "TestLastName26", 
+        "has_confirmed_data": true, 
+        "skills": [
+            15, 
+            20
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$vxPJzZjljBTZ$Xc6CjVkGI+FUeHqiHfEfQCaf2QI0++3iWu0FGx3wR9M=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 31, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser27", 
+        "bio": "", 
+        "first_name": "TestFirstName27", 
+        "last_name": "TestLastName27", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            34, 
+            46, 
+            86, 
+            99, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-08-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$YxgxVAv0skmn$G7LgB3bBgD06c0bbLpucMp6sX0f/zEDd2ng7J1IZKNM=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 32, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser28", 
+        "bio": "", 
+        "first_name": "TestFirstName28", 
+        "last_name": "TestLastName28", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            14, 
+            18, 
+            19, 
+            30, 
+            65
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            15
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$eUrWmMSfrr7F$PJf715VIg1R+Ozgj7EbPKlnc0DL+2CD2zC7IP+t4/14=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 33, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser29", 
+        "bio": "", 
+        "first_name": "TestFirstName29", 
+        "last_name": "TestLastName29", 
+        "has_confirmed_data": true, 
+        "skills": [
+            20, 
+            21, 
+            44, 
+            57, 
+            85
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-08-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$JGbWDRupBOva$KDih//WOB1zOpKM7Y3B+xLbb+05zgUlJ31Oyic+f/Jc=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 34, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser30", 
+        "bio": "", 
+        "first_name": "TestFirstName30", 
+        "last_name": "TestLastName30", 
+        "has_confirmed_data": true, 
+        "skills": [
+            43, 
+            83, 
+            102
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$xIaxogMrLciG$y2rQuDwsW6E7m1QRfZux76sViPQ2AALw7I923zceP3s=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 35, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser31", 
+        "bio": "", 
+        "first_name": "TestFirstName31", 
+        "last_name": "TestLastName31", 
+        "has_confirmed_data": true, 
+        "skills": [
+            22, 
+            40, 
+            48, 
+            55, 
+            60, 
+            89, 
+            90
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$MKP32gHaPw9y$kXK1FrBzEre7fqiA3jFSCuUKGJK49/K2W8qmDaE8JKA=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 36, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser32", 
+        "bio": "", 
+        "first_name": "TestFirstName32", 
+        "last_name": "TestLastName32", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            14, 
+            30, 
+            65
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$253qWz0FIC1E$Xi0kGMbr+NEh4jWjtwbB4POksBUb/voJQfXPhLX/ZVg=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 37, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser33", 
+        "bio": "", 
+        "first_name": "TestFirstName33", 
+        "last_name": "TestLastName33", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            12, 
+            39, 
+            45, 
+            46, 
+            83, 
+            102, 
+            106
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$lYJa4tauiRi2$11z6dG9BoOpgbekIbTt26YQVNSKibC3SSiZiMW3xP9A=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 38, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser34", 
+        "bio": "", 
+        "first_name": "TestFirstName34", 
+        "last_name": "TestLastName34", 
+        "has_confirmed_data": true, 
+        "skills": [
+            58, 
+            73
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$O6wU9pE4DoEZ$SUgX4BYTwGhygrSMPS9Msdf1XA3LxvaIUazoCGyXi0A=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 39, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser35", 
+        "bio": "", 
+        "first_name": "TestFirstName35", 
+        "last_name": "TestLastName35", 
+        "has_confirmed_data": true, 
+        "skills": [
+            15
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-06-30", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$w46TiLzeTnIa$bSYhBE9hTSmmPEu5h+KHnEzcOLmUubEs6hxsSdVuSw0=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 40, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser36", 
+        "bio": "", 
+        "first_name": "TestFirstName36", 
+        "last_name": "TestLastName36", 
+        "has_confirmed_data": true, 
+        "skills": [
+            23, 
+            84
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-06-30", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$on7ZpSIqYsvz$k6c+wu4s5JO2O59wcfaYaIb23hyIwTJ2lbMEtDAy8xQ=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 41, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser37", 
+        "bio": "", 
+        "first_name": "TestFirstName37", 
+        "last_name": "TestLastName37", 
+        "has_confirmed_data": true, 
+        "skills": [
+            6, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-15", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$NTxyRu2l683e$6XRTOii9HWpbzx3mYs4OY/KF3kJhb2AYlFWM725D4Xo=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 42, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser38", 
+        "bio": "", 
+        "first_name": "TestFirstName38", 
+        "last_name": "TestLastName38", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            14, 
+            17, 
+            30, 
+            31, 
+            65, 
+            85
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$fgta4K2hz6Rf$Qq5RgtUQjW3c8JWj0CqP8RZBGdDG2mrFr3nF14KdvOI=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 43, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser39", 
+        "bio": "", 
+        "first_name": "TestFirstName39", 
+        "last_name": "TestLastName39", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            30, 
+            65, 
+            70, 
+            85
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$ATfDGgLhvZAa$p77V8qiPDza69m0d+UerBJJPZGh/W4cPegEQ5j83YyQ=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 44, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser40", 
+        "bio": "", 
+        "first_name": "TestFirstName40", 
+        "last_name": "TestLastName40", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            29, 
+            70
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$S9rEySJ5PE0i$sxkPkhb8UOJzWp8HHSp4E1++jmSXdvVMFNBIvHXxS10=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 45, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser41", 
+        "bio": "", 
+        "first_name": "TestFirstName41", 
+        "last_name": "TestLastName41", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4, 
+            18, 
+            39, 
+            64, 
+            91
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$dsP1lerWJc5d$yM8bkYXa7PtRs0R4VvE80EU3c1GFblDeu1U4NVuuvbA=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 46, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser42", 
+        "bio": "", 
+        "first_name": "TestFirstName42", 
+        "last_name": "TestLastName42", 
+        "has_confirmed_data": true, 
+        "skills": [
+            18
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$fswDlidc798X$RBSqnpQcdXP21WtfZGzOeaeGXK3QTAx7ys9x2nsU8Uk=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 47, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser43", 
+        "bio": "", 
+        "first_name": "TestFirstName43", 
+        "last_name": "TestLastName43", 
+        "has_confirmed_data": true, 
+        "skills": [
+            5, 
+            11, 
+            13, 
+            32, 
+            39, 
+            57, 
+            60, 
+            76, 
+            104, 
+            110, 
+            111
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$LEL0rJvOmnK1$zuqtfeniXFB+ggYceJ6ltMpca7u/+K/NMLA+63v482M=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 48, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser44", 
+        "bio": "", 
+        "first_name": "TestFirstName44", 
+        "last_name": "TestLastName44", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4, 
+            22
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-08-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$XIRS7NmPMgKl$M9IgPMd1cmsqrqjgSd6gCtjkr1MFlclLLUKjK++mfb0=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 49, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser45", 
+        "bio": "", 
+        "first_name": "TestFirstName45", 
+        "last_name": "TestLastName45", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            12, 
+            30, 
+            31, 
+            46, 
+            99
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$sm5lotlntg3Q$F3ff+h0X0PmSi85pSDKXYar/EFXurKtvToxEkG1Y3ys=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 50, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser46", 
+        "bio": "", 
+        "first_name": "TestFirstName46", 
+        "last_name": "TestLastName46", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            19, 
+            54, 
+            57, 
+            79, 
+            83, 
+            102, 
+            106, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            15, 
+            22
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$OFJcb5PAKFjw$Ho14nDW10Q1ZdFONlaiLcmeJQVOXT9cDesB0OJARHBY=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 51, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser47", 
+        "bio": "", 
+        "first_name": "TestFirstName47", 
+        "last_name": "TestLastName47", 
+        "has_confirmed_data": true, 
+        "skills": [
+            19, 
+            20, 
+            33
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-15", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$ecyU34iFC9Gy$5mEViAVqWujRxfOcCwVZZZ5SeIVaksg9vB9PpesTvi4=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 52, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser48", 
+        "bio": "", 
+        "first_name": "TestFirstName48", 
+        "last_name": "TestLastName48", 
+        "has_confirmed_data": true, 
+        "skills": [
+            3, 
+            4, 
+            6, 
+            10, 
+            14, 
+            18, 
+            22, 
+            25, 
+            34, 
+            37, 
+            65, 
+            85, 
+            107, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            3, 
+            7, 
+            9
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$HbA2NWNsCIvM$1Hi/Ofj0sAn0rkBmW6L4eY00M8Yg0IlXCLPszzez2ec=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 53, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser49", 
+        "bio": "", 
+        "first_name": "TestFirstName49", 
+        "last_name": "TestLastName49", 
+        "has_confirmed_data": true, 
+        "skills": [
+            6, 
+            11, 
+            14, 
+            16, 
+            23, 
+            32, 
+            37, 
+            39, 
+            53, 
+            57, 
+            76, 
+            82, 
+            83, 
+            86, 
+            87, 
+            94, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-15", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$caqydb6eZjJ6$8LrtmBwiwC9JOCHK2sn7i0xiUfWkKosa0cfkDrbDfbs=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 54, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser50", 
+        "bio": "", 
+        "first_name": "TestFirstName50", 
+        "last_name": "TestLastName50", 
+        "has_confirmed_data": true, 
+        "skills": [
+            8, 
+            10, 
+            14, 
+            15, 
+            29, 
+            30, 
+            34
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-07-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$6xLDPtYboZAF$+sK7U4WGTL9JSWET+aTdSWy3N11ql5yyjYkrcC1j7l8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 55, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser51", 
+        "bio": "", 
+        "first_name": "TestFirstName51", 
+        "last_name": "TestLastName51", 
+        "has_confirmed_data": true, 
+        "skills": [
+            3, 
+            11, 
+            14, 
+            15, 
+            16, 
+            19, 
+            20, 
+            29, 
+            33, 
+            43, 
+            46, 
+            65, 
+            70, 
+            72, 
+            76, 
+            83, 
+            85, 
+            87, 
+            90, 
+            94, 
+            95, 
+            96, 
+            98, 
+            99, 
+            100
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2015-10-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$fQV7yPOljIpP$BDll0LSApxbXyp1JNQ8YJ+0ehW0cxsnVC4cHFci9JTg=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 56, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser52", 
+        "bio": "", 
+        "first_name": "TestFirstName52", 
+        "last_name": "TestLastName52", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            14, 
+            112
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$mRFgmIWQwyR2$sLMB2fOJ/fTCHZ7dbPQlK1pQWAFXL+0NbYKrlYr+rUk=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 57, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser53", 
+        "bio": "", 
+        "first_name": "TestFirstName53", 
+        "last_name": "TestLastName53", 
+        "has_confirmed_data": true, 
+        "skills": [
+            1, 
+            41, 
+            59, 
+            74, 
+            75, 
+            80
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            20
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$hsjSvtDRMP1S$APQuAWZLG3HAbcgcepdSSPRNBwXAmxydk+4t3AFqztc=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 58, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser54", 
+        "bio": "", 
+        "first_name": "TestFirstName54", 
+        "last_name": "TestLastName54", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            18, 
+            32, 
+            39, 
+            53, 
+            87, 
+            88, 
+            89, 
+            90, 
+            93, 
+            103, 
+            105, 
+            106
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$JlaGRe232KVn$/5f7hdfVupUGO5aXCbHWjGkdkoNGs+XRJJYrsqRqE7o=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 59, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser55", 
+        "bio": "", 
+        "first_name": "TestFirstName55", 
+        "last_name": "TestLastName55", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            5, 
+            19, 
+            21, 
+            34, 
+            54, 
+            58, 
+            72, 
+            73, 
+            85, 
+            86, 
+            95, 
+            99
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$zuz9ZjtfMHR5$EZwxT9LwPvZN1DgHL8dCPNllEVopohOXB14TOGpnixY=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 60, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser56", 
+        "bio": "", 
+        "first_name": "TestFirstName56", 
+        "last_name": "TestLastName56", 
+        "has_confirmed_data": true, 
+        "skills": [
+            24, 
+            25
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$5ARzH1bzAsPU$SDflaqAphTXE3aDP8FSzp4rOjVFCoxs0wPz/q2+2+DY=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 61, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser57", 
+        "bio": "", 
+        "first_name": "TestFirstName57", 
+        "last_name": "TestLastName57", 
+        "has_confirmed_data": true, 
+        "skills": [
+            15, 
+            19, 
+            33, 
+            70
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-20", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$QHoSGaaJH9Cq$GN/GLMoEUVzVZ9mIYWrXZIPVvguZ9Sb1cRwPB8RkFK0=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 62, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser58", 
+        "bio": "", 
+        "first_name": "TestFirstName58", 
+        "last_name": "TestLastName58", 
+        "has_confirmed_data": true, 
+        "skills": [
+            46, 
+            99, 
+            101
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$v874MEp9HlU1$rIfVq0peyFVYG16XjHduPXsH3sSWCKMVikfy8z78+pk=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 63, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser59", 
+        "bio": "", 
+        "first_name": "TestFirstName59", 
+        "last_name": "TestLastName59", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            14, 
+            30, 
+            70
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            1, 
+            3, 
+            21
+        ], 
+        "available_after": "2014-09-27", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$VItvJm0KWrTT$IRtyDcBBz1o3JOh/RHBRyNl24n6yf/LOEbE825EGE28=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 64, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser60", 
+        "bio": "", 
+        "first_name": "TestFirstName60", 
+        "last_name": "TestLastName60", 
+        "has_confirmed_data": true, 
+        "skills": [
+            13, 
+            21, 
+            22, 
+            23, 
+            53, 
+            54, 
+            60, 
+            83, 
+            93, 
+            94, 
+            104
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            7
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$S2gCN9rpmyc2$BexgtPz+mfVIe+h5Vr4tbd21rFlVUXxBBnQltcHm044=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 65, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser61", 
+        "bio": "", 
+        "first_name": "TestFirstName61", 
+        "last_name": "TestLastName61", 
+        "has_confirmed_data": true, 
+        "skills": [
+            15, 
+            33, 
+            95, 
+            96
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-07-08", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$YxsNM4B9bSOG$wwRBZGMfQKI9rmvqUGl92ycQvqpQX5L1lbXD9Epqlr0=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 66, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser62", 
+        "bio": "", 
+        "first_name": "TestFirstName62", 
+        "last_name": "TestLastName62", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            23, 
+            26, 
+            39, 
+            40, 
+            45, 
+            57, 
+            83, 
+            88, 
+            106
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$HSEQDWEj6smT$Alp4Q6Pzd+zCcYLmOqk+V94EvRbK54cn0Hu5D5TmF6Q=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 67, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser63", 
+        "bio": "", 
+        "first_name": "TestFirstName63", 
+        "last_name": "TestLastName63", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            15, 
+            57
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$nDbynZhgucUc$BLJmBWMuleFpuxMIYG2RorNk8eKW8/xcLqq/jQ86gyA=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 68, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser64", 
+        "bio": "", 
+        "first_name": "TestFirstName64", 
+        "last_name": "TestLastName64", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            15, 
+            19
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$xGK4WX4jFgOP$Vo5DmFMXdXqdFC1wgbbtn1zzRDvU03Kqh1sbS03kRwU=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 69, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser65", 
+        "bio": "", 
+        "first_name": "TestFirstName65", 
+        "last_name": "TestLastName65", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            20, 
+            29, 
+            44
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-08-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$ZtdFgAs9tXyZ$5EpHF3R7yVCvh4Y1GomuqlUEW+PtN6nz8wtOaow89pU=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 70, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser66", 
+        "bio": "", 
+        "first_name": "TestFirstName66", 
+        "last_name": "TestLastName66", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-07-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$q5XyBQrfhPWp$UVsvGtbXap+CtTQD7dgJcQAI2MY8pWwc8p21ERyopQA=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 71, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser67", 
+        "bio": "", 
+        "first_name": "TestFirstName67", 
+        "last_name": "TestLastName67", 
+        "has_confirmed_data": true, 
+        "skills": [
+            14, 
+            15, 
+            17, 
+            19, 
+            20, 
+            29, 
+            30, 
+            31, 
+            85
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            1, 
+            2, 
+            3, 
+            8
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$cLlL2lTkz9ER$SxUN1thvoz8LM0q3qdiVhS5Sklbtb3c9G6QvVr65oIc=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 72, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser68", 
+        "bio": "", 
+        "first_name": "TestFirstName68", 
+        "last_name": "TestLastName68", 
+        "has_confirmed_data": true, 
+        "skills": [
+            59
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            9, 
+            18
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$PaQ4p6UM4aPZ$LOm2uEfZ8+pIvzBWT74ilhFR+VXr4v6HII2D73Ww5+g=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 73, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser69", 
+        "bio": "", 
+        "first_name": "TestFirstName69", 
+        "last_name": "TestLastName69", 
+        "has_confirmed_data": true, 
+        "skills": [
+            6, 
+            10, 
+            57
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-07-07", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$71Nw9C8IANYK$nbXZPI6dUORL9PbfRyKM6uF96GYFO4DAOzzRC6rTwMg=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 74, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser70", 
+        "bio": "", 
+        "first_name": "TestFirstName70", 
+        "last_name": "TestLastName70", 
+        "has_confirmed_data": true, 
+        "skills": [
+            1, 
+            11, 
+            23, 
+            39, 
+            55, 
+            59, 
+            74, 
+            83, 
+            84, 
+            106
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$Vex6Q3NaDdXo$PgtsDkmoeLhawnL4bc+uV004l5yWbdXEb09oiwJXevc=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 75, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser71", 
+        "bio": "", 
+        "first_name": "TestFirstName71", 
+        "last_name": "TestLastName71", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4, 
+            23, 
+            80
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$ru791AGrSyLf$5g4MEh/hx53DWjgqF2g/eX3UhvoIbFVUOygAQBzGuuc=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 76, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser72", 
+        "bio": "", 
+        "first_name": "TestFirstName72", 
+        "last_name": "TestLastName72", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            19, 
+            29, 
+            39, 
+            53, 
+            96
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-11-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$ueGJ4YXpPd6n$RXINQEw7LxdvXtV9dorByjIAOvBEk0YP0iWFTgzunww=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 77, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser73", 
+        "bio": "", 
+        "first_name": "TestFirstName73", 
+        "last_name": "TestLastName73", 
+        "has_confirmed_data": true, 
+        "skills": [
+            6, 
+            10, 
+            29, 
+            30, 
+            31, 
+            69, 
+            70, 
+            113, 
+            114
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$b3EAdLZaxYFb$d6dZ27NR8fXCmZhZ+QLeoKigUKY+jf/JUURvn55za/A=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 78, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser74", 
+        "bio": "", 
+        "first_name": "TestFirstName74", 
+        "last_name": "TestLastName74", 
+        "has_confirmed_data": true, 
+        "skills": [
+            1, 
+            19, 
+            32, 
+            37, 
+            39, 
+            41, 
+            51, 
+            53, 
+            55, 
+            57, 
+            59, 
+            79, 
+            83, 
+            84, 
+            85, 
+            107
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-06-19", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$cORyf66ihyon$Gq34B5qXHNoWP7pfbDo8x5GvdNNiCZnXodTs9ifZYcw=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 79, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser75", 
+        "bio": "", 
+        "first_name": "TestFirstName75", 
+        "last_name": "TestLastName75", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            18, 
+            39, 
+            103
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$4FtTeiMV78X8$B48shZLSn88PBFT2I1WdNP7gU4wO2Sj1Y5qr9cztxjI=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 80, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser76", 
+        "bio": "", 
+        "first_name": "TestFirstName76", 
+        "last_name": "TestLastName76", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4, 
+            25, 
+            37, 
+            58, 
+            73, 
+            76, 
+            78, 
+            94
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$F7xRmVOOuDUe$JBlBb/mihxq4k/GUdYGXx8mIvc4UdXDU/3GzW5jkHGo=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 81, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser77", 
+        "bio": "", 
+        "first_name": "TestFirstName77", 
+        "last_name": "TestLastName77", 
+        "has_confirmed_data": true, 
+        "skills": [
+            5, 
+            46, 
+            73
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$yaHduc2LJ8GI$ztUen3gFTfmpFrKJefi9fYxe0Sexcte3K7cVpSaFX7Y=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 82, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser78", 
+        "bio": "", 
+        "first_name": "TestFirstName78", 
+        "last_name": "TestLastName78", 
+        "has_confirmed_data": true, 
+        "skills": [
+            25, 
+            46
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            3
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$2AzZiJbhL6QL$ydFkdF64RXFte4uhE+urfmqJ139lCcf51ZV7orMw2SQ=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 83, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser79", 
+        "bio": "", 
+        "first_name": "TestFirstName79", 
+        "last_name": "TestLastName79", 
+        "has_confirmed_data": true, 
+        "skills": [
+            20, 
+            25, 
+            33
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            9, 
+            15, 
+            20, 
+            21
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$mUqe0l6Oqqw2$Q8NnkCA3I5Bk5RlBO9aCgnxeffBFx5I6oD3cY1mYfl4=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 84, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser80", 
+        "bio": "", 
+        "first_name": "TestFirstName80", 
+        "last_name": "TestLastName80", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            59, 
+            94
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            3
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$sQtYRjag0aAj$xTSGmaDgeIA4z3eOV67vdfgvexPjEx94QYl88jAfV3k=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 85, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser81", 
+        "bio": "", 
+        "first_name": "TestFirstName81", 
+        "last_name": "TestLastName81", 
+        "has_confirmed_data": true, 
+        "skills": [
+            32, 
+            53, 
+            59, 
+            84, 
+            87, 
+            91, 
+            104
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$gQO57USTT30B$uZUrmI+kRCwYk+6ZJTxcdeH72MhLaQwfOM5RoQvI6oY=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 86, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser82", 
+        "bio": "", 
+        "first_name": "TestFirstName82", 
+        "last_name": "TestLastName82", 
+        "has_confirmed_data": true, 
+        "skills": [
+            15
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-06-06", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$nEq1mQTOElGy$6kQqLcZbTInk+zK8B+D0W6iYKQfQIC3Vu+sxxAs/Iuo=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 87, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser83", 
+        "bio": "", 
+        "first_name": "TestFirstName83", 
+        "last_name": "TestLastName83", 
+        "has_confirmed_data": true, 
+        "skills": [
+            1, 
+            13, 
+            41, 
+            57, 
+            59, 
+            60, 
+            74, 
+            75, 
+            106
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$vq5bv16M3TQX$X1EpalriyKd+mCGRMevxwl/EMPuqIVdQrygywlyWEcM=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 88, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser84", 
+        "bio": "", 
+        "first_name": "TestFirstName84", 
+        "last_name": "TestLastName84", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4, 
+            11, 
+            22, 
+            23, 
+            32, 
+            39, 
+            43, 
+            93, 
+            103, 
+            109
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$ys94DJieqqT5$+gxPTDwR4RG5zgsyz+P9YH9TYadRC5Um+FXOz1XFH7Q=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 89, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser85", 
+        "bio": "", 
+        "first_name": "TestFirstName85", 
+        "last_name": "TestLastName85", 
+        "has_confirmed_data": true, 
+        "skills": [
+            20, 
+            44
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-06-26", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$qxQeSZ9h5lBq$J8DYQWfTAsHcmL2sX1rDOdvzqa88jbPhqnJvt1mBkCM=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 90, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser86", 
+        "bio": "", 
+        "first_name": "TestFirstName86", 
+        "last_name": "TestLastName86", 
+        "has_confirmed_data": true, 
+        "skills": [
+            5, 
+            40, 
+            60, 
+            80, 
+            82, 
+            87, 
+            105
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-15", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$wi4JMVdCkol3$3Ok+XTsJ7/kFm9LCM+3xZBQpOtDHMP1j9AjFhtccO1E=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 91, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser87", 
+        "bio": "", 
+        "first_name": "TestFirstName87", 
+        "last_name": "TestLastName87", 
+        "has_confirmed_data": true, 
+        "skills": [
+            13, 
+            22, 
+            46, 
+            55, 
+            57, 
+            60, 
+            82, 
+            83, 
+            90, 
+            110, 
+            111
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            7, 
+            9, 
+            15
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$dEtre3FUYQmb$VgTn3TuanlSkvYdTobFBB/bwN3bWgEpV4TF9MtBWkpk=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 92, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser88", 
+        "bio": "", 
+        "first_name": "TestFirstName88", 
+        "last_name": "TestLastName88", 
+        "has_confirmed_data": true, 
+        "skills": [
+            15, 
+            33
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-07-01", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$HpWFBfszT0uh$G6Y7vbjQfFpqAFOHLamqM5S1pUCydKXGw+waKyEyqGg=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 93, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser89", 
+        "bio": "", 
+        "first_name": "TestFirstName89", 
+        "last_name": "TestLastName89", 
+        "has_confirmed_data": true, 
+        "skills": [
+            1, 
+            48, 
+            75, 
+            77, 
+            102
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$XBJJoTltGQy3$ss8Q5LGcKCJnpr2y27iLelRt6L4Mbtz8ITYHE/gtIAE=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 94, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser90", 
+        "bio": "", 
+        "first_name": "TestFirstName90", 
+        "last_name": "TestLastName90", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            7, 
+            9
+        ], 
+        "available_after": "2014-06-30", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$ouL2jL4oOAzG$EjVMdewV3HReaWTKfIU0fDGcHlVt5R/SY72ds9uprto=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 95, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser91", 
+        "bio": "", 
+        "first_name": "TestFirstName91", 
+        "last_name": "TestLastName91", 
+        "has_confirmed_data": true, 
+        "skills": [
+            6, 
+            15, 
+            31, 
+            44
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-09-25", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$KgsGeQOPKNLH$gyc3Ja2/JJyFsWGXLyIVmfMaoydd/51BVAidnQe+aA8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 96, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser92", 
+        "bio": "", 
+        "first_name": "TestFirstName92", 
+        "last_name": "TestLastName92", 
+        "has_confirmed_data": true, 
+        "skills": [
+            38, 
+            39, 
+            40, 
+            53, 
+            57, 
+            60, 
+            76, 
+            78, 
+            80, 
+            82, 
+            84, 
+            90, 
+            103, 
+            104, 
+            105
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$myZIWt9sXuER$T5PW+X+ghWsCuOjPWl3nGdHRe8z9uTHm4+mHf1WqQL0=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 97, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser93", 
+        "bio": "", 
+        "first_name": "TestFirstName93", 
+        "last_name": "TestLastName93", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            34, 
+            46
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            3
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$rEHIMnnPBded$C178l9M+stYu3fHhXfFHJlkzLpOdWhY+dtSVhZz1zF8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 98, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser94", 
+        "bio": "", 
+        "first_name": "TestFirstName94", 
+        "last_name": "TestLastName94", 
+        "has_confirmed_data": true, 
+        "skills": [
+            38, 
+            84
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$UiCDRR3XhVoW$96JI4vrRRN/AGCIEBVu8JuIg4XL4I5FMUA79arkqTfE=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 99, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser95", 
+        "bio": "", 
+        "first_name": "TestFirstName95", 
+        "last_name": "TestLastName95", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            18, 
+            32, 
+            39, 
+            53, 
+            59
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$RQYzsSWs0BAj$AZFNRhVlFGVQJcQBvTmG7ehuz23Qn0gPCKaT/QdU60Q=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 100, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser96", 
+        "bio": "", 
+        "first_name": "TestFirstName96", 
+        "last_name": "TestLastName96", 
+        "has_confirmed_data": true, 
+        "skills": [
+            18, 
+            22, 
+            32, 
+            53, 
+            54
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            3
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$34B4fH5HMzaC$gI44BdGIorG3nM3OlmHkJNz/sryIAxIaEOawXh0mzx8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 101, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser97", 
+        "bio": "", 
+        "first_name": "TestFirstName97", 
+        "last_name": "TestLastName97", 
+        "has_confirmed_data": true, 
+        "skills": [
+            10, 
+            29, 
+            30
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            1, 
+            3
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$mggsSEFJotV2$5x7KZs1p3x+/tEAlRCcA9/g/hJlG+9AvurzCktU/eyo=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 102, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser98", 
+        "bio": "", 
+        "first_name": "TestFirstName98", 
+        "last_name": "TestLastName98", 
+        "has_confirmed_data": true, 
+        "skills": [
+            2, 
+            3, 
+            12, 
+            14, 
+            30, 
+            65, 
+            82, 
+            90, 
+            99, 
+            105
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$vTmZfmauvPyj$PvL6Pm0F+4JN1MrFihzGY4oY8SsHoALt2738t8imKWY=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 103, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser99", 
+        "bio": "", 
+        "first_name": "TestFirstName99", 
+        "last_name": "TestLastName99", 
+        "has_confirmed_data": true, 
+        "skills": [
+            4, 
+            13, 
+            23, 
+            39, 
+            94, 
+            106, 
+            109
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$RCb1cdSy1aHQ$KIMr8itr/pGKwtvDtTG+Ioj8C3M4pC1LUFvCpRI/Dn8=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 104, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser100", 
+        "bio": "", 
+        "first_name": "TestFirstName100", 
+        "last_name": "TestLastName100", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            18, 
+            39, 
+            76, 
+            86, 
+            93, 
+            94, 
+            95, 
+            96, 
+            98, 
+            100
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$HQXgt40coX5f$u4He36YXhp4lgHM45MBni6yEA71ig1oEEo/RBDQ2ej4=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 105, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser101", 
+        "bio": "", 
+        "first_name": "TestFirstName101", 
+        "last_name": "TestLastName101", 
+        "has_confirmed_data": true, 
+        "skills": [
+            5, 
+            13, 
+            60, 
+            72, 
+            76, 
+            89
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            1, 
+            2, 
+            3, 
+            5, 
+            6, 
+            7, 
+            9
+        ], 
+        "available_after": "2014-06-27", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$FIsz2SYIvTHV$obao7rIG3Ojek3P7qHKhBrPqQwqlBbuv+Sv28fshdVI=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 106, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser102", 
+        "bio": "", 
+        "first_name": "TestFirstName102", 
+        "last_name": "TestLastName102", 
+        "has_confirmed_data": true, 
+        "skills": [
+            11, 
+            14, 
+            18, 
+            29, 
+            70
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            3
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$Cg89KA7RlK3U$XTadQAIgl8BqX+mLVxBu0jJqZe3okXPwpHgS5BDt8eo=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 107, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser103", 
+        "bio": "", 
+        "first_name": "TestFirstName103", 
+        "last_name": "TestLastName103", 
+        "has_confirmed_data": true, 
+        "skills": [
+            24, 
+            38, 
+            48, 
+            49, 
+            109, 
+            110
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [], 
+        "available_after": "2014-11-26", 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$RGi69kFyxVdt$JzSEOon0yAYt2WUJxedAk6NAGqvf5ikzfF+crvJ4FxQ=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 108, 
+    "model": "projects.user", 
+    "fields": {
+        "username": "testuser104", 
+        "bio": "", 
+        "first_name": "TestFirstName104", 
+        "last_name": "TestLastName104", 
+        "has_confirmed_data": true, 
+        "skills": [
+            3, 
+            10, 
+            13, 
+            14, 
+            18, 
+            22, 
+            29
+        ], 
+        "is_browsable": true, 
+        "is_active": true, 
+        "projects_interests": [
+            1, 
+            2, 
+            3, 
+            6, 
+            7, 
+            9, 
+            22
+        ], 
+        "available_after": null, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-01-01T22:22:22Z", 
+        "avatar": "", 
+        "groups": [], 
+        "user_permissions": [], 
+        "is_available": false, 
+        "password": "pbkdf2_sha256$12000$8fpauiOJJzIZ$th8gWeSXiZa7gK7XisHNRKur0oZtcCADpOCDSkT+k5c=", 
+        "email": "test@example.com", 
+        "date_joined": "2014-01-01T22:22:22Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/op_logo_square.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#000", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 1, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "\u0421\u043b\u0435\u0434\u0438 \u0434\u0435\u0439\u043d\u043e\u0441\u0442\u0442\u0430 \u0432 \u043f\u0430\u0440\u043b\u0430\u043c\u0435\u043d\u0442\u0430 \u0432\u0441\u0435\u043a\u0438 \u0434\u0435\u043d \u0438 \u044f \u043f\u043e\u043a\u0430\u0437\u0432\u0430 \u0432 \u0434\u0438\u0430\u0433\u0440\u0430\u043c\u0438; \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u0432\u0430 \u0440\u0430\u0437\u0448\u0438\u0440\u0435\u043d\u043e \u0442\u044a\u0440\u0441\u0435\u043d\u0435 \u0438 \u0441\u044a\u0437\u0434\u0430\u0432\u0430 \u043f\u0440\u043e\u0444\u0438\u043b\u0438 \u043d\u0430 \u043d\u0430\u0440\u043e\u0434\u043d\u0438\u0442\u0435 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043b\u0438.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "openparliament", 
+        "name": "\u041e\u0442\u0432\u043e\u0440\u0435\u043d \u041f\u0430\u0440\u043b\u0430\u043c\u0435\u043d\u0442"
+    }
+},
+{
+    "pk": 2, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/pitaigi_logo_sq.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#aef2ec", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 2, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "\u041f\u043e\u043b\u0437\u0432\u0430\u0439\u0442\u0435 \u0441\u0432\u043e\u0435\u0442\u043e \u043f\u0440\u0430\u0432\u043e \u0434\u0430 \u0437\u043d\u0430\u0435\u0442\u0435 \u0438 \u0442\u043e \u043e\u0431\u0435\u043a\u0442\u0438\u0432\u043d\u043e. \u041f\u0438\u0442\u0430\u0439\u0442\u0435 \u0434\u044a\u0440\u0436\u0430\u0432\u0430\u0442\u0430. \u0421\u0430\u0439\u0442\u044a\u0442 \u043e\u043f\u043e\u043b\u0437\u043e\u0442\u0432\u043e\u0440\u044f\u0432\u0430 \u0437\u0430\u043a\u043e\u043d\u0430 \u0437\u0430 \u0434\u043e\u0441\u0442\u044a\u043f \u0434\u043e \u0438\u043d\u0444\u0440\u043e\u043c\u0430\u0446\u0438\u044f \u0438 \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430 \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u043d\u043e \u043c\u044f\u0441\u0442\u043e \u0437\u0430 \u0438\u0437\u043f\u0440\u0430\u0449\u0430\u043d\u0435 \u043d\u0430 \u0437\u0430\u044f\u0432\u043b\u0435\u043d\u0438\u044f.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "pitaigi", 
+        "name": "Pitaigi.bg"
+    }
+},
+{
+    "pk": 3, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/grada_me_logo_sq.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#ecc1c0", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 3, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "\u041f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430 \u0437\u0430 \u0440\u0430\u0437\u0440\u0435\u0448\u0430\u0432\u0430\u043d\u0435 \u043d\u0430 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0438\u0442\u0435 \u0432 \u0433\u0440\u0430\u0434\u0441\u043a\u0430\u0442\u0430 \u0441\u0440\u0435\u0434\u0430. \u041c\u043e\u0431\u0438\u043b\u043d\u043e \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0438 \u0443\u0435\u0431-\u0441\u0430\u0439\u0442, \u0441 \u0447\u0438\u044f\u0442\u043e \u043f\u043e\u043c\u043e\u0449 \u043c\u043e\u0436\u0435 \u043d\u0430 \u043c\u044f\u0441\u0442\u043e \u0438\u043b\u0438 \u043e\u0442 \u0432\u043a\u044a\u0449\u0438 \u0434\u0430 \u0441\u0435 \u0441\u043d\u0438\u043c\u0430\u0442 \u0438 \u043f\u043e\u0434\u0430\u0432\u0430\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u0435\u043d \u0442\u0438\u043f \u0441\u0438\u0433\u043d\u0430\u043b\u0438: \u043d\u0435\u0440\u0430\u0431\u043e\u0442\u0435\u0449\u043e \u043e\u0441\u0432\u0435\u0442\u043b\u0435\u043d\u0438\u0435, \u0434\u0443\u043f\u043a\u0438, \u043e\u043f\u0430\u0441\u043d\u0438 \u0441\u0433\u0440\u0430\u0434\u0438 \u0438 \u0434\u0440\u0443\u0433\u0438.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "gradame", 
+        "name": "Grada.me"
+    }
+},
+{
+    "pk": 4, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/recycle_suqred_logo.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#78b975", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 4, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "\u041d\u0430\u043c\u0435\u0440\u0438 \u043d\u0430\u0439-\u0431\u043b\u0438\u0437\u043a\u0438\u044f \u043f\u0443\u043d\u043a\u0442 \u0437\u0430 \u0440\u0435\u0446\u0438\u043a\u043b\u0438\u0440\u0430\u043d\u0435 \u043e\u043a\u043e\u043b\u043e \u0442\u0435\u0431.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "recycle", 
+        "name": "RE:CYCLE"
+    }
+},
+{
+    "pk": 5, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/knowmp_1.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#d8dac8", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 5, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "\u0418\u0433\u0440\u0430 \u0432 \u043a\u043e\u044f\u0442\u043e \u0435 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0435\u043d\u0430 \u0441\u043d\u0438\u043c\u043a\u0430 \u0438 \u0438\u043c\u0435 \u043d\u0430 \u043d\u0430\u0440\u043e\u0434\u0435\u043d \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043b, \u0441\u043b\u0435\u0434 \u043a\u043e\u0435\u0442\u043e \u0442\u0440\u044f\u0431\u0432\u0430 \u0434\u0430 \u0441\u0435 \u043f\u043e\u0437\u043d\u0430\u0435 \u043e\u0442 \u043a\u043e\u044f \u043f\u0430\u0440\u0442\u0438\u044f \u0435 \u0434\u0435\u043f\u0443\u0442\u0430\u0442\u0430.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "", 
+        "name": "\u041e\u043f\u043e\u0437\u043d\u0430\u0439 \u0414\u0435\u043f\u0443\u0442\u0430\u0442\u0430"
+    }
+},
+{
+    "pk": 6, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/howto_logo_square.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#aaa", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 6, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "\u0421\u0430\u0439\u0442 \u0444\u043e\u043a\u0443\u0441\u0438\u0440\u0430\u0449 \u043d\u0430\u0434 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u0438\u0442\u0435 \u043e\u0442\u0433\u043e\u0432\u043e\u0440\u0438 \u0438 \u0432\u044a\u043f\u0440\u043e\u0441\u0438 \u043f\u043e \u0433\u0440\u0430\u0436\u0434\u0430\u043d\u0441\u043a\u0438 \u0442\u0435\u043c\u0438. \u041f\u0440\u0438\u043c\u0435\u0440: \u201c\u041a\u0430\u043a \u0434\u0430 \u0438\u0437\u0431\u0435\u0440\u0430 \u043b\u0438\u0447\u0435\u043d \u043b\u0435\u043a\u0430\u0440?", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "howto", 
+        "name": "Howto.bg"
+    }
+},
+{
+    "pk": 7, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/alerts_logo_square.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#e4ebee", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 7, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "\u0418\u0437\u0432\u0435\u0441\u0442\u0438\u044f \u043f\u043e email \u0437\u0430 \u043d\u043e\u0432\u0438 \u0434\u044a\u0440\u0436\u0430\u0432\u043d\u0438 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438 \u0441\u044a\u0434\u044a\u0440\u0436\u0430\u0449\u0438 \u0438\u0437\u0431\u0440\u0430\u043d\u0438 \u043e\u0442 \u0432\u0430\u0441 \u043a\u043b\u044e\u0447\u043e\u0432\u0438 \u0434\u0443\u043c\u0438. \u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\u0442\u0435 \u0441\u0435 \u0441\u044a\u0431\u0438\u0440\u0430\u0442 \u043e\u0442 \u0438\u0437\u0442\u043e\u0447\u043d\u0438\u0446\u0438 \u043a\u0430\u0442\u043e \u0414\u044a\u0440\u0436\u0430\u0432\u043d\u0438\u044f \u0432\u0435\u0441\u0442\u043d\u0438\u043a.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "alerts", 
+        "name": "Alerts!"
+    }
+},
+{
+    "pk": 8, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/stroeji_logo_squared.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "#e7ccb4", 
+        "is_forced_active": true, 
+        "github_repo": "https://github.com/ndkv/tourism-yes", 
+        "order": 8, 
+        "cover_image": "", 
+        "has_static_page": true, 
+        "pm_url": "", 
+        "facebook_group": "https://www.facebook.com/groups/613236628749130/", 
+        "logo": "", 
+        "short_description": "\u041a\u0430\u0440\u0442\u0430 \u043c\u0430\u0440\u043a\u0438\u0440\u0430\u0449\u0430 \u0437\u0430\u0449\u0438\u0442\u0435\u043d\u0438\u0442\u0435 \u0437\u043e\u043d\u0438 \u0432 \u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f \u0438 \u043f\u043e\u0441\u0442\u0440\u043e\u0435\u043d\u0438\u0442\u0435 \u0441\u0433\u0440\u0430\u0434\u0438 \u0432 \u0442\u044f\u0445; \u043e\u043f\u0438\u0442\u0432\u0430 \u0441\u0435 \u0434\u0430 \u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u0437\u0430 \u043d\u0435\u043b\u0435\u0433\u0430\u043b\u043d\u0438 \u0441\u0442\u0440\u043e\u0435\u0436\u0438.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "", 
+        "name": "\u0421\u0442\u0440\u043e\u0435\u0436\u0438 \u0432 \u0437\u0430\u0449\u0438\u0442\u0435\u043d\u0438 \u0437\u043e\u043d\u0438"
+    }
+},
+{
+    "pk": 9, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "project/obshtestvo-rog-logo-squared.png", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": true, 
+        "github_repo": "", 
+        "order": 9, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "https://www.facebook.com/groups/obshtestvo.identity/", 
+        "logo": "", 
+        "short_description": "\u0420\u0430\u0437\u0432\u0438\u0442\u0438\u0435 \u043d\u0430 \u0441\u0430\u0439\u0442\u0430 \u043a\u0430\u0442\u043e \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430, \u043f\u043e\u0435\u043c\u0430\u043d\u0435 \u043d\u0430 \u0441\u0440\u0435\u0449\u0438, \u043c\u0435\u0439\u043b\u0438, \u043f\u0438\u0441\u0430\u043d\u0435 \u0432 \u0431\u043b\u043e\u0433\u0430, \u0441\u043e\u0446\u0438\u0430\u043b\u043d\u0438\u0442\u0435 \u043c\u0440\u0435\u0436\u0438 \u0438 \u043a\u0430\u0442\u043e \u0446\u044f\u043b\u043e \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f.", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "", 
+        "name": "Obshtestvo.bg - \u0432\u044a\u0442\u0440\u0435\u0448\u043d\u0430 \u043e\u0440\u0433."
+    }
+},
+{
+    "pk": 11, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 0, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "user", 
+        "name": "Custom user idea"
+    }
+},
+{
+    "pk": 12, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 10, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "kakvo-da-napravya-s-___", 
+        "name": "\u041a\u0430\u043a\u0432\u043e \u0434\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u044f \u0441  ___?"
+    }
+},
+{
+    "pk": 13, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 11, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "ignore-peevski-browser-extension", 
+        "name": "Ignore Peevski (browser extension)"
+    }
+},
+{
+    "pk": 14, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 12, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "pet-id", 
+        "name": "Pet ID"
+    }
+},
+{
+    "pk": 15, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 13, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "dostpna-opendata", 
+        "name": "\u0414\u043e\u0441\u0442\u044a\u043f\u043d\u0430 OpenData"
+    }
+},
+{
+    "pk": 16, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 14, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "loyalty-points-funding", 
+        "name": "Loyalty points funding"
+    }
+},
+{
+    "pk": 17, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 15, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "earth-knights", 
+        "name": "Earth Knights"
+    }
+},
+{
+    "pk": 18, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 16, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "danswithme-world-map", 
+        "name": "DANSwithme world map"
+    }
+},
+{
+    "pk": 19, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 17, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "portal-za-administr-tipstricks-km-malki-biznesi", 
+        "name": "\u041f\u043e\u0440\u0442\u0430\u043b \u0437\u0430 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440. tips&tricks \u043a\u044a\u043c \u043c\u0430\u043b\u043a\u0438 \u0431\u0438\u0437\u043d\u0435\u0441\u0438"
+    }
+},
+{
+    "pk": 20, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 18, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "funding-opportunities-portal", 
+        "name": "Funding opportunities portal"
+    }
+},
+{
+    "pk": 21, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 19, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "svoboden-api-za-proverka-na-bitovi-i-drugi-smetki", 
+        "name": "\u0421\u0432\u043e\u0431\u043e\u0434\u0435\u043d API \u0437\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0430 \u0431\u0438\u0442\u043e\u0432\u0438 \u0438 \u0434\u0440\u0443\u0433\u0438 \u0441\u043c\u0435\u0442\u043a\u0438"
+    }
+},
+{
+    "pk": 22, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 20, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "open-public-funds-transactions", 
+        "name": "Open public funds transactions"
+    }
+},
+{
+    "pk": 23, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 21, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "location-grabber", 
+        "name": "Location Grabber"
+    }
+},
+{
+    "pk": 24, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 22, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "facts-version-history", 
+        "name": "Facts' version history"
+    }
+},
+{
+    "pk": 25, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 23, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "track-dangerous-health-claims", 
+        "name": "Track dangerous health claims"
+    }
+},
+{
+    "pk": 26, 
+    "model": "projects.project", 
+    "fields": {
+        "logo_thumb": "", 
+        "is_featured": false, 
+        "logo_styled": "", 
+        "description": "", 
+        "url": "", 
+        "complimenting_color": "", 
+        "is_forced_active": false, 
+        "github_repo": "", 
+        "order": 24, 
+        "cover_image": "", 
+        "has_static_page": false, 
+        "pm_url": "", 
+        "facebook_group": "", 
+        "logo": "", 
+        "short_description": "", 
+        "is_public": true, 
+        "strategy": "", 
+        "slug": "news-medias-analysis", 
+        "name": "News medias analysis"
+    }
+}
+]

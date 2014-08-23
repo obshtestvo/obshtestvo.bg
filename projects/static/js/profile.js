@@ -1,38 +1,15 @@
 $(function () {
-    var $skills = $('#joinSkills'),
+    var placesService = null
+        skills = $('#joinSkills'),
         avatarPicker = $('#avatar'),
         avatarPrev = $('#prev_avatar'),
-        location = $('#location'),
-        geoLoc = JSON.parse(location.attr('value')),
-    // The overlay layer for our marker, with a simple diamond as symbol
-        overlay = new OpenLayers.Layer.Vector('Overlay', {
-            styleMap: new OpenLayers.StyleMap({
-                externalGraphic: '/static/img/map-marker.png',
-                graphicWidth: 30, graphicHeight: 24, graphicYOffset: -24
-            })
-        }),
-
-
-
-        myLocation = new OpenLayers.LonLat(geoLoc.location[0], geoLoc.location[1]),
-
-    // Finally we create the map
-        map = new OpenLayers.Map({
-            div: "map",
-            layers: [new OpenLayers.Layer.OSM(), overlay],
-            center: myLocation, zoom: 3
-        });
-
-    myLocation.transform("EPSG:4326", "EPSG:900913");
-
-    console.log(myLocation);
-
-    // We add the marker with a tooltip text to the overlay
-    overlay.addFeatures([
-        new OpenLayers.Feature.Vector(myLocation)
-    ]);
-
-    new Select2Grouped($skills, $skills.data('choices'), $skills.data('selection'));
+        userActiveTrue = $('#user_active_true'),
+        userActiveFalse = $('#user_active_false'),
+        availableAfterGroup = $('.available_after_sub_group'),
+        availableAfter = $('#available_after'),
+        isUserActive = userActiveTrue.data('isActive') ? userActiveTrue : userActiveFalse,
+        profession = $('#profession'),
+        motivation = $('#motivation');
 
     avatarPrev.on('click', function () {
         avatarPicker.click();
@@ -43,9 +20,54 @@ $(function () {
     });
 
     avatarPicker.on('change', function () {
-        var imgUrl = window.URL.createObjectURL(avatarPicker[0].files[0]);
-        console.log(imgUrl);
-        avatarPrev.attr('src', imgUrl);
+        var filenames = avatarPicker[0].files;
+
+        if (filenames.length) {
+            var imgUrl = window.URL.createObjectURL(filenames[0]);
+            console.log(imgUrl);
+            avatarPrev.attr('src', imgUrl);
+        }
     });
 
+    userActiveTrue.on('change', function () {
+        if (userActiveTrue.prop('checked')) {
+            availableAfterGroup.addClass("hidden");
+        }
+    });
+
+    userActiveFalse.on('change', function () {
+        if (userActiveFalse.prop('checked')) {
+            availableAfterGroup.removeClass("hidden");
+        }
+    });
+
+    isUserActive.prop("checked", true)
+        .trigger('change');
+
+    availableAfter.pickadate({
+        today: '',
+        clear: '',
+        onSet: function () {
+        //    availableAfter.valid()
+        },
+        min: 1,
+        hiddenName: true,
+        formatSubmit: 'yyyy-mm-dd'
+    });
+
+    new Select2Grouped(skills, skills.data('choices'), skills.data('selection'));
+
+    $('#location').select2({
+        minimumInputLength: 2,
+        query: function (query) {
+
+            if (placesService === null){
+                placesService = new google.maps.places.AutocompleteService();
+            }
+
+            placesService.getQueryPredictions({ input: query.term }, function (data) {
+                query.callback({results: data.map(function (e) { return { id: e.description, text: e.description }; }   )});
+            });
+        }
+    });
 });

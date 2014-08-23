@@ -50,7 +50,7 @@ class UserProfileView(View):
         user.get_avatar();
         #raise Exception("Error with select2grouped bad string searching leads to fake skills")
 
-        return {"form" : form,
+        return {"form": form,
                 "profile": user,
                 "all_skills": skills}
 
@@ -73,7 +73,10 @@ class UserProfileView(View):
         new_data['first_name'] = full_name[0]
         new_data['last_name'] = full_name[1]
         new_data.setlist('skills', processed_skills_ids)
-        #raise Exception(request.params.getlist('skills'))
+
+        if request.params['user_active'] == "now":
+            new_data['available_after'] = None
+
         form = UserModelForm(data=get_updated_data(user, new_data), files=request.FILES, instance=user)
         if form.is_valid():
             form.save()
@@ -86,4 +89,5 @@ class UserProfileView(View):
 class UserModelForm(ModelForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'skills', "avatar", "profession", "motivation", "location"]
+        fields = ['first_name', 'last_name', 'email', 'skills', "avatar", "profession", "motivation", "location",
+                  "available_after"]

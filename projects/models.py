@@ -191,7 +191,6 @@ def user_file_name(instance, filename):
 
 class User(AbstractUser):
     is_browsable = models.BooleanField(_('Is this a user you can browse amongst others'), default=True)
-    is_available = models.BooleanField(_('Is the user available for work'), default=True)
     available_after = models.DateField(_('available after'), blank=True, null=True)
     has_confirmed_data = models.BooleanField(_('has confirmed custom data'), default=True)
     bio = models.TextField(_('biography'), blank=True, null=True)
@@ -203,7 +202,6 @@ class User(AbstractUser):
     skills = models.ManyToManyField('Skill', related_name="users", blank=True,
                                       verbose_name=_("skills"))
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
-
 
     def get_avatar(self, uid=None):
         if self.avatar:
