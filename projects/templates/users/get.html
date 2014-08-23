@@ -114,14 +114,13 @@
                     {% for id, u in users.items %}
                     <li class="user-preview"
                         data-is-available="{% if u.is_currently_available %}1{% else %}0{% endif %}"
-                        data-project-count="{{ u.preloaded_projects_interests|length }}"
-                    >
+                        data-project-count="{{ u.preloaded_projects_interests|length }}">
                         <h2 class="user-names">{{ u.first_name }} {{ u.last_name }}</h2>
                         <div class="avatar">
                             <figure>
-                                <a href="#" class="round"><img src="{{ u.get_avatar }}?width=86&height=86" alt="" /></a>
+                                <a href="#" class="round"><img src="{{ u.get_avatar }}?width=86&amp;height=86" alt="" /></a>
                             </figure>
-                            <a href="#" class="button standard blue">попитай</a>
+                            <a href="#" data-id="{{ u.id }}" class="askBtn button standard blue">попитай</a>
                         </div>
                         {% with skill_count=u.preloaded_skills|length %}
                         <div class="user-skills">
@@ -302,14 +301,14 @@
         </div>
     </div>
 {#    inviatiton/form/ #}
-    <div class="test hidden">
-        <form class="small compact clearfix"
+    <div class="askForm hidden">
+        <form class="inviteForm small compact clearfix"
               role="form"
               data-uid="1503558699872852"
               data-avatar="http://graph.facebook.com/1503558699872852/picture"
 {#              we must check for permissions if not admin and is nt current user#}
 {#        -> cant send invitations as someone else#}
-              action="invitations?from=current_user&to="
+              action=""
               method="post"
               novalidate="novalidate">
             <div class="animation-container">
@@ -319,27 +318,22 @@
                     <div class="control large focus round">
                         <label for="availabelAfter">Опишете за какво става дума </label>
                         <fieldset class="main">
-                            <label for="">Дейност</label>
+                            <label class="title-primary">
+                                <h3>Проект</h3>
+                            </label>
                             <select name="project" id="project">
-                                <option value="">lqlqlq</option>
-                                <option value="proekt1">proekt 1</option>
-                                <option value="proekt2">proekt 2</option>
-                            </select>
-                            <label for="">Дейност</label>
-                            <select name="project" id="project">
-                                <option value="">lqlqlq</option>
-                                <option value="proekt1">proekt 1</option>
-                                <option value="proekt2">proekt 2</option>
+                                 {% for project in projects %}
+                                    <option value="{{ project.id }}">{% if project.slug == 'user'%}Проект по собствена идея{% else %}&bdquo;{{ project.name }}&ldquo;{% endif %}</option>
+                                {% endfor %}
                             </select>
                         </fieldset>
-                        <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%"
-                               value="" data-selection="
-                                {% for s in member.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
-                               data-choices=""/>
-                        <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%"
-                               value="" data-selection="
-                                {% for s in member.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
-                               data-choices=""/>
+                        <fieldset class="skills">
+                            <label for="joinSkills">
+                                <h3 class="title-primary">Дейност</h3>
+                            </label>
+                            <select name="skill" id="userSkills">
+                            </select>
+                        </fieldset>
 
                         <span class="err available_after"></span>
                     </div>
@@ -348,27 +342,26 @@
                         <label for="joinSkills">
                             Създайте или изберете задача:
                         </label>
-                        <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%"
-                               value="" data-selection="
-                                {% for s in member.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
-                               data-choices=""/>
                         <span class="err skills"></span>
                         <label for="joinSkills" class="secondary">
                     <span class="help">Ако не виждате това, което искате, просто го напишете и натиснете „Enter“, за да го добавите.
                     </span>
                         </label>
+                         <input type="hidden" id="task" name="task">
                     </div>
                     <div class="last predefined contrasted control round">
                         <label for="joinSkills">
                             Съобщение
                         </label>
-                        <button type="submit" class="button standard green"><b>Изпрати</b>
-                        </button>
                         <div class="animation-container">
                             <div>
-                                <strong>Anton Stoychev</strong>
-                                <em>antitoxic@gmail.com</em>
-                                <a href="#" class="change">промени</a>
+                                Здравей, <span id="msg-user-name"></span>,
+                                <p>Видях, че искаш да се включиш в/във "<span id="chosen-activity">_____________</span>"</p>
+                                <p>Проектът "<span id="chosen-project">___________</span>" има нужда точно от това.</p>
+                                <textarea name="message"></textarea>
+                                {# <em id="msg-user-mail">antitoxic@gmail.com</em> #}
+                                {# <a href="#" class="change">промени</a> #}
+                        <button class="button standard green" id="invite-btn"><b>Изпрати</b></button>
                             </div>
                             <div class="inputs" style="display: none;">
                                 <input type="text" name="name" class="form-control round" placeholder="Име"
@@ -384,6 +377,14 @@
                 </div>
             </div>
         </form>
+    </div>
+    <div class="invHtml hidden">
+        <div class="animation-container">
+            <div class="control large focus round">
+                <p class="inviteMessage">
+                </p>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

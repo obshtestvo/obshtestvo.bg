@@ -133,3 +133,38 @@ class SkillService:
             'page': "users-page",
             'skills_options': skills_options
         }
+
+try:
+    import json
+except ImportError:
+    from django.utils import simplejson as json
+
+from django.http import HttpResponse
+from django.conf import settings
+from django.core.serializers.json import DjangoJSONEncoder
+
+JSONContentType = 'application/json; charset=%s' % (settings.DEFAULT_CHARSET, )
+
+class JSONResponse(HttpResponse):
+    """
+    Response that will return JSON serialized value of the content
+
+    """
+    INDENT = 1 if settings.DEBUG else None
+
+    def __init__(self, content, content_type=JSONContentType, *args, **kwargs):
+        json_content = json.dumps(content, cls=DjangoJSONEncoder, indent=self.INDENT)
+        super(JSONResponse, self).__init__(json_content, content_type)
+
+
+def render_json(request, data, content_type=JSONContentType, *args, **kwargs):
+    """
+    View shortcut around JSONResponse that will set the content_type
+    to text/plain if browser (like IE 8) does not support application/json
+
+    """
+    if 'application/json' in content_type:
+        if 'application/json' not in request.META['HTTP_ACCEPT']:
+            content_type = "text/plain; charset=%s" % (settings.DEFAULT_CHARSET, )
+    return JSONResponse(data, content_type, *args, **kwargs)
+

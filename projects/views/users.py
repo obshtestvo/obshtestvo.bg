@@ -3,13 +3,41 @@ from django.views.generic.base import View
 
 from restful.decorators import restful_view_templates
 
-from projects.models import SkillGroup, User, Project, Skill
-from projects.services import UsersService
+from projects.models import SkillGroup, User, Project, Skill, Task
+from projects.services import UsersService, JSONResponse
 
 @restful_view_templates
 class UsersView(View):
 
     def get(self, request):
+
+        if request.is_ajax():
+            if request.GET.get('userId'):
+                user_id = int(request.GET.get('userId'))
+                user = User.objects.get(pk=user_id)
+
+                data = [{'skill': s.name,
+                        'skill_id':  s.pk,
+                        'user': user.first_name,
+                        'email': user.email,
+                } for s in user.skills.iterator()]
+
+                return JSONResponse(data)
+
+            if request.GET.get('skillId'):
+                project_id = int(request.GET.get('projectId'))
+                skill_id = int(request.GET.get('skillId'))
+                tasks = Task.objects.filter(skill_id=skill_id, project_id=project_id)
+
+                data = [{'name': t.name,
+                        'task_id':  t.pk,
+                        'task_description':  t.description,
+                        'task_project':  t.project.name,
+                        'task_skill':  t.skill.name,
+                } for t in tasks]
+
+                return JSONResponse(data)
+
         user_service = UsersService()
 
         # no-join queries

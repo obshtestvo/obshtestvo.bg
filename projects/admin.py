@@ -205,8 +205,22 @@ class ProjectActivityInline(SortableTabularInline):
 
     readonly_fields = ('advanced',)
 
-class TaskInline(SortableTabularInline):
+
+class TasksAdmin(admin.ModelAdmin):
     model = Task
+    suit_classes = 'suit-tab suit-tab-tasks'
+    sortable = 'order'
+    extra = 0
+
+
+class InvitationsAdmin(admin.ModelAdmin):
+    model = Invitation
+    suit_classes = 'suit-tab suit-tab-tasks'
+    sortable = 'order'
+    extra = 0
+
+class InvitationAnswerAdmin(admin.ModelAdmin):
+    model = InvitationAnswer
     suit_classes = 'suit-tab suit-tab-tasks'
     sortable = 'order'
     extra = 0
@@ -338,7 +352,7 @@ class SkillAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 class ProjectActivityAdminBase(admin.ModelAdmin):
-    inlines = (UserActivityInline, TaskInline)
+    inlines = (UserActivityInline,)
 
     def tools(self, instance):
         return close_link(instance)
@@ -355,7 +369,6 @@ class ProjectActivityAdminBase(admin.ModelAdmin):
 class ProjectActivityAdmin(ProjectActivityAdminBase, reversion.VersionAdmin):
     suit_form_tabs = (
         ('general', 'General'),
-        ('tasks', 'Tasks'),
         ('activities', 'User activities'),
     )
 
@@ -613,5 +626,8 @@ admin.site.register(UserProjectPause)
 admin.site.register(ProjectActivity, ProjectActivityAdmin)
 admin.site.register(ProjectActivityTemplate, ProjectActivityTemplateAdmin)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(Task, TasksAdmin)
+admin.site.register(Invitation, InvitationsAdmin)
+admin.site.register(InvitationAnswer, InvitationAnswerAdmin)
 admin.site.register(User, MyUserAdmin)
 admin.site.register(UserActivity)

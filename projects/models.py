@@ -390,11 +390,15 @@ class Task(models.Model):
     class Meta:
         verbose_name = _('task')
         verbose_name_plural = _('tasks')
-    activity = models.ForeignKey('ProjectActivity', related_name="tasks")
+    project = models.ForeignKey('Project', related_name="tasks", null=True, blank=True)
+    skill = models.ForeignKey('Skill', related_name="tasks", null=True, blank=True)
+    description = models.TextField(_('description'), blank=True)
     name = models.CharField(_('name'), max_length=30, blank=False)
     points = models.PositiveIntegerField(_('points'), max_length=4, default=5)
     is_complete = models.BooleanField(_('is this complete'), default=False)
-    order = models.PositiveIntegerField()
+
+    def __unicode__(self):
+        return unicode(self.name + " | " + self.project.name)
 
 
     # return RecycleSpot.objects.select_related("type").filter(materials__name__in=types).only(*cls.FIELDS).distinct()
@@ -403,3 +407,42 @@ class Task(models.Model):
     # ref: https://docs.djangoproject.com/en/dev/ref/models/queries/
     # ref: https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related
     # .select_related('blog')
+
+class Invitation(models.Model):
+    class Meta:
+        verbose_name = _('invitation')
+        verbose_name_plural = _('invitations')
+    task = models.ForeignKey('Task', related_name="invitations", blank=True, null=True)
+    project = models.ForeignKey('Project', related_name="invitations", blank=True, null=True)
+    skill = models.ForeignKey('Skill', related_name="invitations", blank=True, null=True)
+    inviter = models.ForeignKey('User', related_name="inviters", blank=True, null=True)
+    invitee = models.ForeignKey('User', related_name="recipients", blank=True, null=True)
+    message = models.TextField(_('Message'), blank=True, null=True)
+    created_at = models.DateTimeField(_('created at'), default=timezone.now)
+
+    def __unicode__(self):
+        return unicode(self.task.name + " | " + self.project.name)
+
+
+class InvitationAnswer(models.Model):
+    NEED_CLARIFICATION = 'clarify'
+    YES = 'yes'
+    NO = 'no'
+    ANSWER_CHOICES = (
+        (NEED_CLARIFICATION, _('Needs clarification')),
+        (YES, _('Yes')),
+        (NO, _('No')),
+    )
+    invitation = models.ForeignKey('Invitation', related_name="answers")
+    invitee = models.ForeignKey('User', related_name="invitees")
+    answered_at = models.DateTimeField(_('answered at'), null=True, blank=True)
+    is_answered = models.BooleanField(_('Is Answered'), default=False)
+    answer = models.CharField(max_length=20,
+                              choices=ANSWER_CHOICES,
+                              verbose_name=_("Answer"),
+                              blank=True,
+                              null=True)
+    answer_notes = models.CharField(_('notes'), max_length=280, blank=True, null=True)
+
+    def __unicode__(self):
+        return unicode(self.invitation.task.name + " | " + self.invitation.project.name +  " from " + self.invitation.inviter.get_full_name())

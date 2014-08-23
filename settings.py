@@ -48,6 +48,8 @@ USE_TZ = True
 
 
 EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 ALLOWED_HOSTS = ['.obshtestvo.bg']
 INTERNAL_IPS = ['127.0.0.1', '10.0.2.2']
 
@@ -149,6 +151,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'social.apps.django_app.default',
     "restful",
     "auth",
@@ -163,7 +166,7 @@ if DEBUG:
     INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
     MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
 
-    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_FILE_PATH = os.path.join(PROJECT_ROOT, 'server/mail')
 
 ANONYMOUS_USER_ID = -1
@@ -375,7 +378,9 @@ SUIT_CONFIG = {
                 'project',
                 {'model': 'projectactivity', 'label': _('activities')},
                 # {'model': 'projectactivitytemplate', 'label': _('activity templates')},
-                'task',
+                {'model': 'projects.task', 'label': _('tasks')},
+                {'model': 'projects.invitation', 'label': _('invitations')},
+                {'model': 'projects.invitationanswer', 'label': _('invitation answers')},
             )
         },
         {
