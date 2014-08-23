@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
-{% block footerTag %}
-    <script src="{% static 'js/sidebar.js' %}"></script>
-{% endblock %}
+{% load staticblock %}
+
 {% block content %}
+    {% assets bottomjs %}
+        <script src="{% static 'js/sidebar.js' %}"></script>
+    {% endassets %}
     {% include '_header_inner.html' with screen_tmpl="faq/_screen.html" headnav_tmpl="faq/_headnav.html" toc_tmpl="faq/_toc.html" page_title="Въпроси и Отговори" %}
     <div class="half-layout">
     <div class="padder">

@@ -4,82 +4,129 @@
 {% load restful %}
 {% load dict %}
 {% load dev %}
+{% load staticblock %}
 
 {% block content %}
-<div class="layout styleguide">
+    {% assets topcss %}
+        <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'js/lib/prism/prism.css' %}">
+    {% endassets %}
 
-<h2>Лого</h2>
-<em>todo..</em>
+    {% assets topjs %}
+        <script src="{% static 'libs/spin.js/spin.js' %}"></script>
+    {% endassets %}
 
-<em>Цветове</em>
-<em>todo..</em>
+    {% assets bottomjs %}
+        <script src="{% static 'js/lib/prism/prism.js' %}"></script>
+        <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
+        <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'libs/mustache/mustache.js' %}"></script>
+        <script src="{% static 'js/styleguide.js' %}"></script>
+    {% endassets %}
 
-<h2>Икони</h2>
-<em>todo..</em>
+    <div class="layout styleguide">
+        <h2>Лого</h2>
+
+        <p>Комбинира се </p>
+
+        <h3>Пълен формат</h3>
+        <img src="{% static "img/elements/logo-full-200x31.png" %}" alt=""/>
+
+        <h3>Само знак</h3>
+        <img src="{% static "img/elements/logo-mark-50x46.png" %}" alt=""/>
+
+        <h3>Удобни размери</h3>
+        <h4>Avatar</h4>
+
+        <p class="label">200x200, с бяла подложка и отстояние от крайщата</p>
+        <img src="{% static "img/elements/logo-mark-avatar-200x200.png" %}" alt=""/>
+        <h4>Начална страница</h4>
+
+        <p class="label">293x46, без подложка и без отстояния</p>
+        <img src="{% static "img/logo.png" %}" alt=""/>
 
 
-<h2>Текст</h2>
-<p>Абзаци, линкове</p>
-<em>todo..</em>
-<div class="txt">
-    <h2>H2 Заглавие</h2>
-    <h3>H3 Заглавие</h3>
-    <h4>H4 Заглавие</h4>
-    <h5>H5 Заглавие</h5>
-    <p>„Ентусиасти, създаващи инструменти, които <strong>улесняват</strong> отношенията между гражданите и различните институции“</p>
-    <p>„Общество.бг дава <a href="{% url 'users' %}">структура, юридически гръб и ресурси</a> на всеки, който има желание да подобри средата около себе си“</p>
-</div>
+        <em>todo..</em>
 
-<h2>Линк <q>още</q></h2>
-<a class="more continue" href="">още</a><br/>
-<a class="more bulky" href="">виж повече</a><br/>
-<a class="pickme" href="">кликни ме</a>
+        <em>Цветове</em>
+        <em>todo..</em>
 
-<h4 class="code-title">html</h4>
+        {% include "style/_icons.html" %}
+
+        <h2>Mascot</h2>
+        <em>г-жа бюрокрация и дамите и господа хакери todo..</em>
+
+
+        <h2>Текст</h2>
+
+        <p>Абзаци, линкове</p>
+        <em>todo..</em>
+
+        <div class="txt">
+            <h2>H2 Заглавие</h2>
+
+            <h3>H3 Заглавие</h3>
+            <h4>H4 Заглавие</h4>
+            <h5>H5 Заглавие</h5>
+
+            <p>„Ентусиасти, създаващи инструменти, които <strong>улесняват</strong> отношенията между гражданите и
+                различните институции“</p>
+
+            <p>„Общество.бг дава <a href="{% url 'users' %}">структура, юридически гръб и ресурси</a> на всеки, който
+                има желание да подобри средата около себе си“</p>
+        </div>
+
+        <h2>Линк <q>още</q></h2>
+        <a class="more continue" href="">още</a><br/>
+        <a class="more bulky" href="">виж повече</a><br/>
+        <a class="pickme" href="">кликни ме</a>
+
+        <h4 class="code-title">html</h4>
 <pre><code class="language-markup">{% filter force_escape|strip %}
 <a class="more continue" href="">още</a>
 <a class="more bulky" href="">виж повече</a>
 {% endfilter %}</code></pre>
 
-<h2>Header линк</h2>
-<a class="more" href="/faq.html#approach">Как ще ги постигнем</a>
-<a class="more" href="/faq.html#gettingthingsdone">Как работим</a>
-<em>todo..</em>
+        <h2>Header линк</h2>
+        <a class="more" href="/faq.html#approach">Как ще ги постигнем</a>
+        <a class="more" href="/faq.html#gettingthingsdone">Как работим</a>
+        <em>todo..</em>
 
-<h2>Бутон</h2>
-<a href="#" class="button standard green"><b>Включи се</b></a>
-<a href="#" class="button standard blue"><b>Включи се</b></a>
-<a href="#" class="button standard orange"><b>Включи се</b></a>
-<a href="#" class="button standard red "><b>Включи се</b></a>
+        <h2>Бутон</h2>
+        <a href="#" class="button standard green"><b>Включи се</b></a>
+        <a href="#" class="button standard blue"><b>Включи се</b></a>
+        <a href="#" class="button standard orange"><b>Включи се</b></a>
+        <a href="#" class="button standard red "><b>Включи се</b></a>
 
-<h4 class="code-title">html</h4>
+        <h4 class="code-title">html</h4>
 <pre><code class="language-markup">{% filter force_escape|strip %}
 <a href="#" class="button standard green"><b>Включи се</b></a>
 <a href="#" class="button standard blue"><b>Включи се</b></a>
 <a href="#" class="button standard orange"><b>Включи се</b></a>
 <a href="#" class="button standard red "><b>Включи се</b></a>
 {% endfilter %}</code></pre>
-<p>Текста е в <code class="language-markup">{% filter force_escape|strip %}<b>{% endfilter %}</code>, за да може да се анимира при натиск</p>
+        <p>Текста е в <code class="language-markup">{% filter force_escape|strip %}<b>{% endfilter %}</code>, за да може
+            да се анимира при натиск</p>
 
-<h2>Бутон с по-малък текст</h2>
-<a href="{% url 'join' %}" class="button small green"><b>Включи се</b></a>
-<h4 class="code-title">html</h4>
+        <h2>Бутон с по-малък текст</h2>
+        <a href="{% url 'join' %}" class="button small green"><b>Включи се</b></a>
+        <h4 class="code-title">html</h4>
 <pre><code class="language-markup">{% filter force_escape|strip %}
-<a href="{% url 'join' %}" class="button small green"><b>Включи се</b></a>{% endfilter %}
+    <a href="{% url 'join' %}" class="button small green"><b>Включи се</b></a>{% endfilter %}
 </code></pre>
 
-<h2>Отметка</h2>
-<em>todo..</em>
+        <h2>Отметка</h2>
+        <em>todo..</em>
 
-<h2>Dropdown (избор на 1 опция)</h2>
-<select class="example-single" data-placeholder="Инфо за опциите" style="width: 300px">
-    <option></option>
-    <option value="1">Зеле</option>
-    <option value="2">Картофи</option>
-    <option value="3">Домати</option>
-    <option value="4">Пъпеш</option>
-</select>
-<h4 class="code-title">html</h4>
+        <h2>Dropdown (избор на 1 опция)</h2>
+        <select class="example-single" data-placeholder="Инфо за опциите" style="width: 300px">
+            <option></option>
+            <option value="1">Зеле</option>
+            <option value="2">Картофи</option>
+            <option value="3">Домати</option>
+            <option value="4">Пъпеш</option>
+        </select>
+        <h4 class="code-title">html</h4>
 <pre><code class="language-markup">{% filter force_escape|strip %}
 <select class="example-single" data-placeholder="Инфо за опциите" style="width: 300px">
     <option></option>
@@ -89,7 +136,7 @@
     <option value="4">Пъпеш</option>
 </select>
 {% endfilter %}</code></pre>
-<h4 class="code-title">js</h4>
+        <h4 class="code-title">js</h4>
 <pre><code class="language-javascript">{% filter force_escape|strip %}
 $('select.example-single').select2({
     containerCssClass: 'example-single select2',
@@ -97,14 +144,15 @@ $('select.example-single').select2({
 })
 {% endfilter %}</code></pre>
 
-<h2>Dropdown (избор на няколко опции)</h2>
-<select class="example-multiple" multiple data-placeholder="Инфо за опциите" style="width: 300px">
-    <option value="1">Зеле</option>
-    <option value="2">Картофи</option>
-    <option value="3">Домати</option>
-    <option value="4">Пъпеш</option>
-</select>
-<h4 class="code-title">html</h4>
+        <h2>Dropdown (избор на няколко опции)</h2>
+        <select class="example-multiple" multiple data-placeholder="Инфо за опциите" style="width: 300px">
+            <option value="1">Зеле</option>
+            <option value="2">Картофи</option>
+            <option value="3">Домати</option>
+            <option value="4">Пъпеш</option>
+        </select>
+
+        <h4 class="code-title">html</h4>
 <pre><code class="language-markup">{% filter force_escape|strip %}
 <select class="example-multiple" multiple data-placeholder="Инфо за опциите" style="width: 300px">
     <option value="1">Зеле</option>
@@ -113,81 +161,60 @@ $('select.example-single').select2({
     <option value="4">Пъпеш</option>
 </select>
 {% endfilter %}</code></pre>
-<h4 class="code-title">js</h4>
+        <h4 class="code-title">js</h4>
 <pre><code class="language-javascript">{% filter force_escape|strip %}
 $('select.example-multiple').select2({
     containerCssClass: 'example-multiple select2'
 })
 {% endfilter %}</code></pre>
 
-<h2>Форма за попълване</h2>
-<p>Попринцио формите се изпращат със <code class="language-javascript">AJAX</code></p>
-<form action="" class="standard">
-    <div class="msg" style="display: none;"></div>
-    <div class="controls">
-        <div class="control focus">
-            <label for="availabelAfter">Опишете за какво става дума </label>
-            ...
-            <span class="err available_after"></span>
-        </div>
+        <h2>Форма за попълване</h2>
 
-        <div class="control clearfix faded">
-            <label for="joinSkills">
-                Създайте или изберете задача:
-            </label>
-            <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%" value="" data-selection="
+        <p>Попринцио формите се изпращат със <code class="language-javascript">AJAX</code></p>
+
+        <form action="" class="standard">
+            <div class="msg" style="display: none;"></div>
+            <div class="controls">
+                <div class="control focus">
+                    <label for="availabelAfter">Опишете за какво става дума </label>
+                    ...
+                    <span class="err available_after"></span>
+                </div>
+
+                <div class="control clearfix faded">
+                    <label for="joinSkills">
+                        Създайте или изберете задача:
+                    </label>
+                    <input type="hidden" id="joinSkills" name="skills" data-rule-required="true" style="width:100%"
+                           value="" data-selection="
                     " data-choices="">
-            <span class="err skills"></span>
-            <label for="joinSkills" class="secondary">
+                    <span class="err skills"></span>
+                    <label for="joinSkills" class="secondary">
                 <span class="help">
                     Ако не виждате това, което искате, просто го напишете и натиснете „Enter“, за да го добавите.
                 </span>
-            </label>
-        </div>
-        <div class="predefined contrasted control">
-            <label for="joinSkills">
-                Съобщение
-            </label>
-            ....
-        </div>
+                    </label>
+                </div>
+                <div class="predefined contrasted control">
+                    <label for="joinSkills">
+                        Съобщение
+                    </label>
+                    ....
+                </div>
+            </div>
+        </form>
+        <em>todo..</em>
+
+        <h2>Табове</h2>
+        <em>todo..</em>
+
+        <h2>Tooltip</h2>
+        <em>todo..</em>
+
+        <h2>Popup</h2>
+        <em>todo..</em>
+
+        {% skills_picker %}
     </div>
-</form>
-<em>todo..</em>
 
-<h2>Табове</h2>
-<em>todo..</em>
-
-<h2>Tooltip</h2>
-<em>todo..</em>
-
-<h2>Popup</h2>
-<em>todo..</em>
-
-
-</div>
-
-{% endblock %}
-
-
-{% block headTag %}
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'js/lib/prism/prism.css' %}">
-{% endblock %}
-
-{% block headScript %}
-    <script src="{% static 'libs/spin.js/spin.js' %}"></script>
-{% endblock %}
-
-{% block footerTag %}
-    <script src="{% static 'js/lib/prism/prism.js' %}"></script>
-    <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
-    <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'libs/mustache/mustache.js' %}"></script>
-    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
-    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-    <script src="{% static 'js/select2grouped.js' %}"></script>
-    <script src="{% static 'libs/mixitup/build/jquery.mixitup.min.js' %}"></script>
-    <script src="{% static 'libs/packery/dist/packery.pkgd.min.js' %}"></script>
-    <script src="{% static 'js/styleguide.js' %}"></script>
 {% endblock %}

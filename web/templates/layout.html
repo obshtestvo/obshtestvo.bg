@@ -1,5 +1,8 @@
 {% load staticfiles %}
+{% load staticblock %}
+{% load dev %}
 {% load compress %}
+
 <!DOCTYPE html>
 <html class="no-js" lang="bg">
 <head>
@@ -20,19 +23,21 @@
     {% endcompress %}
 
     {% compress css %}
-    {% block headTag %}{% endblock %}
+        {% assets topcss master %}{% endassets %}
     {% endcompress %}
 
     {% compress css %}
     <link rel="stylesheet" type="text/x-scss" href="{% static 'css/app.scss' %}">
     {% endcompress %}
+
     {% compress js %}
         <script src="{% static "libs/modernizer/modernizr.js" %}"></script>
         <script src="{% static 'libs/deepmerge/index.js' %}"></script>
         <script src="{% static 'js/utils.js' %}"></script>
     {% endcompress %}
+
     {% compress js %}
-        {% block headScript %}{% endblock %}
+        {% assets topjs master %}{% endassets %}
     {% endcompress %}
 </head>
 <body class="{{ page }}">
@@ -120,7 +125,9 @@
 {% endcompress %}
 
 {% compress js %}
-{% block footerTag %}{% endblock %}>
+    {% filter uniquelines %}
+        {% assets bottomjs master  %}{% endassets %}
+    {% endfilter %}
 {% endcompress %}
 
 {% compress js %}

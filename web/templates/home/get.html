@@ -1,6 +1,13 @@
 {% extends "layout.html" %}
-{% load staticfiles %}<!DOCTYPE html>
+{% load staticblock %}
+{% load staticfiles %}
+
 {% block content %}
+    {% assets bottomjs %}
+        <script src="{% static 'js/slider.js' %}"></script>
+        <script src="{% static 'js/sidebar.js' %}"></script>
+        <script src="{% static 'js/home.js' %}"></script>
+    {% endassets %}
 
     <header class="masthead">
         <h1><a
@@ -277,11 +284,4 @@
             </ul>
         </section>
     </div>
-{% endblock %}
-
-
-{% block footerTag %}
-    <script src="{% static 'js/slider.js' %}"></script>
-    <script src="{% static 'js/sidebar.js' %}"></script>
-    <script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

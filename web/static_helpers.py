@@ -19,7 +19,8 @@ class SassFilter(CompilerFilter):
         super(SassFilter, self).__init__(content, command=self.command, *args, **kwargs)
 
     def input(self, **kwargs):
-        if self.infile is None and self.filename is None and "{infile}" in self.command:
+        input_is_not_file = self.infile is None and self.filename is None and "{infile}" in self.command
+        if input_is_not_file or not settings.DEBUG:
             self.options = dict(self.options)
             self.options["watch_args"] = ''
             return super(SassFilter, self).input(**kwargs)

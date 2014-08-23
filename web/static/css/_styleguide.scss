@@ -20,4 +20,25 @@
   code {
     font-size: 14px;
   }
+  .gallery {
+    [class^="flaticon-"] {
+      font-size: 80px;
+      color:#0498cc;
+    }
+    li {
+      text-align: center;
+      float:left;
+      margin-top: 50px;
+      width:150px;
+      height:150px;
+      position: relative;
+      h4 {
+        text-align: left;
+        position: absolute;
+        bottom:150px;
+        font-weight: normal;
+        width:100%
+      }
+    }
+  }
 }

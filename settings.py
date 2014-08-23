@@ -137,6 +137,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'assetstack',
     'web',
     "projects",
     'django_object_actions',
