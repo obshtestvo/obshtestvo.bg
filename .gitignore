@@ -8,3 +8,6 @@ static/*
 fabric_settings.py
 .vagrant/
 web/static/libs/
+.sass-cache/*
+*.sublime-project
+*.sublime-workspace
