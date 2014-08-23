@@ -57,6 +57,9 @@ $navLinkHoverBackground: #108eba;
     &.inspiration {
       width:165px;
     }
+    &.cv {
+      width:50px;
+    }
     &:hover {
       background: $navLinkHoverBackground;
       a {

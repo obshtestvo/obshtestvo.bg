@@ -1,0 +1,168 @@
+
+form.standard {
+  label {
+    display: block;
+  }
+  .control {
+    padding: 23px;
+    &.focus {
+      background: #10303c;
+      @include border-bottom-left-radius(0);
+      @include border-bottom-right-radius(0);
+      &.large {
+        padding-bottom: 26px;
+      }
+      .select2-container-multi .select2-choices,
+      .select2-container .select2-choice {
+        border-width: 2px;
+        border-color: #108eba;
+      }
+      .select2-dropdown-open .select2-choice,
+      .select2-dropdown-open .select2-choices {
+        border-bottom-color: transparent;
+      }
+      &.error .select2-container-multi {
+        .select2-choices {
+          border-color: #D50000;
+        }
+        &.select2-dropdown-open .select2-choices {
+          border-color: #108eba;
+        }
+      }
+      &.error .select2-container {
+        .select2-choice {
+          border-color: #D50000;
+        }
+        &.select2-dropdown-open .select2-choice {
+          border-color: #108eba;
+        }
+      }
+      > label {
+        letter-spacing: -0.04em;
+        color: #108eba !important;
+        font-weight: bold;
+      }
+      > label .help {
+        color: #9ba9ad !important;
+      }
+      span.err {
+        top: 0;
+      }
+    }
+    &.faded {
+      background: #ebebeb;
+      border-bottom: 1px solid #c2c7c9;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      > label {
+        color: #607d89;
+        padding-bottom: 5px;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        line-height: 1.1em;
+        margin-right: -0.2em;
+        &.secondary {
+          padding-bottom: 0;
+        }
+        .help {
+          color: #8a9a9e;
+          letter-spacing: 0;
+          padding-top: 5px;
+        }
+        strong {
+          text-decoration: underline;
+        }
+      }
+    }
+    &.large {
+      input {
+        width: 100%;
+        font-size: 28px;
+        height: 50px;
+        color: #10303c;
+        border: 2px solid #108eba;
+        @include box-sizing(border-box);
+
+        &.error {
+          border: 2px solid #D50000;
+
+          &:focus {
+            width: 100%;
+            font-size: 28px;
+            height: 50px;
+            color: #10303c;
+            border: 2px solid #108eba;
+            @include box-sizing(border-box);
+          }
+        }
+      }
+      > label {
+        font-size: 27px;
+        line-height: 1em;
+        font-weight: bold;
+        letter-spacing: -0.04em;
+        padding-bottom: 5px;
+        padding-top: 0;
+      }
+      label .help {
+        letter-spacing: 0;
+        padding-top: 6px;
+        padding-bottom: 3px;
+      }
+    }
+    &.contrasted {
+      background: #fff;
+      @include border-top-left-radius(0);
+      @include border-top-right-radius(0);
+      .inputs {
+        padding-bottom: 10px;
+      }
+    }
+    &.predefined {
+      strong {
+        display: block;
+        font-weight: normal;
+        line-height: 1.2em;
+        color: #607a84;
+        font-size: 17px;
+      }
+      em {
+        display: block;
+        color: #9ba9ad;
+        line-height: 1.2em;
+        font-size: 14px;
+        font-style: normal;
+      }
+      a {
+        font-size: 14px;
+        position: relative;
+        display: inline-block;
+        top: -4px;
+        line-height: 1.2em;
+      }
+    }
+
+    label .help {
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+  &.compact {
+    .control {
+      &.last {
+        padding-top: 16px;
+        padding-bottom: 9px;
+        input {
+          min-width: 190px;
+        }
+        .button {
+          float: right;
+        }
+      }
+    }
+
+  }
+  select[multiple] {
+    width: 100%;
+  }
+}

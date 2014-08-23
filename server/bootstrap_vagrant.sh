@@ -76,7 +76,7 @@ export PROJECT_ENV_FILE=$VAGRANT_DIR/server/.env.vagrant
 python $VAGRANT_DIR/manage.py syncdb --noinput
 python $VAGRANT_DIR/manage.py migrate
 expect -c "spawn python $VAGRANT_DIR/manage.py createsuperuser --username=admin --email=" -c "expect \"Password:\"" -c "send \"admin\n\"" -c "expect \"Password (again):\"" -c "send \"admin\n\"" -c "expect eof"
-python $VAGRANT_DIR/manage.py loaddata VAGRANT_DIR/projects/data_seed.json
+python $VAGRANT_DIR/manage.py loaddata $VAGRANT_DIR/projects/data_seed.json
 
 # servers
 sudo apt-get install nginx-full uwsgi uwsgi-plugin-python -y

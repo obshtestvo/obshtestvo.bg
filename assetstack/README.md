@@ -1,0 +1,1 @@
+Works only with `staticfiles` assets.

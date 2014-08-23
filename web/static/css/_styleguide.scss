@@ -1,0 +1,44 @@
+.styleguide {
+  padding-top: 200px;
+  > h2 {
+    border-top:1px solid #bac9ce;
+    margin-top: 100px;
+    padding-top: 20px;
+  }
+  .code-title {
+    margin-bottom: -1em;
+    line-height: 1em;
+    position: relative;
+    top:0.5em;
+    left:1em;
+    color: #B6A49A;
+  }
+  pre[class*="language-"] {
+    margin:0;
+    padding-top: 2em;
+  }
+  code {
+    font-size: 14px;
+  }
+  .gallery {
+    [class^="flaticon-"] {
+      font-size: 80px;
+      color:#0498cc;
+    }
+    li {
+      text-align: center;
+      float:left;
+      margin-top: 50px;
+      width:150px;
+      height:150px;
+      position: relative;
+      h4 {
+        text-align: left;
+        position: absolute;
+        bottom:150px;
+        font-weight: normal;
+        width:100%
+      }
+    }
+  }
+}
