@@ -26,8 +26,16 @@
         <script src="{% static 'js/select2grouped.js' %}"></script>
         <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
         <script src="{% static 'libs/mixitup/build/jquery.mixitup.min.js' %}"></script>
+        <script src="{% static 'js/lib/jquery.animateContentSwitch.js' %}"></script>
         <script src="{% static 'libs/packery/dist/packery.pkgd.min.js' %}"></script>
+        <script src="{% static 'libs/blockui/jquery.blockUI.js' %}"></script>
+        <script src="{% static 'js/auth.js' %}"></script>
+        <script src="{% static 'js/facebook.js' %}"></script>
+        <script src="{% static 'js/login.js' %}"></script>
         <script src="{% static 'js/users.js' %}"></script>
+        {% if user.is_authenticated %}
+            <script src="{% static 'js/supplies.js' %}"></script>
+        {% endif %}
     {% endassets %}
 
     <section class="content">
@@ -110,7 +118,10 @@
                     </div>
                 </div>
                 <p class="summary">Общо <strong>{{ users|length }}</strong> участника, подредени по <strong>най-рядко избирана дейност</strong> и <strong>най-малко избрани дейности</strong></p>
-                <ul class="stripped users-list">
+                <ul class="{% if user.is_authenticated == False %} login {% endif %} stripped users-list" {% if user.is_authenticated == False %} data-dash="{% url 'users' %}"
+                 data-waiting-auth-msg="Изчакваме потвърждение от facebook"
+                 data-app-id="{{ SOCIAL_AUTH_FACEBOOK_KEY }}"
+                 data-scope="{{ SOCIAL_AUTH_FACEBOOK_SCOPE|jsonify }}"{% endif %}>
                     {% for id, u in users.items %}
                     <li class="user-preview"
                         data-is-available="{% if u.is_currently_available %}1{% else %}0{% endif %}"
@@ -120,7 +131,7 @@
                             <figure>
                                 <a href="#" class="round"><img src="{{ u.get_avatar }}?width=86&amp;height=86" alt="" /></a>
                             </figure>
-                            <a href="#" data-id="{{ u.id }}" class="askBtn button standard blue">попитай</a>
+                            <a href="#" {% if user.is_authenticated == False %} data-greeting="Чудно!" data-server-gateway="{% url 'social:token' 'facebook' %}" {% endif %} data-id="{{ u.id }}"  class="askBtn {% if user.is_authenticated == False %} trigger {% endif %} button standard blue">попитай</a>
                         </div>
                         {% with skill_count=u.preloaded_skills|length %}
                         <div class="user-skills">
@@ -301,6 +312,7 @@
         </div>
     </div>
 {#    inviatiton/form/ #}
+
     <div class="askForm hidden">
         <form class="inviteForm small compact clearfix"
               role="form"
