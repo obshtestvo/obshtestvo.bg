@@ -1,5 +1,6 @@
-from models import User, Skill, SkillGroup, Task
+from models import User, Skill, SkillGroup
 from collections import OrderedDict
+
 
 class UsersService:
     def all_ordered_by_skill_popularity_and_skill_count(self, order="ASC"):
@@ -145,6 +146,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 
 JSONContentType = 'application/json; charset=%s' % (settings.DEFAULT_CHARSET, )
 
+
 class JSONResponse(HttpResponse):
     """
     Response that will return JSON serialized value of the content
@@ -167,4 +169,3 @@ def render_json(request, data, content_type=JSONContentType, *args, **kwargs):
         if 'application/json' not in request.META['HTTP_ACCEPT']:
             content_type = "text/plain; charset=%s" % (settings.DEFAULT_CHARSET, )
     return JSONResponse(data, content_type, *args, **kwargs)
-
