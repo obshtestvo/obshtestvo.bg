@@ -9,12 +9,10 @@ from django.utils.decorators import method_decorator
 from django.utils.html import strip_tags
 
 
-# from restful.decorators import restful_view_templates 
 from projects.services import JSONResponse
 from projects.models import Invitation, Project, Skill, Task, User, InvitationAnswer
 
 
-# @restful_view_templates
 class InvitationsView(View):
     @method_decorator(login_required)
     def post(self, request):
@@ -42,9 +40,7 @@ class InvitationsView(View):
                     try:
                         # send email
                         subject, from_email, to = 'Покана от obshtestvo.bg', settings.EMAIL_FROM, 'vladimirrussinov@gmail.com'
-                        html_content = render_to_string('email_templates/invite.html', {'project': inv.project.name, 'skill': inv.skill.name,
-                            'task': inv.task.name, 'inviter_mail': inv.inviter.email, 'inviter_name': inv.inviter.get_full_name(),
-                            'invitee_name': inv.invitee.first_name, 'message': inv.message})
+                        html_content = render_to_string('email_templates/invite.html', {'invitation': inv, 'invitation_answer': invitation_answer})
                         text_content = strip_tags(html_content)
 
                         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])

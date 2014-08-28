@@ -3,18 +3,18 @@
 		
 	</head>
 	<body>
-	<p>Здравей, {{ invitee_name }}, </p>
-	<p>Видях, че искаш да се включиш в/във "{{ skill }}".</p>
-	<p>Проектът "{{ project }}" има нужда точно от това.</p>
-	<p>Задачата е: "{{ task }}" </p>
-	{% if message %}
-		<p>Eто малко повече информация: {{ message }}</p>
+	<p>Здравей, {{ invitation.invitee.first_name }}, </p>
+	<p>Видях, че искаш да се включиш в/във "{{ invitation.skill.name }}".</p>
+	<p>Проектът "{{ invitation.project.name }}" има нужда точно от това.</p>
+	<p>Задачата е: "{{ invitation.task.name }}" </p>
+	{% if invitation.message %}
+		<p>Eто малко повече информация: {{ invitation.message }}</p>
 	{% endif %}
 	<p><a href="#">"Заемам се"</a></p>
 	<p><a href="#">"Трябва ми още детайли"</a></p>
 	<p><a href="#">"Не ми е интересно"</a></p>
 	<p>Поздрави, </p>
-	<p>{{ inviter_name }}</p>
-	<p>{{ inviter_mail }}</p>
+	<p>{{ invitation.inviter.get_full_name }}</p>
+	<p>{{ invitation.inviter.email }}</p>
 	</body>
 </html>
