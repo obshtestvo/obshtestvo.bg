@@ -1,4 +1,4 @@
-from models import User, Skill, SkillGroup
+from .models import User, Skill, SkillGroup
 from collections import OrderedDict
 
 
