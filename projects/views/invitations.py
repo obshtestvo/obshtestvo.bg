@@ -1,24 +1,52 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 from django.contrib.auth import settings
+from django.contrib.sites.models import get_current_site
 from django.core.mail import EmailMultiAlternatives
 from django import forms
 from django.views.generic.base import View
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.utils.decorators import method_decorator
 from django.utils.html import strip_tags
+from restful.decorators import restful_view_templates
 
 
 from projects.services import JSONResponse
 from projects.models import Invitation, Project, Skill, Task, User, InvitationAnswer
 
-
+@restful_view_templates
 class InvitationsView(View):
+
+    @method_decorator(login_required)
+    def get(self, request, pk=None, choice=None):
+        result = {}
+        user = request.user
+        if pk is not None and choice is not None:
+            answer_instance_pk = pk
+            try:
+                answer_instance = InvitationAnswer.objects.get(pk=answer_instance_pk)
+            except InvitationAnswer.DoesNotExist:
+                return redirect('home')
+
+            if answer_instance.invitee == user:
+                answer_instance.answer = choice
+                answer_instance.answered_at = datetime.now()
+                answer_instance.is_answered = True
+                answer_instance.save()
+                result['answer_instance'] = answer_instance
+                result['site'] = get_current_site(request).domain
+
+                return result
+        else:
+            return redirect('home')
+
     @method_decorator(login_required)
     def post(self, request):
         if request.is_ajax():
             try:
-                form = Form(data=request.params)
+                form = InvitationForm(data=request.params)
                 if form.is_valid():
                     data = form.cleaned_data
                     task_data = data['task']
@@ -40,7 +68,8 @@ class InvitationsView(View):
                     try:
                         # send email
                         subject, from_email, to = 'Покана от obshtestvo.bg', settings.EMAIL_FROM, 'vladimirrussinov@gmail.com'
-                        html_content = render_to_string('email_templates/invite.html', {'invitation': inv, 'invitation_answer': invitation_answer})
+                        html_content = render_to_string('email_templates/invite.html', {'invitation': inv, 'invitation_answer': invitation_answer,
+                                                        'site': get_current_site(request).domain})
                         text_content = strip_tags(html_content)
 
                         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
@@ -67,7 +96,12 @@ class InvitationsView(View):
                 message = str(e)
 
 
-class Form(forms.Form):
+# class AnswersView(View):
+#     template = 'invitations/answers.html'
+
+
+
+class InvitationForm(forms.Form):
     task = forms.CharField(required=True)
     project = forms.ModelChoiceField(required=True, queryset=Project.objects.all())
     skill = forms.ModelChoiceField(required=True, queryset=Skill.objects.all())

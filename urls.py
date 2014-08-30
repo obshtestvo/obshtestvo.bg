@@ -3,7 +3,7 @@ from django.contrib import admin
 from web.views import home, about, project, support, members, contact, faq, report, style
 from login.views import login
 from auth.views import extra_data, entry
-from projects.views import dashboard, user, users, temp, invitations, answer
+from projects.views import dashboard, user, users, temp, invitations
 from django.conf import settings
 admin.autodiscover()
 
@@ -27,7 +27,7 @@ urlpatterns = patterns('',
     url(r'^join/$', login.LoginView.as_view(), name='join'),
     url(r'^user/(?P<id>\d+)$', user.UserView.as_view(), name='user'),
     url(r'^supplies/$', users.UsersView.as_view(), name='users'),
-    url(r'^supplies/invitations/answer/$', invitations.AnswersView.as_view(), name='invitations'),
+    url(r'^supplies/invitations/(?P<pk>\d+)/(?P<choice>yes|clarify|no)/$', invitations.InvitationsView.as_view(), name='invitation_answer'),
     url(r'^supplies/invitations/$', invitations.InvitationsView.as_view(), name='invitation_answer'),
     url(r'^temp/$', temp.TempView.as_view(), name='temp'),
     url(r'^dashboard/$', dashboard.DashboardView.as_view(), name='dash'),
