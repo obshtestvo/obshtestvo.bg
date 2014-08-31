@@ -10,9 +10,9 @@
 	{% if invitation.message %}
 		<p>Eто малко повече информация: {{ invitation.message }}</p>
 	{% endif %}
-	<p><a href="#">"Заемам се"</a></p>
-	<p><a href="#">"Трябва ми още детайли"</a></p>
-	<p><a href="#">"Не ми е интересно"</a></p>
+	<p><a href="http://{{ site }}/supplies/invitations/{{ invitation_answer.pk }}/yes/">"Заемам се"</a></p>
+	<p><a href="http://{{ site }}/supplies/invitations/{{ invitation_answer.pk }}/clarify/">"Трябват ми още детайли"</a></p>
+	<p><a href="http://{{ site }}/supplies/invitations/{{ invitation_answer.pk }}/no/">"Не ми е интересно"</a></p>
 	<p>Поздрави, </p>
 	<p>{{ invitation.inviter.get_full_name }}</p>
 	<p>{{ invitation.inviter.email }}</p>
