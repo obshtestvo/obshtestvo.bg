@@ -21,7 +21,6 @@ class InvitationsView(View):
 
     @method_decorator(login_required)
     def get(self, request, pk=None, choice=None):
-        result = {}
         user = request.user
         if pk is not None and choice is not None:
             answer_instance_pk = pk
@@ -35,10 +34,8 @@ class InvitationsView(View):
                 answer_instance.answered_at = datetime.now()
                 answer_instance.is_answered = True
                 answer_instance.save()
-                result['answer_instance'] = answer_instance
-                result['site'] = get_current_site(request).domain
 
-                return result
+            return redirect('users')
         else:
             return redirect('home')
 
@@ -94,11 +91,6 @@ class InvitationsView(View):
                     return JSONResponse(response)
             except Exception as e:
                 message = str(e)
-
-
-# class AnswersView(View):
-#     template = 'invitations/answers.html'
-
 
 
 class InvitationForm(forms.Form):
