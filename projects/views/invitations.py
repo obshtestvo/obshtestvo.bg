@@ -30,11 +30,22 @@ class InvitationsView(View):
                 return redirect('home')
 
             if answer_instance.invitee == user:
-                answer_instance.answer = choice
-                answer_instance.answered_at = datetime.now()
-                answer_instance.is_answered = True
-                answer_instance.save()
+                if answer_instance.is_answered is False:
+                    answer_instance.answer = choice
+                    answer_instance.answered_at = datetime.now()
 
+                    answer_instance.is_answered = True
+                    answer_instance.save()
+
+                    subject, from_email, to = 'Отговор на покана от obshtestvo.bg', settings.EMAIL_FROM, 'vladimirrussinov@gmail.com'
+                    html_content = render_to_string('email_templates/answer.html', {'answer': answer_instance, 'site': get_current_site(request).domain})
+                    text_content = strip_tags(html_content)
+
+                    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+                    msg.attach_alternative(html_content, "text/html")
+                    msg.send()
+
+                    # message = 'Благодарим Ви. Ще се свържем с Вас възможно най-скоро.
             return redirect('users')
         else:
             return redirect('home')

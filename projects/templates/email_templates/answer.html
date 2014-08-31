@@ -1,0 +1,22 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+	<p>Здравей, {{ answer.invitation.inviter.first_name }}, </p>
+	<p>Благодаря за поканата свързана с "{{ answer.invitation.skill.name }}", по проект "{{ answer.invitation.project.name }}".</p>	
+	<p>Задачата е: "{{ answer.invitation.task.name }}".</p>
+	<p>
+	{% if answer.answer == "yes" %}
+		Заемам се !
+	{% elif answer.answer == "clarify" %}
+		Ще ми трябва малко повече разяснение.
+	{% else %}
+		По една или друга причина няма да мога да се заема. Съжалявам !
+	{% endif %}
+	</p>
+	<p>Поздрави, </p>
+	<p>{{ answer.invitee.get_full_name }}</p>
+	<p>{{ answer.invitee.email }}</p>
+	</body>
+</html>
