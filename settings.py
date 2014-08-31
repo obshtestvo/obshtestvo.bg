@@ -393,6 +393,7 @@ SUIT_CONFIG = {
                 {'model': 'projects.skillgroup', 'label': _('skill groups')},
             )
         },
+        'sites',
     )
 }
 PUBLIC_SETTINGS = ['SOCIAL_AUTH_FACEBOOK_KEY', 'SOCIAL_AUTH_FACEBOOK_SCOPE']
