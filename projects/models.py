@@ -396,10 +396,3 @@ class Task(models.Model):
     is_complete = models.BooleanField(_('is this complete'), default=False)
     order = models.PositiveIntegerField()
 
-
-    # return RecycleSpot.objects.select_related("type").filter(materials__name__in=types).only(*cls.FIELDS).distinct()
-    # return RecycleSpot.objects.select_related("type").filter(materials__name__in=types).only(*cls.FIELDS).distinct()
-
-    # ref: https://docs.djangoproject.com/en/dev/ref/models/queries/
-    # ref: https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.query.QuerySet.select_related
-    # .select_related('blog')
