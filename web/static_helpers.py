@@ -20,6 +20,8 @@ class SassFilter(CompilerFilter):
         super(SassFilter, self).__init__(content, command=self.command, *args, **kwargs)
 
     def input(self, **kwargs):
+        if not os.path.exists(settings.SASS_BINARY_PATH):
+            raise FilterError( "Please set path to `sass` binary - settings.SASS_BINARY_PATH")
         input_is_not_file = self.infile is None and self.filename is None and "{infile}" in self.command
         if input_is_not_file or not settings.DEBUG:
             self.options = dict(self.options)
@@ -50,6 +52,8 @@ class SassSimpleFilter(CompilerFilter):
         super(SassFilter, self).__init__(content, command=self.command, *args, **kwargs)
 
     def input(self, **kwargs):
+        if not os.path.exists(settings.SASS_BINARY_PATH):
+            raise FilterError( "Please set path to `sass` binary - settings.SASS_BINARY_PATH")
         input_is_not_file = self.infile is None and self.filename is None and "{infile}" in self.command
         if input_is_not_file:
             raise FilterError(type(self).__name__ + " can't compile embedded SASS or SCSS. Please use another compiler filter.")

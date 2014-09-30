@@ -9,6 +9,9 @@ class Command(BaseCommand):
     help = 'Compiles a specified (by absolute path) scss file css'
 
     def handle(self, *args, **kwargs):
+        if not os.path.exists(settings.SASS_BINARY_PATH):
+            raise CommandError( "Please set path to `sass` binary - settings.SASS_BINARY_PATH")
+
         if len(args) == 0:
             raise CommandError("You haven't specified path")
 
