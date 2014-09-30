@@ -20,7 +20,8 @@ class SassFilter(CompilerFilter):
         super(SassFilter, self).__init__(content, command=self.command, *args, **kwargs)
 
     def input(self, **kwargs):
-        if not os.path.exists(settings.SASS_BINARY_PATH):
+        sass_binary = settings.SASS_BINARY_PATH
+        if sass_binary is None or not os.path.exists(sass_binary):
             raise FilterError( "Please set path to `sass` binary - settings.SASS_BINARY_PATH")
         input_is_not_file = self.infile is None and self.filename is None and "{infile}" in self.command
         if input_is_not_file or not settings.DEBUG:
@@ -48,11 +49,9 @@ class SassFilter(CompilerFilter):
 
 class SassSimpleFilter(CompilerFilter):
 
-    def __init__(self, content, attrs, *args, **kwargs):
-        super(SassFilter, self).__init__(content, command=self.command, *args, **kwargs)
-
     def input(self, **kwargs):
-        if not os.path.exists(settings.SASS_BINARY_PATH):
+        sass_binary = settings.SASS_BINARY_PATH
+        if sass_binary is None or not os.path.exists(sass_binary):
             raise FilterError( "Please set path to `sass` binary - settings.SASS_BINARY_PATH")
         input_is_not_file = self.infile is None and self.filename is None and "{infile}" in self.command
         if input_is_not_file:
