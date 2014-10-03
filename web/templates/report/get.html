@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
-{% load staticblock %}
+{% load assetsblock %}
 
-{% block content %}
-    {% assets bottomjs %}
+{% assets bottomjs %}
     <script src="{% static 'js/sidebar.js' %}"></script>
     <script src="{% static 'js/report.js' %}"></script>
-    {% endassets %}
+{% endassets %}
 
+{% block content %}
     {% include '_header_inner.html' with screen_tmpl="report/_screen.html" headnav_tmpl="report/_headnav.html" toc_tmpl="report/_toc.html" page_title="Отчети" %}
     <div class="half-layout">
         <div class="padder">

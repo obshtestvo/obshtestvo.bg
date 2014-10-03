@@ -1,28 +1,27 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
-{% load staticblock %}
+{% load assetsblock %}
 {% load url from future %}
+
+{% assets topcss %}
+    {#    Тук се добавят допълнителни CSS файлове по примера на долния ред #}
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
+    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
+    {#    за файл вътре в нея "static/css/lib/select2/select2.css" #}
+{% endassets %}
+
+{% assets bottomjs %}
+    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
+    <script src="{% static 'js/select2grouped.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
+    {#    Тук се добавят допълнителни javascript файлове по примера на долния ред #}
+    <script src="{% static 'js/temp.js' %}"></script>
+    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
+    {#    за файл вътре в нея "static/js/users.js" #}
+{% endassets %}
 
 {% block content %}
     {% include '_masthead_sample.html' %}
-
-    {% assets topcss %}
-        {#    Тук се добавят допълнителни CSS файлове по примера на долния ред #}
-        <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
-        {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-        {#    за файл вътре в нея "static/css/lib/select2/select2.css" #}
-    {% endassets %}
-    {% assets bottomjs %}
-        <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
-        <script src="{% static 'js/select2grouped.js' %}"></script>
-        <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-        {#    Тук се добавят допълнителни javascript файлове по примера на долния ред #}
-        <script src="{% static 'js/temp.js' %}"></script>
-        {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-        {#    за файл вътре в нея "static/js/users.js" #}
-    {% endassets %}
-
-    
     <div class="layout">
         
         <form>

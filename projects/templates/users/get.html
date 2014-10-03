@@ -1,43 +1,41 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
-{% load staticblock %}
+{% load assetsblock %}
 {% load url from future %}
 {% load restful %}
 {% load dict %}
 
+{% assets topcss %}
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
+{% endassets %}
+
+{% assets topjs %}
+    <script src="{% static 'libs/spin.js/spin.js' %}"></script>
+{% endassets %}
+
+{% assets bottomjs %}
+    <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
+    <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'libs/mustache/mustache.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
+    <script src="{% static 'js/select2grouped.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
+    <script src="{% static 'libs/mixitup/build/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'js/lib/jquery.animateContentSwitch.js' %}"></script>
+    <script src="{% static 'libs/packery/dist/packery.pkgd.min.js' %}"></script>
+    <script src="{% static 'libs/blockui/jquery.blockUI.js' %}"></script>
+    <script src="{% static 'js/auth.js' %}"></script>
+    <script src="{% static 'js/facebook.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+    <script src="{% static 'js/users.js' %}"></script>
+    {% if user.is_authenticated %}
+        <script src="{% static 'js/supplies.js' %}"></script>
+    {% endif %}
+{% endassets %}
 
 {% block content %}
     {% include '_masthead_sample.html' %}
-
-    {% assets topcss %}
-        <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
-    {% endassets %}
-
-    {% assets topjs %}
-        <script src="{% static 'libs/spin.js/spin.js' %}"></script>
-    {% endassets %}
-
-    {% assets bottomjs %}
-        <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
-        <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
-        <script src="{% static 'libs/mustache/mustache.js' %}"></script>
-        <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
-        <script src="{% static 'js/select2grouped.js' %}"></script>
-        <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-        <script src="{% static 'libs/mixitup/build/jquery.mixitup.min.js' %}"></script>
-        <script src="{% static 'js/lib/jquery.animateContentSwitch.js' %}"></script>
-        <script src="{% static 'libs/packery/dist/packery.pkgd.min.js' %}"></script>
-        <script src="{% static 'libs/blockui/jquery.blockUI.js' %}"></script>
-        <script src="{% static 'js/auth.js' %}"></script>
-        <script src="{% static 'js/facebook.js' %}"></script>
-        <script src="{% static 'js/login.js' %}"></script>
-        <script src="{% static 'js/users.js' %}"></script>
-        {% if user.is_authenticated %}
-            <script src="{% static 'js/supplies.js' %}"></script>
-        {% endif %}
-    {% endassets %}
-
     <section class="content">
         <nav class="nav-tabs">
             <ul class="stripped clearfix">

@@ -106,7 +106,7 @@ DATABASES = {
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
+    'outputcontext.template.loaders.app_directories.Loader',
     #     'django.template.loaders.eggs.Loader',
 )
 
@@ -139,7 +139,8 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'assetstack',
+    'outputcontext',
+    'assetsblock',
     'web',
     "projects",
     'django_object_actions',
@@ -166,7 +167,8 @@ if DEBUG:
     INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
     MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
 
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     EMAIL_FILE_PATH = os.path.join(PROJECT_ROOT, 'server/mail')
 
 ANONYMOUS_USER_ID = -1
@@ -351,7 +353,7 @@ AUTH_USER_MODEL = 'projects.User'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 # SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_education_history', 'user_interests']
 LOCALE_PATHS = ['locale',]
-#
+
 SUIT_CONFIG = {
     'SEARCH_URL': '',
     'ADMIN_NAME': 'Obshtestvo.bg',

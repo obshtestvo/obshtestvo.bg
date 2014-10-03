@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% load staticblock %}
+{% load assetsblock %}
 {% load dev %}
 {% load compress %}
 
@@ -23,7 +23,7 @@
     {% endcompress %}
 
     {% compress css %}
-        {% assets topcss master %}{% endassets %}
+        {% assets topcss %}{% endassets %}
     {% endcompress %}
 
     {% compress css %}
@@ -37,7 +37,7 @@
     {% endcompress %}
 
     {% compress js %}
-        {% assets topjs master %}{% endassets %}
+        {% assets topjs %}{% endassets %}
     {% endcompress %}
 </head>
 <body class="{{ page }}">
@@ -47,7 +47,6 @@
 <![endif]-->
 
 <div class="container">
-
     <nav class="main">
         <div class="container">
             <div class="layout">
@@ -126,7 +125,7 @@
 
 {% compress js %}
     {% filter uniquelines %}
-        {% assets bottomjs master  %}{% endassets %}
+        {% assets bottomjs %}{% endassets %}
     {% endfilter %}
 {% endcompress %}
 

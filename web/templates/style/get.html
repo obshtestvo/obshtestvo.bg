@@ -4,26 +4,26 @@
 {% load restful %}
 {% load dict %}
 {% load dev %}
-{% load staticblock %}
+{% load assetsblock %}
+
+{% assets topcss %}
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/lib/prism/prism.css' %}">
+{% endassets %}
+
+{% assets topjs %}
+    <script src="{% static 'libs/spin.js/spin.js' %}"></script>
+{% endassets %}
+
+{% assets bottomjs %}
+    <script src="{% static 'js/lib/prism/prism.js' %}"></script>
+    <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
+    <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'libs/mustache/mustache.js' %}"></script>
+    <script src="{% static 'js/styleguide.js' %}"></script>
+{% endassets %}
 
 {% block content %}
-    {% assets topcss %}
-        <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'js/lib/prism/prism.css' %}">
-    {% endassets %}
-
-    {% assets topjs %}
-        <script src="{% static 'libs/spin.js/spin.js' %}"></script>
-    {% endassets %}
-
-    {% assets bottomjs %}
-        <script src="{% static 'js/lib/prism/prism.js' %}"></script>
-        <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
-        <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
-        <script src="{% static 'libs/mustache/mustache.js' %}"></script>
-        <script src="{% static 'js/styleguide.js' %}"></script>
-    {% endassets %}
-
     <div class="layout styleguide">
         <h2>Лого</h2>
 
