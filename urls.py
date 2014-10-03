@@ -34,9 +34,6 @@ urlpatterns = patterns('',
 )
 
 
-from outputcontext.template import override_include_extend
-override_include_extend()
-
 if settings.DEBUG:
     from django.conf.urls.static import static
     import debug_toolbar
