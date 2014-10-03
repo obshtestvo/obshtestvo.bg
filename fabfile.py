@@ -22,6 +22,7 @@ def deploy_static_files():
     run_manage('collectstatic -v0 --noinput')
 
 def compile_static_files():
+    run_manage('sass')
     run_manage('compress')
 
 def install_static_dependencies():
