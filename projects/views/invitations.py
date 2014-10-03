@@ -52,56 +52,55 @@ class InvitationsView(View):
 
     @method_decorator(login_required)
     def post(self, request):
-        if request.is_ajax():
-            try:
-                form = InvitationForm(data=request.params)
-                if form.is_valid():
-                    data = form.cleaned_data
-                    task_data = data['task']
-                    project = data['project']
-                    skill = data['skill']
+        try:
+            form = InvitationForm(data=request.params)
+            if form.is_valid():
+                data = form.cleaned_data
+                task_data = data['task']
+                project = data['project']
+                skill = data['skill']
 
-                    if task_data.isdigit():
-                        task_id = int(task_data)
-                        task = Task.objects.get(pk=task_id)
-                    else:
-                        task = Task(name=task_data, project=project, skill=skill)
-                        task.save()
+                if task_data.isdigit():
+                    task_id = int(task_data)
+                    task = Task.objects.get(pk=task_id)
+                else:
+                    task = Task(name=task_data, project=project, skill=skill)
+                    task.save()
 
-                    inv = Invitation(task=task, project=project, skill=skill, message=data['message'], inviter=request.user, invitee=data['invitee'])
-                    inv.save()
-                    invitation_answer = InvitationAnswer(invitation=inv, invitee=data['invitee'])
-                    invitation_answer.save()
+                inv = Invitation(task=task, project=project, skill=skill, message=data['message'], inviter=request.user, invitee=data['invitee'])
+                inv.save()
+                invitation_answer = InvitationAnswer(invitation=inv, invitee=data['invitee'])
+                invitation_answer.save()
 
-                    try:
-                        # send email
-                        subject, from_email, to = 'Покана от obshtestvo.bg', settings.EMAIL_FROM, 'vladimirrussinov@gmail.com'
-                        html_content = render_to_string('email_templates/invite.html', {'invitation': inv, 'invitation_answer': invitation_answer,
-                                                        'site': get_current_site(request).domain})
-                        text_content = strip_tags(html_content)
+                try:
+                    # send email
+                    subject, from_email, to = 'Покана от obshtestvo.bg', settings.EMAIL_FROM, 'vladimirrussinov@gmail.com'
+                    html_content = render_to_string('email_templates/invite.html', {'invitation': inv, 'invitation_answer': invitation_answer,
+                                                    'site': get_current_site(request).domain})
+                    text_content = strip_tags(html_content)
 
-                        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-                        msg.attach_alternative(html_content, "text/html")
-                        msg.send()
+                    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+                    msg.attach_alternative(html_content, "text/html")
+                    msg.send()
 
-                        message = 'Благодарим Ви. Ще се свържем с Вас възможно най-скоро.'
-                    except Exception as e:
-                        print e
-                        message = 'Изникна грешка при получаването на вашата информацията. Моля, опитайте по-късно'
-
-                    response = {
+                    message = 'Благодарим Ви. Ще се свържем с Вас възможно най-скоро.'
+                    return {
                         "message": message
                     }
-                    return JSONResponse(response)
+                except Exception as e:
+                    print e
+                    return {
+                        "message": 'Изникна грешка при получаването на вашата информацията. Моля, опитайте по-късно'
+                    }, 500
 
-                else:
-                    message = form.errors
-                    response = {
-                        "errors": message
-                    }
-                    return JSONResponse(response)
-            except Exception as e:
-                message = str(e)
+            else:
+                return {
+                    "message": form.errors
+                }, 400
+        except Exception as e:
+            return {
+                "message": 'Нещо има. Не знаем какво. Сори.'
+            }, 500
 
 
 class InvitationForm(forms.Form):
