@@ -1,4 +1,4 @@
-from django import template
+from outputcontext.template.base import Library
 from django.template.defaultfilters import stringfilter
 
 from projects.services import SkillService
@@ -9,7 +9,7 @@ import logging
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
-register = template.Library()
+register = Library()
 
 @register.filter
 @stringfilter

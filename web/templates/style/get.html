@@ -9,6 +9,7 @@
 {% assets topcss %}
     <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'js/lib/prism/prism.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
 {% endassets %}
 
 {% assets topjs %}
@@ -20,6 +21,8 @@
     <script src="{% static 'libs/speakingurl/speakingurl.min.js' %}"></script>
     <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'libs/mustache/mustache.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
     <script src="{% static 'js/styleguide.js' %}"></script>
 {% endassets %}
 
@@ -127,7 +130,7 @@
             <option value="4">Пъпеш</option>
         </select>
         <h4 class="code-title">html</h4>
-<pre><code class="language-markup">{% filter force_escape|strip %}
+<pre><code class="language-markup">{% filter force_escape|strip %}{% verbatim %}
 <select class="example-single" data-placeholder="Инфо за опциите" style="width: 300px">
     <option></option>
     <option value="1">Зеле</option>
@@ -135,6 +138,11 @@
     <option value="3">Домати</option>
     <option value="4">Пъпеш</option>
 </select>
+{% assets bottomjs %}
+    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
+{% endassets %}
+{% endverbatim %}
 {% endfilter %}</code></pre>
         <h4 class="code-title">js</h4>
 <pre><code class="language-javascript">{% filter force_escape|strip %}
@@ -144,33 +152,52 @@ $('select.example-single').select2({
 })
 {% endfilter %}</code></pre>
 
-        <h2>Dropdown (избор на няколко опции)</h2>
-        <select class="example-multiple" multiple data-placeholder="Инфо за опциите" style="width: 300px">
-            <option value="1">Зеле</option>
-            <option value="2">Картофи</option>
-            <option value="3">Домати</option>
-            <option value="4">Пъпеш</option>
-        </select>
-
-        <h4 class="code-title">html</h4>
-<pre><code class="language-markup">{% filter force_escape|strip %}
+{################################# ELEMENT EXAMPLE ######################################}
+<h2>Dropdown (избор на няколко опции)</h2>
 <select class="example-multiple" multiple data-placeholder="Инфо за опциите" style="width: 300px">
     <option value="1">Зеле</option>
     <option value="2">Картофи</option>
     <option value="3">Домати</option>
     <option value="4">Пъпеш</option>
 </select>
-{% endfilter %}</code></pre>
-        <h4 class="code-title">js</h4>
+
+{# ------------------------------ HTML ---------------------  #}
+<h4 class="code-title">html</h4>
+<pre><code class="language-markup">{% filter force_escape|strip %}{% verbatim %}
+<select class="example-multiple" multiple data-placeholder="Инфо за опциите" style="width: 300px">
+    <option value="1">Зеле</option>
+    <option value="2">Картофи</option>
+    <option value="3">Домати</option>
+    <option value="4">Пъпеш</option>
+</select>
+{% assets bottomjs %}
+    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
+    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
+{% endassets %}
+{% endverbatim %}{% endfilter %}</code></pre>
+{# ------------------------------ JS ---------------------  #}
+<h4 class="code-title">js</h4>
 <pre><code class="language-javascript">{% filter force_escape|strip %}
 $('select.example-multiple').select2({
     containerCssClass: 'example-multiple select2'
 })
 {% endfilter %}</code></pre>
+{################################# END! ELEMENT EXAMPLE ######################################}
+
+{################################# ELEMENT EXAMPLE ######################################}
+<h2>Избор на дейности</h2>
+{% skills_picker %}
+
+{# ------------------------------ HTML ---------------------  #}
+<h4 class="code-title">html</h4>
+<pre><code class="language-markup">{% filter force_escape|strip %}{% verbatim %}
+{% skills_picker %}
+{% endverbatim %}{% endfilter %}</code></pre>
+{################################# END! ELEMENT EXAMPLE ######################################}
 
         <h2>Форма за попълване</h2>
 
-        <p>Попринцио формите се изпращат със <code class="language-javascript">AJAX</code></p>
+        <p>По принцип е желателно формите се изпращат със <code class="language-javascript">AJAX</code></p>
 
         <form action="" class="standard">
             <div class="msg" style="display: none;"></div>
@@ -213,8 +240,6 @@ $('select.example-multiple').select2({
 
         <h2>Popup</h2>
         <em>todo..</em>
-
-        {% skills_picker %}
     </div>
 
 {% endblock %}

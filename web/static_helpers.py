@@ -28,4 +28,4 @@ class SassSimpleFilter(CompilerFilter):
     @staticmethod
     def get_cachefilename(filename):
         cached_name = hashlib.md5(filename).hexdigest()
-        return os.path.join(settings.COMPRESS_ROOT, settings.COMPRESS_OUTPUT_DIR, cached_name + '.css')
+        return os.path.join(settings.COMPRESS_ROOT, settings.COMPRESS_OUTPUT_DIR, 'css', cached_name + '.css')

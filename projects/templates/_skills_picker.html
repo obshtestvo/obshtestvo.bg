@@ -1,3 +1,4 @@
+{% load restful %}
 {% load staticfiles %}
 {% load assetsblock %}
 
@@ -5,10 +6,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
 {% endassets %}
 
-ТУк ще се показва skill-picker
+<input type="hidden" class="skill-picker" name="skills" style="width:100%" value="" data-choices="{{ skills_options|jsonify }}"/>
 
 {% assets bottomjs %}
 <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
 <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
 <script src="{% static 'js/select2grouped.js' %}"></script>
+<script src="{% static 'js/_skillPicker.js' %}"></script>
 {% endassets %}
