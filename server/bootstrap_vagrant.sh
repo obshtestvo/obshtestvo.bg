@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 VAGRANT_DIR=/vagrant
+VAGRANT_SHARED_DIR=/vagrant_sf
 PROJECT_NAME=obshtestvobg
 DB_NAME=$PROJECT_NAME
 
@@ -84,16 +85,36 @@ sudo usermod -a -G vagrant www-data
 sudo ln -s $VAGRANT_DIR/server/settings_nginx.vagrant.conf /etc/nginx/sites-enabled/vagrant.conf
 sudo ln -s $VAGRANT_DIR/server/settings_uwsgi.vagrant.ini /etc/uwsgi/apps-enabled/vagrant.ini
 sudo rm /etc/nginx/sites-available/default
-sudo service nginx restart
-sudo service uwsgi restart
+
+# inotify limits
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
 echo "start on vagrant-mounted
 
 script
   service nginx restart
   service uwsgi restart
-  su vagrant -c 'source /home/vagrant/.virtualenvs/$PROJECT_NAME/bin/activate && pip install -r $VAGRANT_DIR/requirements.dev.txt'
-  su vagrant -c 'cd $VAGRANT_DIR/web && $NODE_BINARY $BOWER_BINARY install'
 end script" | sudo tee /etc/init/vagrant-fix.conf
 
-# bower
-(cd $VAGRANT_DIR/web && bower install)
+echo "start on vagrant-mounted
+
+script
+  su vagrant -c 'source /home/vagrant/.virtualenvs/$PROJECT_NAME/bin/activate && pip install -r $VAGRANT_DIR/requirements.dev.txt'
+  su vagrant -c 'cd $VAGRANT_DIR/web && $NODE_BINARY $BOWER_BINARY install'
+end script" | sudo tee /etc/init/vagrant-project-dependencies.conf
+
+
+echo "start on vagrant-mounted
+
+script
+  su vagrant -c 'source /home/vagrant/.virtualenvs/$PROJECT_NAME/bin/activate && cd $VAGRANT_DIR && export PROJECT_ENV_FILE='server/.env.vagrant' && python manage.py sass --watch'
+end script" | sudo tee /etc/init/vagrant-project-sass.conf
+
+
+echo "start on vagrant-mounted
+
+scriptv
+  su vagrant -c 'source /home/vagrant/.virtualenvs/$PROJECT_NAME/bin/activate && python $VAGRANT_DIR/server/watch_and_rsync_vagrant.py $VAGRANT_DIR/ $VAGRANT_SHARED_DIR/'
+end script" | sudo tee /etc/init/vagrant-project-reverse-sync.conf
+
+sudo reboot

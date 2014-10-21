@@ -21,9 +21,11 @@ def run_manage(command):
 def deploy_static_files():
     run_manage('collectstatic -v0 --noinput')
 
+def bundle_static_files():
+    run_manage('compress')
+
 def compile_static_files():
     run_manage('sass')
-    run_manage('compress')
 
 def install_static_dependencies():
     with cd(env.project_root+'/web'):
@@ -53,7 +55,8 @@ def deploy():
     deploy_code()
     install_dependencies()
     install_static_dependencies()
-    deploy_static_files()
     compile_static_files()
+    deploy_static_files()
+    bundle_static_files()
     run_migrations()
     restart_app_server()

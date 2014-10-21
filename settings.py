@@ -8,8 +8,9 @@ from django.utils.datastructures import SortedDict
 from django.utils.translation import ugettext_lazy as _
 
 PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
-
-dotenv.read_dotenv(os.path.join(PROJECT_ROOT, env('PROJECT_ENV_FILE', 'server/.env')))
+DOTENV_FILE = os.path.join(PROJECT_ROOT, env('PROJECT_ENV_FILE', 'server/.env'))
+if os.path.isfile(DOTENV_FILE):
+    dotenv.read_dotenv(DOTENV_FILE)
 
 DEBUG = env("DEBUG")
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
@@ -164,8 +165,9 @@ INSTALLED_APPS = (
     "south",
 )
 if DEBUG:
-    INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
-    MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
+    # UNCOMMENT next 2 lines for debug toolbar (commented by default due to performance)
+    # INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
+    # MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
 
     # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

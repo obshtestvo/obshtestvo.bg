@@ -24,13 +24,16 @@ class Command(NoArgsCommand):
         if sass_binary is None or not os.path.exists(sass_binary):
             raise CommandError( "Please set path to `sass` binary - settings.SASS_BINARY_PATH")
 
-        sass_pairs = ''
+        sass_pairs = []
         for finder in finders.get_finders():
             for relative_filepath, storage in finder.list([]):
                 filepath = os.path.join(storage.location, relative_filepath)
                 if fnmatch.fnmatch(os.path.basename(filepath), '[!_]*.scss'):
                     cachefilename = SassSimpleFilter.get_cachefilename(filepath)
-                    sass_pairs = sass_pairs + ' ' + filepath + ':' + cachefilename
+                    sass_pairs.append(filepath + ':' + cachefilename)
 
-        command = '%s %s --compass %s' % (sass_binary, '--watch' if watch else '', sass_pairs)
-        subprocess.Popen(command, shell=True, stderr=self.stderr, stdout=self.stdout).wait()
+        command = [sass_binary, '--compass']
+        if watch:
+            command.append('--watch')
+        command = command + sass_pairs
+        subprocess.Popen(command, stderr=self.stderr, stdout=self.stdout).wait()
