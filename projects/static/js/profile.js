@@ -1,5 +1,5 @@
 $(function () {
-    var placesService = null
+    var placesService = null,
         skills = $('#joinSkills'),
         avatarPicker = $('#avatar'),
         avatarPrev = $('#prev_avatar'),
@@ -9,7 +9,8 @@ $(function () {
         availableAfter = $('#available_after'),
         isUserActive = userActiveTrue.data('isActive') ? userActiveTrue : userActiveFalse,
         profession = $('#profession'),
-        motivation = $('#motivation');
+        motivation = $('#motivation'),
+        location = $('#location');
 
     avatarPrev.on('click', function () {
         avatarPicker.click();
@@ -57,17 +58,21 @@ $(function () {
 
     new Select2Grouped(skills, skills.data('choices'), skills.data('selection'));
 
-    $('#location').select2({
+    location.select2({
         minimumInputLength: 2,
+        initSelection: function (el, cb) {
+            cb({id: el.data('selection'), text: el.data('selection') });
+        },
         query: function (query) {
-
             if (placesService === null){
                 placesService = new google.maps.places.AutocompleteService();
             }
 
             placesService.getQueryPredictions({ input: query.term }, function (data) {
-                query.callback({results: data.map(function (e) { return { id: e.description, text: e.description }; }   )});
+                query.callback({results: data.map(function (e) { return { id: e.description, text: e.description }; })});
             });
         }
     });
+
+    //document.querySelector('.select2-chosen').innerHTML = location.val();
 });

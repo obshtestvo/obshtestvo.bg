@@ -2,44 +2,44 @@
 {% load url from future %}
 {% load restful %}
 {% load staticfiles %}
-
-{% block headTag %}
-    {#    Тук се добавят допълнителни CSS файлове по примера на долния ред #}
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.date.css' %}">
-    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-    {#    за файл вътре в нея "static/css/lib/select2/select2.css" #}
-{% endblock %}
-
-{% block footerTag %}
-    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
-    <script src="{% static 'js/select2grouped.js' %}"></script>
-    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-    <script src="{% static 'libs/pickadate/lib/picker.js' %}"></script>
-    <script src="{% static 'libs/pickadate/lib/picker.date.js' %}"></script>
-    <script src="{% static 'libs/pickadate/lib/translations/bg_BG.js' %}"></script>
-    {#    Тук се добавят допълнителни javascript файлове по примера на долния ред #}
-    <script src="{% static 'js/profile.js' %}"></script>
-    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-    {#    за файл вътре в нея "static/js/users.js" #}
-{% endblock %}
+{% load staticblock %}
 
 {% block content %}
+    {% assets topcss %}
+        <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.date.css' %}">
+    {% endassets %}
+
+    {% assets bottomjs %}
+        <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
+        <script src="{% static 'js/select2grouped.js' %}"></script>
+        <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
+        <script src="{% static 'libs/pickadate/lib/picker.js' %}"></script>
+        <script src="{% static 'libs/pickadate/lib/picker.date.js' %}"></script>
+        <script src="{% static 'libs/pickadate/lib/translations/bg_BG.js' %}"></script>
+        <script src="{% static 'js/profile.js' %}"></script>
+    {% endassets %}
+
+    {% assets externaljs %}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&v=3.exp"></script>
+    {%  endassets %}
+
     <form style="padding-top:100px; padding-left: 20%;" method="POST" action="{{ profile.id }}"
           enctype="multipart/form-data">
 
         <div class="group avatar_group">
             <label for="prev_avatar"></label>
             <input style="display: none" class="file" id="avatar" name="avatar" type="file"
-                                                value="{{ profile.get_avatar }}" data-rule-required="true">
-            <img id="prev_avatar" alt="avatar" src="{{ profile.get_avatar }}" width="150px"/>
+                   value="{{ profile.get_avatar }}" data-rule-required="true">
+            <img id="prev_avatar" alt="avatar" src="{{ profile.get_avatar }}" />
             <span class="err"></span>
         </div>
 
         <div class="group name_group">
             <label style="display:block;" for="full_name">Име:</label>
-            <input style="width: 75%;" name="full_name" value="{{ profile.first_name }} {{ profile.last_name }}" data-rule-required="true"/>
+            <input style="width: 75%;" name="full_name" value="{{ profile.first_name }} {{ profile.last_name }}"
+                   data-rule-required="true"/>
             <span class="err"></span>
         </div>
 
@@ -65,11 +65,12 @@
 
         <div class="group user_active_group">
             <label style="display:block;" for="user_active">Мога да се включа:</label>
-            <input data-is-active="{{ profile.is_currently_available|yesno:"1,0" }}" type="radio" id="user_active_true" name="user_active" value="now">Oще сега</input>
+            <input data-is-active="{{ profile.is_currently_available|yesno:"1,0" }}" type="radio" id="user_active_true"
+                   name="user_active" value="now">Oще сега</input>
             <input type="radio" id="user_active_false" name="user_active" value="later">По-късно</input>
             <div class="sub_groups available_after_sub_group">
                 <label style="display:block;" for="available_after">Моля въведете дата, след която ще бъдете на
-                                                разположение:</label>
+                    разположение:</label>
                 <input style="width: 75%;" id="available_after" name="available_after"
                        value="{% if profile.available_after %}{{ profile.available_after }}{% else %}{% endif %}"/>
             </div>
@@ -77,7 +78,10 @@
         </div>
 
         <div class="group location_group"><label style="display:block;" for="location">Местоположение:</label>
-            <input style="width: 75%;" name="location" id="location" data-placeholder="{{ profile.location }}" data-rule-required="true"/>
+            <input style="width: 75%;" name="location" id="location" data-placeholder="{{ profile.location }}"
+                   value="{{ profile.location }}"
+                   data-selection="{{ profile.location }}"
+                   data-rule-required="true"/>
             <span class="err"></span>
         </div>
 
@@ -87,12 +91,13 @@
                     name="profession"
                     value="{{ profile.profession }}"
                     data-rule-required="true"
-            />
+                    />
             <span class="err"></span>
         </div>
 
         <div class="group motivation_group"><label style="display:block;" for="motivation">Мотивация:</label>
-            <textarea style="width: 75%;" name="motivation" data-rule-required="true">{{ profile.motivation }}</textarea>
+            <textarea style="width: 75%;" name="motivation"
+                      data-rule-required="true">{{ profile.motivation }}</textarea>
             <span class="err"></span>
         </div>
 
@@ -100,5 +105,4 @@
             Актуалицирай
         </button>
     </form>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&v=3.exp"></script>
 {% endblock %}

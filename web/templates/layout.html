@@ -67,8 +67,8 @@
                     <li class="basic-transition-mid"><a href="{% url 'users' %}">Всичко за участниците</a></li>
                 </ul>
                 {% block navExtra %}{% endblock %}
-                {% if user.is_authenticated %}
-                    {% include 'user/_nav.html' %}
+                {% if user.id and user.is_authenticated %}
+                    {% include 'user/_nav.html' with user_id=user.id %}
                 {% endif %}
                 <div class="slider-nav-wrapper basic-transition hidden waiting">
                     <div class="slider-nav clearfix">
@@ -123,6 +123,10 @@
 <script src="{% static 'js/nav.js' %}"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
 {% endcompress %}
+
+{% filter uniquelines %}
+    {% assets externaljs master %}{% endassets %}
+{% endfilter %}
 
 {% compress js %}
     {% filter uniquelines %}

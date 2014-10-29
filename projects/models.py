@@ -186,8 +186,9 @@ class Member(models.Model):
     def fill_gaps_from(self, user):
         pass
 
+
 def user_file_name(instance, filename):
-    return '/'.join(['user', filename])
+    return '/'.join(['user', 'avatar_' + str(instance.id) + '.jpg'])
 
 class User(AbstractUser):
     is_browsable = models.BooleanField(_('Is this a user you can browse amongst others'), default=True)
@@ -199,9 +200,12 @@ class User(AbstractUser):
     motivation = models.CharField(_('motivation'), max_length=140, blank=True)
     location = models.TextField(_('location'), blank=True, null=True)  # geoJSON
 
-    skills = models.ManyToManyField('Skill', related_name="users", blank=True,
-                                      verbose_name=_("skills"))
+    skills = models.ManyToManyField('Skill', related_name="users", blank=True,  verbose_name=_("skills"))
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
+
+    #def is_authenticated(self, *args, **kwargs):
+        #raise Exception("why?")
+        #raise Exception(super(User, self).is_authenticated())
 
     def get_avatar(self, uid=None):
         if self.avatar:
