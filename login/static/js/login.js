@@ -49,11 +49,11 @@ $(function() {
 
         var $skills = $('#joinSkills');
         var $availableAfter = $('#availabelAfter');
-        var selected = $skills.data('selection');
+        var selected = skills.data('selection');
         if (selected) {
             selected = selected.toString().split('|')
         }
-        new Select2Grouped($skills, $skills.data('choices'), selected)
+        new Select2Grouped(skills, skills.data('choices'), selected)
         var $personalSwap = $('.personal .animation-container');
         var $personalChangeSlides =$personalSwap.find('>div')
         var personalFieldsRevealed = false;
@@ -67,8 +67,8 @@ $(function() {
                 }
             });
         }
-        $skills.on('change', function() {
-            $skills.valid()
+        skills.on('change', function() {
+            skills.valid()
         })
         $personalSwap.find('a.change').click(function(e){
             e.preventDefault()

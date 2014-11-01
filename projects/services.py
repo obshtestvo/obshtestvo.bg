@@ -129,6 +129,4 @@ class SkillService:
                     "group": sgroup.name,
                 })
 
-        return {
-            'skills_options': skills_options
-        }
+        return skills_options

@@ -186,23 +186,30 @@ class Member(models.Model):
     def fill_gaps_from(self, user):
         pass
 
+
 def user_file_name(instance, filename):
-    return '/'.join(['user', filename])
+    return '/'.join(['user', 'avatar_' + str(instance.id) + '.jpg'])
 
 class User(AbstractUser):
     is_browsable = models.BooleanField(_('Is this a user you can browse amongst others'), default=True)
-    is_available = models.BooleanField(_('Is the user available for work'), default=True)
     available_after = models.DateField(_('available after'), blank=True, null=True)
     has_confirmed_data = models.BooleanField(_('has confirmed custom data'), default=True)
     bio = models.TextField(_('biography'), blank=True, null=True)
     avatar = models.FileField(_('avatar'), upload_to=user_file_name, blank=True, null=True)
-    skills = models.ManyToManyField('Skill', related_name="users", blank=True,
-                                      verbose_name=_("skills"))
+    profession = models.CharField(_('profession'), max_length=70, blank=True)
+    motivation = models.CharField(_('motivation'), max_length=140, blank=True)
+    location = models.TextField(_('location'), blank=True, null=True)  # geoJSON
+
+    skills = models.ManyToManyField('Skill', related_name="users", blank=True,  verbose_name=_("skills"))
     projects_interests = models.ManyToManyField('Project', blank=True, related_name="interested_users", verbose_name=_("Projects that user's interested in"))
+
+    #def is_authenticated(self, *args, **kwargs):
+        #raise Exception("why?")
+        #raise Exception(super(User, self).is_authenticated())
 
     def get_avatar(self, uid=None):
         if self.avatar:
-            src = settings.MEDIA_URL + self.avatar.url()
+            src = self.avatar.url
         else:
             uid = settings.SOCIAL_AUTH_FACEBOOK_KEY
             if hasattr(self, 'preloaded_uid'):

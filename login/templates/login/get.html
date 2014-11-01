@@ -38,7 +38,9 @@
     <div class="animation-container">
     <section class="start">
         <div class="hidden">
-            {% include 'user/_nav.html' %}
+            {% if user.id and user.is_authenticated %}
+                    {% include 'user/_nav.html' with user_id=user.id %}
+             {% endif %}
         </div>
         <h2 class="prompt">Сега вече може би е по-ясно, <strong>искате ли да участвате?</strong></h2>
             <ul class="login options stripped"

@@ -1,40 +1,30 @@
 from django.views.generic.base import View
-from restful.decorators import restful_view_templates
 from django.shortcuts import redirect
 from django import forms
-from projects.models import Skill, Member, User, SkillGroup
 
+from restful.decorators import restful_view_templates
+
+from projects.services import SkillService
+
+from projects.models import Skill, Member, User
 
 @restful_view_templates
 class ExtraDataView(View):
     def get(self, request):
         details = request.session['partial_pipeline']['kwargs']['details']
-        skills_options = []
+        skills_options = SkillService.all_grouped_as_picker_options()
         member = None
         try:
             member = Member.objects.select_related('skills').get(name=details["first_name"]+' '+details["last_name"])
         except:
             pass
 
-        for sgroup in SkillGroup.objects.select_related('skills').all():
-            skills_options.append({
-                "text": sgroup.name,
-                "id": -1,
-                "group": sgroup.name,
-            })
-            for skill in sgroup.skills.all():
-                skills_options.append({
-                    "text": skill.name,
-                    "id": skill.id,
-                    "group": sgroup.name,
-                })
-
         uid = request.session['partial_pipeline']['kwargs']['uid']
+
         return {
             'details': details,
             'uid': uid,
             'avatar': User.get_facebook_avatar(uid),
-            'skills': Skill.objects.all(),
             'skills_options': skills_options,
             'member': member,
             'usecase': request.params.get('usecase', 'now'),
@@ -59,9 +49,6 @@ class ExtraDataView(View):
         return {
             "status": message
         }, 400
-
-
-
 
 class Form(forms.Form):
     name = forms.CharField(required=True)

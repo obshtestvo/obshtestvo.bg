@@ -7,6 +7,7 @@
     "**/*.txt"
   ],
   "dependencies": {
+    "file-upload": "https://github.com/blueimp/jQuery-File-Upload.git",
     "normalize.css": "*",
     "modernizer": "*",
     "jquery": "*",

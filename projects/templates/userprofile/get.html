@@ -3,51 +3,109 @@
 {% load restful %}
 {% load staticfiles %}
 
-{% block headTag %}
-    {#    Тук се добавят допълнителни CSS файлове по примера на долния ред #}
-    <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
-    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-    {#    за файл вътре в нея "static/css/lib/select2/select2.css" #}
-{% endblock %}
-
-{% block footerTag %}
-    <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
-    <script src="{% static 'js/select2grouped.js' %}"></script>
-    <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
-    {#    Тук се добавят допълнителни javascript файлове по примера на долния ред #}
-    <script src="{% static 'js/profile.js' %}"></script>
-    {#    Горния ред търси във всяка папка на горно ниво в проекта (auth, locale, login, projects..) файл вътре в нея #}
-    {#    за файл вътре в нея "static/js/users.js" #}
-{% endblock %}
+{% load staticblock %}
 
 {% block content %}
-        <form style="padding-top:100px; padding-left: 20%;" method="POST" action="{{profile.id}}">
-        <label for="avatar"></label><img id="avatar" alt="avatar" src="{{ profile.get_avatar }}" />
-        <div><label style="display:block;" for="first_name">Име:</label>
-            <input style="width: 75%;" name="first_name" value="{{ profile.first_name }}"/>
-            <span class="err"></span></div>
-        <div style="padding-top:1.5%"><label style="display:block;" for="last_name">Фамилия:</label>
-            <input style="width: 75%;" name="last_name" value="{{ profile.last_name }}"/>
-            <span class="err"></span></div>
-        <div style="padding-top:1.5%"><label style="display:block;" class="full_width" for="email">Емайл:</label>
-            <input style="width: 75%;" name="email" value="{{ profile.email }} "/>
-            <span class="err"></span></div>
-        <div style="padding-top:1.5%"><label style="display:block;" for="location">Местоположение:</label>
-            <input style="display: none; width: 75%;" name="location" id="location" value="{{ profile.location }}"/>
-            <div id="map" style="height: 150px; width: 75%;"></div>
-            <span class="err"></span></div>
-        <div style="padding-top:1.5%"><label style="display:block;" for="profession">Професия:</label>
-            <input style="width: 75%;" name="profession" value="{{ profile.profession }}"/>
-            <span class="err"></span></div>
-        <div style="padding-top:1.5%"><label style="display:block;" for="motivation">Мотивация:</label>
-            <textarea style="width: 75%;" name="motivation">{{ profile.motivation }}</textarea>
-            <span class="err"></span></div>
-        <div style="padding-top:1.5%"><label style="display:block;" for="skills">Умения:</label>
-            <input type="hidden" id="joinSkills" name="skills" style="width:76%" value=""
-                   data-selection="[{% for s in profile.skills.all %}{{ s.id }}{% if not forloop.last %},{% endif %}{% endfor %}]"
+    {% assets topcss %}
+        <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.date.css' %}">
+    {% endassets %}
+
+    {% assets bottomjs %}
+        <script src="{% static 'js/lib/select2/select2.mod.min.js' %}"></script>
+        <script src="{% static 'js/select2grouped.js' %}"></script>
+        <script src="{% static 'js/lib/select2/select2_locale_bg.js' %}"></script>
+        <script src="{% static 'libs/pickadate/lib/picker.js' %}"></script>
+        <script src="{% static 'libs/pickadate/lib/picker.date.js' %}"></script>
+        <script src="{% static 'libs/pickadate/lib/translations/bg_BG.js' %}"></script>
+        <script src="{% static 'js/profile.js' %}"></script>
+    {% endassets %}
+
+    {% assets externaljs %}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&v=3.exp"></script>
+    {%  endassets %}
+
+    <form style="padding-top:100px; padding-left: 20%;" method="POST" action="{{ profile.id }}"
+          enctype="multipart/form-data">
+
+        <div class="group avatar_group">
+            <label for="prev_avatar"></label>
+            <input style="display: none" class="file" id="avatar" name="avatar" type="file"
+                   value="{{ profile.get_avatar }}" data-rule-required="true">
+            <img id="prev_avatar" alt="avatar" src="{{ profile.get_avatar }}" />
+            <span class="err"></span>
+        </div>
+
+        <div class="group name_group">
+            <label style="display:block;" for="full_name">Име:</label>
+            <input style="width: 75%;" id="full_name" name="full_name" value="{{ profile.first_name }} {{ profile.last_name }}"
+                   data-rule-required="true"/>
+            <span class="err"></span>
+        </div>
+
+        <div class="group email_group">
+            <label style="display:block;" class="full_width" for="email">Емайл:</label>
+            <input style="width: 75%;"
+                   name="email"
+                   id="email"
+                   value="{{ profile.email }}"
+                   data-rule-required="true"
+                   data-rule-email="true"/>
+            <span class="err"></span>
+        </div>
+
+        <div class="group skills_group">
+            <label style="display:block;" for="skills">Умения:</label>
+            <input type="hidden" id="joinSkills" id="skills" name="skills" style="width:76%" value=""
+                   data-selection="{% for s in profile.skills.all %}{{ s.id }}{% if not forloop.last %}|{% endif %}{% endfor %}"
                    data-choices="{{ all_skills|jsonify }}"
-            />
-            <span class="err"></span></div>
-        <button style="float: right; margin-top:2%; margin-right: 24%" class="button small blue" id="update_user_btn">Актуалицирай</button>
+                   data-rule-required="true"
+                    />
+            <span class="err"></span>
+        </div>
+
+        <div class="group user_active_group">
+            <label style="display:block;">Мога да се включа:</label>
+            <input data-is-active="{{ profile.is_currently_available|yesno: 1,0 }}" type="radio" id="user_active_true"
+                   name="user_active" value="now">Oще сега</input>
+            <input type="radio" id="user_active_false" name="user_active" value="later">По-късно</input>
+            <div class="sub_groups available_after_sub_group">
+                <label style="display:block;" for="available_after">Моля въведете дата, след която ще бъдете на
+                    разположение:</label>
+                <input style="width: 75%;" id="available_after" name="available_after"
+                       value="{% if profile.available_after %}{{ profile.available_after }}{% else %}{% endif %}"/>
+            </div>
+            <span class="err"></span>
+        </div>
+
+        <div class="group location_group"><label style="display:block;" for="location">Местоположение:</label>
+            <input style="width: 75%;" name="location" id="location" data-placeholder="{{ profile.location }}"
+                   value="{{ profile.location }}"
+                   data-selection="{{ profile.location }}"
+                   data-rule-required="true"/>
+            <span class="err"></span>
+        </div>
+
+        <div class="group profession_group"><label style="display:block;" for="profession">Професия:</label>
+            <input
+                    style="width: 75%;"
+                    name="profession"
+                    id="profession"
+                    value="{{ profile.profession }}"
+                    data-rule-required="true"
+                    />
+            <span class="err"></span>
+        </div>
+
+        <div class="group motivation_group"><label style="display:block;" for="motivation">Мотивация:</label>
+            <textarea style="width: 75%;" name="motivation" id="motivation"
+                      data-rule-required="true">{{ profile.motivation }}</textarea>
+            <span class="err"></span>
+        </div>
+
+        <button style="float: right; margin-top:2%; margin-right: 24%" class="button small blue" id="update_user_btn">
+            Актуалицирай
+        </button>
     </form>
 {% endblock %}
