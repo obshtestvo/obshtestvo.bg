@@ -108,4 +108,4 @@ find /var/cache/nginx/ -type f | xargs rm
 
 ### Примерна инсталация на Debian-базирана машина
 
-Вижте командите в [инсталационния файл](bootstrap.sh) за Vagrant.
+Вижте командите в [инсталационния файл](server/bootstrap_vagrant.sh) за Vagrant.
