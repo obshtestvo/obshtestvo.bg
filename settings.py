@@ -222,9 +222,9 @@ FAKE_DB["openparliament"] = {
     "slug": "openparliament"
 }
 FAKE_DB["pitaigi"] = {
-    "name": "Pitaigi.bg",
-    "name_full": "Pitaigi.bg (Питай ги)",
-    "url": "http://foi.obshtestvo.bg/",
+    "name": "Питай ги",
+    "name_full": "Питай ги",
+    "url": "http://pitaigi.obshtestvo.bg/",
     "preview": "pitaigi.jpg",
     "fb_group": "https://www.facebook.com/groups/pitaigi.bg/",
     "repo": "https://github.com/obshtestvo/alaveteli-bulgaria",
