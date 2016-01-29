@@ -15,7 +15,7 @@ config.resolve = {
         'obshtestvo-ui': path.normalize(`${PWD}/obshtestvo-ui`), // @todo extract as npm module
         '.modernizrrc': path.normalize(`${PWD}/.modernizrrc`)
     },
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js']
 };
 config.externals = {
     modernizr: 'var Modernizr'
@@ -63,7 +63,7 @@ if (PRODUCTION) {
         //mangle: ... this actually increases build size
         compress: {
             warnings: false,
-            drop_console: true,
+            drop_console: true
         },
         output: {comments: false}
     }));
@@ -139,12 +139,6 @@ config.module = {
         {test: /^(?:(?!autorequire).)+\.png$/, loader: 'url?limit=100000&mimetype=image/png'},
         {test: /^(?:(?!autorequire).)+\.jpg$/, loader: 'file'},
         {test: /\.woff$/, loader: 'url?limit=100000&mimetype=application/font-woff'},
-        {
-            test: /\.html$/, loader: 'react-templates-loader', query: {
-                modules: 'commonjs',
-                targetVersion: '0.14.0'
-            }
-        },
         {test: /\.json$/, loader: 'json'},
         // if svg maximum optimization is required use dangerouslySetInnerHTML: http://stackoverflow.com/a/30845262/339872
         //{test: /\.svg$/, loader: 'raw'+svgExtraLoaders},
