@@ -1,0 +1,42 @@
+$max-layout-width: 900px;
+$font-size-large: 20px;
+$font-size-normal: 20px;
+$font-size-small: 16px;
+
+/*Colors*/
+$white: #fff;
+
+$body-text-color-100: #0b2936;
+$body-text-color-80: #60767f;
+
+$body-text-color: $body-text-color-100;
+$body-text-color-subtle: $body-text-color-80;
+
+$grey: #e5e5e5;
+
+%main-font {
+  font-family: obshtestvobg, sans-serif
+}
+
+%bodytext-font {
+  @extend %main-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+%clearfix:before,
+%clearfix:after {
+  content: "";
+  display: table;
+}
+
+%clearfix:after {
+  clear: both;
+}
+
+
+%layout {
+  max-width: $max-layout-width;
+  margin:0 auto;
+}

@@ -1,0 +1,24 @@
+body {
+  background: red;
+}
+
+%button {
+  color: #fff;
+  font-size:40px;
+  line-height:13px;
+  font-weight:bold;
+  display: block;
+  width:300px;
+  height: 100px;
+}
+
+.intrigued {
+  @extend %button;
+  background: blue;
+}
+
+.intrigued-variant-a {
+  @extend %button;
+  background: pink;
+  font-size:20px;
+}

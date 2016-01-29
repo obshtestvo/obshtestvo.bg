@@ -1,0 +1,19 @@
+<link rel="import" href="./tick" name="Tick"/>
+<link rel="import" href="./icon" name="Tick"/>
+
+<checkbox {...this.props}>
+    <template if="{!this.props.readonly}">
+        <input
+                type="checkbox"
+                id={this.props.name}
+                checked={this.isChecked()}
+                value={this.state.value}
+        /><label class="check" for="{this.props.id}Input"><Tick/></label><label for="{this.props.id}Input">
+        {this.props.children}
+    </label>
+    </template>
+    <template if="{this.props.readonly}">
+        <Tick/>
+        {this.props.children}
+    </template>
+</checkbox>

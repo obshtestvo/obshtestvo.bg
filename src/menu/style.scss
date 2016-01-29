@@ -1,0 +1,32 @@
+@import "../styleguide";
+
+$height: 50px;
+$font-size: $font-size-small;
+$background: $white;
+$link-color: $body-text-color;
+$border-color: $grey;
+
+.bar {
+  border-bottom:1px solid $border-color;
+  margin-bottom:50px;
+}
+
+.menu {
+  @extend %layout;
+  @extend %clearfix;
+  background: $background;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  font-size:$font-size;
+  height: $height;
+}
+
+.item {
+  float:left;
+}
+
+.link {
+  color: $link-color;
+  line-height: $height;
+}

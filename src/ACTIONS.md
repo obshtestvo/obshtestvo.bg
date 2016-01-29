@@ -1,0 +1,1 @@
+Here will be documented all events/signals/dispatched actions that happen in the projects

@@ -1,0 +1,6 @@
+{
+  "feature-detects": [
+    "dom/mutationObserver",
+    "es6/object"
+  ]
+}

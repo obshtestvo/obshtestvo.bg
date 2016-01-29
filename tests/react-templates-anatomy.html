@@ -1,0 +1,17 @@
+<link rel="import" href="./tick.svg" name="Tick"/>
+<link rel="import" href="./main.scss" name="styles"/>
+
+<div class="red" success={this.props.success} classNames={styles.button} inherit-props="density size color">
+    Hello {this.props.name}
+
+    <div if="this.props.success">
+        Success!
+    </div>
+    <template if="this.props.success">
+        <strong>SuccNOOOess!</strong>
+    </template>
+
+    <p>
+        Hey,rrr {this.state.last_name}
+    </p>
+</div>

@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'obshtestvobg';
+	src: url('./subset-obshtestvobg-bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'obshtestvobg';
+	src: url('./subset-obshtestvobg-regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'obshtestvobg';
+	src: url('./subset-obshtestvobg-italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}

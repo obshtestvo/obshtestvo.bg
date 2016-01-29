@@ -1,0 +1,16 @@
+<rt-require dependency="./tick" as="Tick"/>
+<div rt-if={!this.prop.readonly}>
+    <input
+        type="checkbox"
+        id={this.state.name}
+        checked={this.state.checked}
+        value={this.state.value}
+    /><label class="check" for="{id}Input"><Tick/></label><label for="{{id}}Input">
+    {this.props.children}
+    </label>
+</div>
+
+{{#readonly}}
+    <Tick/>
+    {this.props.children}
+{{/readonly}}
