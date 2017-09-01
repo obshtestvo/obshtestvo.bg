@@ -1,12 +1,16 @@
 {% extends "layout.html" %}
 {% load staticfiles %}
 {% load staticblock %}
+{% load compress %}
 
 {% block content %}
     {% assets topcss %}
+        {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
+        {% endcompress %}
     {% endassets %}
     {% assets javascript %}
+        {% compress js %}
         <script src="{% static 'libs/spin.js/spin.js' %}"></script>
         <script src="{% static 'libs/jquery.validation/dist/jquery.validate.js' %}"></script>
         <script src="{% static 'libs/blockui/jquery.blockUI.js' %}"></script>
@@ -16,6 +20,7 @@
         <script src="{% static 'js/ajaxForm.js' %}"></script>
         <script src="{% static 'js/lib/jquery.animateContentSwitch.js' %}"></script>
         <script src="{% static 'js/support.js' %}"></script>
+        {% endcompress %}
     {% endassets %}
 
     {% include '_header_inner.html' with extra_sidebar_classes="fixed reduced" toc_title="Начини да ни подкрепите" screen_tmpl="support/_screen.html" headnav_tmpl="support/_headnav.html" toc_tmpl="support/_toc.html" page_title="Подкрепа" %}

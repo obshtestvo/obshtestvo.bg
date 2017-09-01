@@ -3,17 +3,21 @@
 {% load url from future %}
 {% load staticfiles %}
 {% load staticblock %}
+{% load compress %}
 
 
 {% block content %}
     {% assets topcss %}
+    {% compress css %}
     <link rel="stylesheet" type="text/css" href="{% static 'libs/magnific-popup/dist/magnific-popup.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'libs/select2/select2.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'libs/pickadate/lib/themes/classic.date.css' %}">
+    {% endcompress %}
     {% endassets %}
 
     {% assets bottomjs %}
+    {% compress js %}
     <script src="{% static 'libs/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'libs/blockui/jquery.blockUI.js' %}"></script>
     <script src="{% static 'libs/jquery.validation/dist/jquery.validate.js' %}"></script>
@@ -32,6 +36,7 @@
     <script src="{% static 'js/login.js' %}"></script>
     <script src="{% static 'js/projectPicker.js' %}"></script>
     <script src="{% static 'js/whatCarousel.js' %}"></script>
+    {% endcompress %}
     {% endassets %}
 
     {% include 'about/_whatheader.html' %}
