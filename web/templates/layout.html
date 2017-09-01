@@ -22,9 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'libs/OwlCarousel/owl-carousel/owl.carousel.css' %}">
     {% endcompress %}
 
-    {% compress css %}
-        {% assets topcss master %}{% endassets %}
-    {% endcompress %}
+    {% assets topcss master %}{% endassets %}
 
     {% compress css %}
     <link rel="stylesheet" type="text/x-scss" href="{% static 'css/app.scss' %}">
@@ -36,9 +34,7 @@
         <script src="{% static 'js/utils.js' %}"></script>
     {% endcompress %}
 
-    {% compress js %}
-        {% assets topjs master %}{% endassets %}
-    {% endcompress %}
+    {% assets topjs master %}{% endassets %}
 </head>
 <body class="{{ page }}">
 <!--[if lt IE 8]>
@@ -124,11 +120,9 @@
 <script src="{% static 'js/bootstrap.js' %}"></script>
 {% endcompress %}
 
-{% compress js %}
-    {% filter uniquelines %}
-        {% assets bottomjs master  %}{% endassets %}
-    {% endfilter %}
-{% endcompress %}
+{% filter uniquelines %}
+    {% assets bottomjs master %}{% endassets %}
+{% endfilter %}
 
 {% compress js %}
 <script src="{% static 'js/defaults.js' %}"></script>
