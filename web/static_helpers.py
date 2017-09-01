@@ -19,6 +19,9 @@ class SassFilter(CompilerFilter):
         super(SassFilter, self).__init__(content, command=self.command, *args, **kwargs)
 
     def input(self, **kwargs):
+        if settings.SASS_BINARY_PATH is None:
+            raise Exception("You haven't set SASS_BINARY_PATH. Please make sure it's set properly.")
+
         input_is_not_file = self.infile is None and self.filename is None and "{infile}" in self.command
         if input_is_not_file or not settings.DEBUG:
             self.options = dict(self.options)
