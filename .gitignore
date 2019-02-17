@@ -1,12 +1,1 @@
-server/access.log
-.env
-.env.vagrant
-static/*
-*.pyc
-*.DS_Store
-*.idea
-fabric_settings.py
-.vagrant/
-web/static/libs/
-/venv/
-/django-errors.log
+/_site/
