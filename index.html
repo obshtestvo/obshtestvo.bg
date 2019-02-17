@@ -3,12 +3,119 @@
   <head>
     <title>Общество.бг</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+      @font-face {
+        font-family: 'obshtestvobg';
+        src: url('/assets/fonts/obshtestvobg-bold.eot?0f0ec9118ffb');
+        src: url('/assets/fonts/obshtestvobg-bold.eot?&0f0ec9118ffb#iefix') format('embedded-opentype'),
+             url('/assets/fonts/obshtestvobg-bold.woff?0f0ec9118ffb') format('woff'),
+             url('/assets/fonts/obshtestvobg-bold.ttf?0f0ec9118ffb') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'obshtestvobg';
+        src: url('/assets/fonts/obshtestvobg-regular.eot?0f0ec9118ffb');
+        src: url('/assets/fonts/obshtestvobg-regular.eot?&0f0ec9118ffb#iefix') format('embedded-opentype'),
+             url('/assets/fonts/obshtestvobg-regular.woff?0f0ec9118ffb') format('woff'),
+             url('/assets/fonts/obshtestvobg-regular.ttf?0f0ec9118ffb') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'obshtestvobg';
+        src: url('/assets/fonts/obshtestvobg-black.eot?0f0ec9118ffb');
+        src: url('/assets/fonts/obshtestvobg-black.eot?&0f0ec9118ffb#iefix') format('embedded-opentype'),
+             url('/assets/fonts/obshtestvobg-black.woff?0f0ec9118ffb') format('woff'),
+             url('/assets/fonts/obshtestvobg-black.ttf?0f0ec9118ffb') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'obshtestvobg';
+        src: url('/assets/fonts/obshtestvobg-italic.eot?&0f0ec9118ffb') format('eot'),
+             url('/assets/fonts/obshtestvobg-italic.woff?0f0ec9118ffb') format('woff'),
+             url('/assets/fonts/obshtestvobg-italic.ttf?0f0ec9118ffb') format('truetype'),
+              url('/assets/fonts/obshtestvobg-italic.svg?0f0ec9118ffb#obshtestvobg-italic') format('svg');
+        font-style: italic;
+      }
+
+      html, body {
+        padding: 0;
+        margin: 0;
+        font-family: "obshtestvobg", "Myriad Pro", "Verdana", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      html { height: 100%; }
+      body { min-height: 100%; }
+
+      .content {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 1em;
+      }
+
+      body {
+        background: #2a4650 url('/assets/images/header-bg.jpg?0f0ec9118ffb') no-repeat bottom center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        text-align: center;
+        color: #fff;
+      }
+
+      header ul {
+        margin: 3em 0;
+        list-style-type: none;
+        font-size: 13px;
+      }
+      header ul li {
+        display: inline-block;
+        padding: 0.2em 0.8em 0.2em 0.5em;
+        border-right: 1px solid #688490;
+        text-transform: uppercase;
+      }
+      header ul li:last-child {
+        border-right: none;
+      }
+
+      header a,
+      header a:visited {
+        color: #7BC142;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .big-logo {
+        width: 260px;
+        height: 200px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Общество.бг</h1>
-    <ul>
-      <li><a href="https://status.obshtestvo.bg/">https://status.obshtestvo.bg/</a></li>
-      <li><a href="https://github.com/obshtestvo/">https://github.com/obshtestvo/</a></li>
-    </ul>
+    <header>
+      <div class="content">
+        <h1>
+          <a href="/">
+            <img src="/assets/images/logo-big.png" alt="Лого на Общество.бг" class="big-logo">
+          </a>
+        </h1>
+
+        <h2>
+          Независими създатели на електронни инструменти за бърза и удобна връзка държава–гражданин.
+        </h2>
+
+        <ul>
+          <li><a href="https://status.obshtestvo.bg/">Блог</a></li>
+          <li><a href="https://github.com/obshtestvo/">Проекти в GitHub</a></li>
+          <li><a href="mailto:info@obshtestvo.bg">Имейл</a></li>
+          <li><a href="https://www.facebook.com/obshtestvo.bg">Facebook</a></li>
+        </ul>
+      </section>
+    </header>
   </body>
 </html>
