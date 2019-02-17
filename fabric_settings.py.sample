@@ -1,7 +1,0 @@
-from fabric.api import env
-
-env.hosts            = ['obshtestvo@obshtestvo.bg']
-env.project_root     = '/path/to/deployment/obshtestvo.bg'
-env.deploy_branch    = 'master'
-env.repository_url   = 'https://github.com/obshtestvo/obshtestvo.bg.git'
-env.virtual_env_name = 'obshtestvobg' # leave blank if you don't use virtualenvwrapper

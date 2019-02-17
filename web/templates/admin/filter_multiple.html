@@ -1,9 +1,0 @@
-{% load i18n %}
-<select data-name="{{ field_name }}" class="auto-width search-filter" data-placeholder="{{ title|capfirst }}" style="max-width: 200px" multiple>
-  {% for choice in choices %}
-    {% if forloop.first %}
-    {% else %}
-      <option{% if choice.additional %} data-additional="{{ choice.additional }}"{% endif %} data-name="{{ choice.name }}" value="{{ choice.val }}" {{ choice.selected|yesno:' selected="selected",' }}>{{ choice.display }}</option>
-    {% endif %}
-  {% endfor %}
-</select>
